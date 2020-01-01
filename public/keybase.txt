@@ -1,0 +1,113 @@
+==================================================================
+https://keybase.io/coder_riley
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://rileysmith.me
+  * I am coder_riley (https://keybase.io/coder_riley) on keybase.
+  * I have a public key ASAkPoT8bk-cA8jpviWgktD0BR4tmkJvGzJBSmRtXKHKlgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120243e84fc6e4f9c03c8e9be25a092d0f4051e2d9a426f1b32414a646d5ca1ca960a",
+      "host": "keybase.io",
+      "kid": "0120243e84fc6e4f9c03c8e9be25a092d0f4051e2d9a426f1b32414a646d5ca1ca960a",
+      "uid": "f8be8ad795ae69990f69ef8e0edac219",
+      "username": "coder_riley"
+    },
+    "merkle_root": {
+      "ctime": 1575843150,
+      "hash": "24a32bc1c691b635c062b55a1af7cb7015679342c226e8ea6d6aa1b552faa86e852310cc34331573ca18cccc5f9d8b0c6db0e9db32f5a6766718088ff3d23e21",
+      "hash_meta": "2945910f4037b3ea32b30cf546c6e6cb8d3dc70dd54e0e562fbc90f8e82ece88",
+      "seqno": 12921465
+    },
+    "service": {
+      "entropy": "olBqT154yYdpso7TNIwC/m9n",
+      "hostname": "rileysmith.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.0.0"
+  },
+  "ctime": 1575843156,
+  "expire_in": 504576000,
+  "prev": "a4381fdb35ba194062f348e57c637257f0bafb967b1740e0f6c0501278366dd6",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgJD6E/G5PnAPI6b4loJLQ9AUeLZpCbxsyQUpkbVyhypYKp3BheWxvYWTESpcCBsQgpDgf2zW6GUBi80jlfGNyV/C6+5Z7F0Dg9sBQEng2bdbEIHYUxVThGJpk6vCMgmWiefo8keZh4lJJceDcVQRO0KDMAgHCo3NpZ8RAVR64qzLdQ5rfIO+iXuQWUThEsfJx4CNmaXXjwUKX0vUTnnTOezZdyXkGi38X0X5Su7MxV9D2HVFhge0U9iYdC6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEICf0JaDPMypqxFSGtl828lgylwEsilFwqto/8LdElzwjo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/coder_riley
+
+==================================================================
+
+==================================================================
+https://keybase.io/coder_riley
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://riley.ml
+  * I am coder_riley (https://keybase.io/coder_riley) on keybase.
+  * I have a public key ASAkPoT8bk-cA8jpviWgktD0BR4tmkJvGzJBSmRtXKHKlgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120243e84fc6e4f9c03c8e9be25a092d0f4051e2d9a426f1b32414a646d5ca1ca960a",
+      "host": "keybase.io",
+      "kid": "0120243e84fc6e4f9c03c8e9be25a092d0f4051e2d9a426f1b32414a646d5ca1ca960a",
+      "uid": "f8be8ad795ae69990f69ef8e0edac219",
+      "username": "coder_riley"
+    },
+    "merkle_root": {
+      "ctime": 1575857719,
+      "hash": "c2b48f231f5b485082336f1f66f89d5c37165698c2c214d3fbf03f210b3ab2dcd726be923616963b43d92e5d4491edcafdc4b69fcb8b7dc7120a9a10fe579a7c",
+      "hash_meta": "b9e87704434c3104afa7c456c2d0fe4f1b44b1559d02cbc26e9f6783e10c87fb",
+      "seqno": 12952455
+    },
+    "service": {
+      "entropy": "05jIv5ylBk8HYoPtktDdyM7+",
+      "hostname": "riley.ml",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.0.0"
+  },
+  "ctime": 1575857725,
+  "expire_in": 504576000,
+  "prev": "93b0f10b9c1938b6cebfba6dbef44fa17eef7a6b8e09cfdca834e5c39efbcc76",
+  "seqno": 13,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgJD6E/G5PnAPI6b4loJLQ9AUeLZpCbxsyQUpkbVyhypYKp3BheWxvYWTESpcCDcQgk7DxC5wZOLbOv7ptvvRPoX7vemuOCc/cqDTlw577zHbEIOOtP3NTe0YlW/ag+n3ISvAuNgeAGl0iKfj/OTZSG+czAgHCo3NpZ8RAJiOn8DCEpVpbYS/C+3gvjykqo+y6hhMemZXKHT+226oqJPOY0Emk5wejORD9hblXOpcaDIAN0g8qP3zmkmMMC6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIYbtUMPf+LVs/EB/CUkCa1VQY1wQIRb/MxpqR+uaIFzo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/coder_riley
+
+==================================================================

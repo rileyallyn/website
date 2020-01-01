@@ -1,0 +1,29 @@
+body 
+	color: #333 
+	font-family: Open Sans,Arial 
+	max-width: 800px 
+	margin: auto 
+	padding: 0 1em 
+.breadcrumb 
+	list-style: none 
+	display: flex 
+	padding: 0 
+	& > li 
+		&:not(:first-child)::before 
+			display: inline-block 
+			padding: 0 .5rem 
+			content: "»" 
+a 
+	&:link 
+		text-decoration: none 
+		color: #333 
+	&:visited 
+		text-decoration: none 
+		color: #333 
+	&:hover 
+		text-decoration: underline 
+		color: rgb(101, 99, 99) 
+		font-weight: bold 
+	&:active 
+		text-decoration: underline 
+		color: #333 
