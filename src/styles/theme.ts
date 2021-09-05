@@ -3,10 +3,10 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import { createMuiTheme } from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
+import { createTheme } from "@mui/material/styles";
+import { red } from "@mui/material/colors";
 
-const theme = createMuiTheme({
+const theme = createTheme({
 	palette: {
 		primary: {
 			main: "#556cd6"
@@ -21,15 +21,6 @@ const theme = createMuiTheme({
 			default: "#fff"
 		}
 	},
-	overrides: {
-		MuiCssBaseline: {
-			"@global": {
-				html: {
-					overflow: "hidden"
-				}
-			}
-		}
-	}
 });
 
 export default theme;

@@ -3,38 +3,38 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import createCache from "@emotion/cache";
-import { CacheProvider, ThemeProvider } from "@emotion/react";
-import { CssBaseline } from "@material-ui/core";
-import { AppProps } from "next/dist/next-server/lib/router/router";
+import { CacheProvider, EmotionCache, ThemeProvider } from "@emotion/react";
+import { CssBaseline } from "@mui/material";
+import { AppProps } from "next/dist/shared/lib/router/router";
 import Head from "next/head";
-import React, { useEffect } from "react";
+import React from "react";
 import theme from "../styles/theme";
+import createEmotionCache from "../util/EmotionCache";
 
-export const cache = createCache({ key: "css", prepend: true });
+// export const cache = createCache({ key: "css", prepend: true });
+const clientSideEmotionCache = createEmotionCache();
 
-const App: React.VFC<AppProps> = ({ Component, pageProps }: AppProps) => {
-	useEffect(() => {
-		const jssStyles = document.querySelector("#jss-server-side");
-		if (jssStyles) jssStyles.parentElement?.removeChild(jssStyles);
-	}, []);
+interface MyAppProps extends AppProps {
+	emotionCache?: EmotionCache
+}
+
+const App: React.VFC<AppProps> = (props: MyAppProps) => {
+	const {Component, emotionCache = clientSideEmotionCache, pageProps} = props;
 
 	return (
-		<CacheProvider value={cache}>
+		<CacheProvider value={emotionCache}>
 			<Head>
-				<meta 
-					name="viewport" 
-					content="initial-scale=1, width=device-width" 
-				/>
+				<title>
+					Riley Smith
+				</title>
+				<meta name="viewport" content="initial-scale=1, width=device-width" />
 			</Head>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-				{
-					<Component {...pageProps} />
-				}
+				<Component {...pageProps} />
 			</ThemeProvider>
 		</CacheProvider>
-	);
+	)
 };
 
 export default App;
