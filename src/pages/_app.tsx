@@ -19,7 +19,7 @@ interface MyAppProps extends AppProps {
 }
 
 const App: React.VFC<AppProps> = (props: MyAppProps) => {
-	const {Component, emotionCache = clientSideEmotionCache, pageProps} = props;
+	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
 	return (
 		<CacheProvider value={emotionCache}>
@@ -34,7 +34,7 @@ const App: React.VFC<AppProps> = (props: MyAppProps) => {
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</CacheProvider>
-	)
+	);
 };
 
 export default App;

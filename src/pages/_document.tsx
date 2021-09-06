@@ -6,7 +6,6 @@
 import React from "react";
 import createEmotionServer from "@emotion/server/create-instance";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { Children } from "react";
 import theme from "../styles/theme";
 import createEmotionCache from "../util/EmotionCache";
 
@@ -42,14 +41,14 @@ CustomDocument.getInitialProps = async (ctx) => {
 	ctx.renderPage = () =>
 		originalRenderPage({
 			enhanceApp: (App: any) => (props) => <App emotionCache={cache} {...props} />,
-		})
+		});
 
 	const initialProps = await Document.getInitialProps(ctx);
 
 	const emotionStyles = extractCriticalToChunks(initialProps.html);
 	const emotionStyleTags = emotionStyles.styles.map((style) => (
 		<style
-			data-emotion={`${style.key} ${style.ids.join(' ')}`}
+			data-emotion={`${style.key} ${style.ids.join(" ")}`}
 			key={style.key}
 			dangerouslySetInnerHTML={{ __html: style.css }}
 		/>
@@ -57,6 +56,6 @@ CustomDocument.getInitialProps = async (ctx) => {
 
 	return {
 		...initialProps,
-		styles: [...React.Children.toArray(initialProps.styles), ...emotionStyleTags]
-	}
+		styles: [ ...React.Children.toArray(initialProps.styles), ...emotionStyleTags ]
+	};
 };
