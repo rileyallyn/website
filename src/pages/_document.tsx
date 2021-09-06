@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 // Copyright (c) 2021 Riley Smith
 // 
 // This software is released under the MIT License.

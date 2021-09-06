@@ -4,23 +4,32 @@
 // https://opensource.org/licenses/MIT
 
 import { createTheme } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
+import { blueGrey } from "@mui/material/colors";
+
+declare module "@mui/material/styles" {
+  interface Theme {
+    header: {
+			color: string;
+      buttonColor: string;
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    header?: {
+			color: string;
+      buttonColor: string;
+    };
+  }
+}
 
 const theme = createTheme({
 	palette: {
-		primary: {
-			main: "#556cd6"
-		},
-		secondary: {
-			main: "#19857b"
-		},
-		error: {
-			main: red.A400
-		},
-		background: {
-			default: "#fff"
-		}
+		mode: "dark"
 	},
+	header: {
+		color: blueGrey[900],
+		buttonColor: blueGrey[600]
+	}
 });
 
 export default theme;

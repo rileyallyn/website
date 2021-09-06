@@ -3,8 +3,9 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import { CacheProvider, EmotionCache, ThemeProvider } from "@emotion/react";
+import { CacheProvider, EmotionCache } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import Head from "next/head";
 import React from "react";
