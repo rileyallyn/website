@@ -88,7 +88,7 @@ export default IndexPage;`;
 	}, [ containerElement.current?.scrollHeight ]);
 
 	return (
-		<Card variant="outlined" sx={{ maxHeight: "340px", overflowY: "hidden", width: { sm: 1 }  }} ref={containerElement}>
+		<Card variant="outlined" sx={{ height: "340px", overflowY: "hidden", width: { sm: 1 }, background: "rgb(40, 44, 52) none repeat scroll 0% 0%"  }} ref={containerElement}>
 			<ReactSyntaxHighlighter language="javascript" style={atomOneDark} customStyle={{ marginTop: "0px", marginBottom: "0px", overflowX: "hidden !important" }} wrapLines>
 				{runningText}
 			</ReactSyntaxHighlighter>
