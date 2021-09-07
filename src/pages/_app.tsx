@@ -8,6 +8,7 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import Head from "next/head";
+import Script from "next/script";
 import React from "react";
 import theme from "../styles/theme";
 import createEmotionCache from "../util/EmotionCache";
@@ -32,6 +33,7 @@ const App: React.VFC<AppProps> = (props: MyAppProps) => {
 			</Head>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
+				<Script async src="https://kit.fontawesome.com/074043ff20.js" crossOrigin="anonymous"></Script>
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</CacheProvider>

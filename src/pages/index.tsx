@@ -11,32 +11,69 @@ import HeaderBar from "../components/Header";
 import Typography from "@mui/material/Typography";
 import Fader from "../components/Fader";
 import CodeWriter from "../components/CodeWriter";
+import { IconButton, Tooltip, useMediaQuery, useTheme } from "@mui/material";
+import { GitHub, Mail, Twitter } from "@mui/icons-material";
 
-
-const FrontContainer: React.FC = () => (
+interface FrontContainerProps {
+	isMobile: boolean
+}
+const FrontContainer: React.FC<FrontContainerProps> = ({ isMobile }) => (
 	<Box sx={{ padding: "4rem 0" }}>
-		<Grid container spacing={6} columns={20}>
+		<Grid container spacing={3} columns={19}>
 			<Grid item lg={8} mr={4}>
 				<Typography variant="h1">
-							Hey, I&apos;m QPixel.
+							Hey, I&apos;m Riley.
 				</Typography>
 				<Typography variant="body1" sx={{ mt: 3 }}>
-							I&apos;m a 17 year old developer with a passion for working on cool stuff. I have over 3 years of experience in web and software development and am familiar with latest technologies.
+							I&apos;m a 17 year old full-stack developer with a passion for working on cool stuff. 
+							I have three years of experience of working with the MERN stack.
+							I am currently learning GoLang and I am working on real-time scalable backend systems.
 				</Typography>
+				<Box sx={{ marginTop: "10px", maxWidth: 200 }}>
+					<Tooltip title="Check out my existing projects!"> 
+						<a href="https://github.com/qpixel" aria-label="github-link"> 
+							<IconButton>
+								<GitHub />	
+							</IconButton>
+						</a>
+					</Tooltip>
+					<IconButton disabled>
+						<i className="fab fa-discord"></i>
+					</IconButton>
+					<a href="https://twitter.com/qpixel_" aria-label="twitter-link"> 
+						<IconButton>
+							<Twitter />
+						</IconButton>
+					</a>
+					<Tooltip title="Let's work together"> 
+						<a href="mailto:contact@qpixel.me" aria-label="email"> 
+					
+							<IconButton>
+								<Mail />
+							</IconButton>
+						</a>
+					</Tooltip>
+				</Box>
 			</Grid>
-			<Grid item lg={11} mt={2}> 
-				<CodeWriter />
-			</Grid>
+			{isMobile ?
+				<Grid item lg={10} mt={2}> 
+					<CodeWriter />
+				</Grid> :
+				<>
+				</>
+			}
 		</Grid>
 	</Box>
 );
 
 const IndexPage: React.FC = () => {
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
 	return (
 		<Fader>
 			<Container maxWidth="lg">
 				<HeaderBar />
-				<FrontContainer />
+				<FrontContainer isMobile={isMobile}/>
 			</Container>
 		</Fader>
 	);

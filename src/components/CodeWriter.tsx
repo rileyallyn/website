@@ -4,7 +4,8 @@ import ReactSyntaxHighlighter from "react-syntax-highlighter";
 import atomOneDark from "react-syntax-highlighter/dist/cjs/styles/hljs/atom-one-dark";
 
 const CodeWriter: React.FC = () => {
-	const codeString = `import React from "react";
+	const codeString = `//codewriter still has bugs (remember to fix)
+import React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -48,7 +49,7 @@ export default IndexPage;`;
 	let timeout: NodeJS.Timeout;
 	const generateText = () => {
 		clearTimeout(timeout);
-		const speed = 1000 / 400;
+		const speed = 1000 / 250;
 		if (index < codeString.length) {
 			if (!(runningText[runningText.length] === codeString[index])) {		
 				timeout = setTimeout(() => {
@@ -80,13 +81,14 @@ export default IndexPage;`;
 
 	useEffect(() => {
 		const { current } = containerElement;
+
 		if (current) {
 			current.scrollTop = current.scrollHeight;
 		}
-	}, [ containerElement, runningText ]);
+	}, [ containerElement.current?.scrollHeight ]);
 
 	return (
-		<Card variant="outlined" sx={{ maxHeight: "340px", overflowY: "hidden" }} ref={containerElement}>
+		<Card variant="outlined" sx={{ maxHeight: "340px", overflowY: "hidden", width: { sm: 1 }  }} ref={containerElement}>
 			<ReactSyntaxHighlighter language="javascript" style={atomOneDark} customStyle={{ marginTop: "0px", marginBottom: "0px", overflowX: "hidden !important" }} wrapLines>
 				{runningText}
 			</ReactSyntaxHighlighter>
