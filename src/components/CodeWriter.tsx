@@ -50,10 +50,12 @@ export default IndexPage;`;
 		clearTimeout(timeout);
 		const speed = 1000 / 400;
 		if (index < codeString.length) {
-			timeout = setTimeout(() => {
-				setRunningText(runningText + codeString[index]);
-				setIndex(index + 1);
-			}, speed);
+			if (!(runningText[runningText.length] === codeString[index])) {		
+				timeout = setTimeout(() => {
+					setRunningText(runningText + codeString[index]);
+					setIndex(index + 1);
+				}, speed);
+			}
 		} else {
 			clearTimeout(timeout);
 		}
