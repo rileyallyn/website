@@ -62,7 +62,7 @@ export default function HeaderBar({ titleLink }: HeaderProps): JSX.Element {
 						titleLink ? 
 							<Link href="/" sx={{ flexGrow: 1 }}><Typography variant="h4" component="a" >Riley Smith</Typography></Link> 
 							:
-							<Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>Riley Smith</Typography>
+							<Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>QPixel</Typography>
 					}
 					<ButtonStack useMenu={!hidden} />
 				</Toolbar>
