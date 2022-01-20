@@ -25,9 +25,8 @@ const FrontContainer: React.FC<FrontContainerProps> = ({ isMobile }) => (
 							Hey, I&apos;m Riley.
 				</Typography>
 				<Typography variant="body1" sx={{ mt: 3 }}>
-							I&apos;m a 17 year old full-stack developer with a passion for working on cool stuff. 
-							I have three years of experience of working with the MERN stack.
-							I am currently learning GoLang and I am working on real-time scalable backend systems.
+							I&apos;m an 18 year old full-stack developer with a passion for cool projects. 
+							I have four years of development experience and I can adapt to new environments.
 				</Typography>
 				<Box sx={{ marginTop: "10px", maxWidth: 200 }}>
 					<Tooltip title="Check out my existing projects!"> 
@@ -40,11 +39,6 @@ const FrontContainer: React.FC<FrontContainerProps> = ({ isMobile }) => (
 					<IconButton disabled>
 						<i className="fab fa-discord"></i>
 					</IconButton>
-					<a href="https://twitter.com/qpixel_" aria-label="twitter-link"> 
-						<IconButton>
-							<Twitter />
-						</IconButton>
-					</a>
 					<Tooltip title="Let's work together"> 
 						<a href="mailto:contact@qpixel.me" aria-label="email"> 
 					
