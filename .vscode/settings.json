@@ -4,5 +4,8 @@
 	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
 	}
 }
