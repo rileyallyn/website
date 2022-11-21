@@ -25,6 +25,7 @@
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
+		"sass": "^1.55.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.7",
@@ -40,6 +41,7 @@
 		"@threlte/extras": "^4.4.1",
 		"@yushijinhun/three-minifier-rollup": "^0.4.0",
 		"install": "^0.13.0",
+		"svelte-awesome": "^3.0.0",
 		"three": "^0.146.0"
 	}
 }

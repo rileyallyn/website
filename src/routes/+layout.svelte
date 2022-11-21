@@ -5,7 +5,7 @@
 	import { fade } from 'svelte/transition';
 	import { browser } from '$app/environment';
 	// TODO: Find a way to make this work with SSR
-	let opener = false;
+	let opener = true;
 	setTimeout(() => {
 		opener = true;
 	}, 1500);

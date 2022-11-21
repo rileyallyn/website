@@ -12,45 +12,67 @@
 		PerspectiveCamera
 	} from '@threlte/core';
 	import { spring } from 'svelte/motion';
+	import { TorusGeometry } from 'three';
 	const scale = spring(1);
+	const x = 20;
+	const y = 3;
+	const z = 5;
 </script>
 
 <div>
 	<Canvas>
-		<PerspectiveCamera position={{ x: 10, y: 10, z: 10 }} fov={24}>
+		<PerspectiveCamera position={{ x: 21, y: 20, z: 25 }} fov={24}>
 			<OrbitControls
 				maxPolarAngle={DEG2RAD * 80}
 				autoRotate={true}
-				autoRotateSpeed={20}
-				enableZoom={true}
+				autoRotateSpeed={2}
+				enableZoom={false}
 				target={{ y: 0.5 }}
 			/>
 		</PerspectiveCamera>
 
-		<DirectionalLight shadow position={{ x: 3, y: 10, z: 10 }} />
+		<DirectionalLight position={{ x: 3, y: 10, z: 12 }} />
 		<DirectionalLight position={{ x: -3, y: 10, z: -10 }} intensity={0.2} />
-		<AmbientLight intensity={0.2} />
+		<AmbientLight intensity={0.4} />
 
 		<!-- Cube -->
-		<Group scale={$scale}>
-			<Mesh
-				interactive
-				on:pointerenter={() => ($scale = 2)}
-				on:pointerleave={() => ($scale = 1)}
-				position={{ y: 0.5 }}
-				castShadow
-				geometry={new BoxGeometry(1, 1, 1)}
-				material={new MeshStandardMaterial({ color: '#333333' })}
-			/>
-		</Group>
+		<!-- <Group scale={$scale}> -->
+		<!-- bar magnet -->
+		<!-- <Mesh
+			geometry={new BoxGeometry(x, y, z)}
+			material={new MeshStandardMaterial({ color: 'red' })}
+		/> -->
+		<!-- north pole -->
+		<Mesh
+			geometry={new BoxGeometry(0.5, 32)}
+			material={new MeshStandardMaterial({ color: 'red' })}
+			position={{ x: 10, y: 1.5, z: 0 }}
+		/>
+		<!-- south pole -->
+		<Mesh
+			geometry={new BoxGeometry(0.5, 32)}
+			material={new MeshStandardMaterial({ color: 'blue' })}
+			position={{ x: -10, y: 1.5, z: 0 }}
+		/>
+
+		<Mesh
+			interactive
+			position={{ y }}
+			castShadow
+			rotation={{ x: 0.5, y: 0.5 }}
+			geometry={new TorusGeometry(2, 1, 40, 100, 6.3)}
+			material={new MeshStandardMaterial({ color: '#ffc0cb', metalness: 0.5, roughness: 0 })}
+		/>
+
+		<!-- </Group> -->
 
 		<!-- Floor -->
-		<Mesh
+		<!-- <Mesh
 			receiveShadow
 			rotation={{ x: -90 * (Math.PI / 180) }}
-			geometry={new CircleGeometry(3, 72)}
+			geometry={new CircleGeometry(10, 72)}
 			material={new MeshStandardMaterial({ side: DoubleSide, color: 'white' })}
-		/>
+		/> -->
 	</Canvas>
 </div>
 
