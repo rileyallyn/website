@@ -12,7 +12,7 @@ import Typography from "@mui/material/Typography";
 import Fader from "../components/Fader";
 import CodeWriter from "../components/CodeWriter";
 import { IconButton, Tooltip, useMediaQuery, useTheme } from "@mui/material";
-import { GitHub, Mail, Twitter } from "@mui/icons-material";
+import { GitHub, Mail, PostAdd } from "@mui/icons-material";
 
 interface FrontContainerProps {
 	isMobile: boolean
@@ -25,8 +25,8 @@ const FrontContainer: React.FC<FrontContainerProps> = ({ isMobile }) => (
 							Hey, I&apos;m Riley.
 				</Typography>
 				<Typography variant="body1" sx={{ mt: 3 }}>
-							I&apos;m an 18 year old full-stack developer with a passion for cool projects. 
-							I have four years of development experience and I can adapt to new environments.
+							I am a 18 year old full-stack developer with a passion for cool projects. 
+							Currently, I have over five years of experience in a variety of languages and frameworks.
 				</Typography>
 				<Box sx={{ marginTop: "10px", maxWidth: 200 }}>
 					<Tooltip title="Check out my existing projects!"> 
@@ -39,6 +39,13 @@ const FrontContainer: React.FC<FrontContainerProps> = ({ isMobile }) => (
 					<IconButton disabled>
 						<i className="fab fa-discord"></i>
 					</IconButton>
+					<Tooltip title="I'm on mastodon!">
+						<a rel="me" href="https://qpixel.pw/@qpixel">
+							<IconButton>
+								<PostAdd />
+							</IconButton>
+						</a>
+					</Tooltip>
 					<Tooltip title="Let's work together"> 
 						<a href="mailto:contact@qpixel.me" aria-label="email"> 
 					
