@@ -2,7 +2,7 @@ import React, { useState }  from "react";
 import Head from "next/head";
 import { Box, Typography, Grid } from "@mui/material";
 import styles from "../styles/dog.module.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import useMusicPlayer from "../components/Music";
 
 // made as an easter egg because i remember this website 
