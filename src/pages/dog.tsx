@@ -43,7 +43,7 @@ const DogPage: React.FC = () => {
 						<Typography>PETS: {clickState} </Typography>
 					</Grid>
 					<Grid item sx={{ marginTop: 5 }}>
-						<Image className={shouldSpin ? spinSpeed : ""} src="/dog.png" alt="dog" onClick={onClick} layout="fixed" height="229px" width="275"/> 
+						<Image className={shouldSpin ? spinSpeed : ""} src="/dog.png" alt="dog" onClick={onClick} layout="fixed" height="229" width="275"/> 
 					</Grid>
 				</Grid>
 			</Box>
