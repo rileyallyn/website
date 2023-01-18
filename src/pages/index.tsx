@@ -68,13 +68,19 @@ const FrontContainer: React.FC<FrontContainerProps> = ({ isMobile }) => (
 );
 
 const IndexPage: React.FC = () => {
-	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
+	// const theme = useTheme();
+	// const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
 	return (
 		<Fader>
-			<Container maxWidth="lg">
-				<HeaderBar />
-				<FrontContainer isMobile={isMobile}/>
+			<Container maxWidth="lg" sx={{ "justifyContent": "center", alignItems: "center", "marginTop": 10 }}>
+				{/* <HeaderBar />
+				<FrontContainer isMobile={isMobile}/> */}
+				<Typography variant="body1">
+					I am currently working on a new website! If you need to contact me, I am available at <a href="https://qpixel.pw/@qpixel">Mastodon</a> and via <a href="mailto:riley@rileyy.dev">Email</a>
+				</Typography>
+				<Typography variant="body1">
+					You can also check me out on GitHub <a href="https://github.com/qpixel">here</a>
+				</Typography>
 			</Container>
 		</Fader>
 	);
