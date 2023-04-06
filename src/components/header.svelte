@@ -9,7 +9,7 @@
 		<a href="/" class="mr-auto title">
 			<h1 class="text-xl mr-auto ">Riley Smith</h1>
 		</a>
-		<ul class="hidden sm:flex">
+		<!-- <ul class="hidden sm:flex">
 			<li class="mr-4 p-2">
 				<a href="/about" class="text-md">About</a>
 			</li>
@@ -25,7 +25,7 @@
 		</ul>
 		<button on:click={barsClickHandler} class="w-7 h-7 sm:hidden">
 			<Bars3Icon />
-		</button>
+		</button> -->
 	</nav>
 </header>
 
