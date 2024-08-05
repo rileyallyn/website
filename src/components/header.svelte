@@ -1,31 +1,21 @@
 <script lang="ts">
 	import { Bars3Icon } from '@babeard/svelte-heroicons/solid';
-
-	const barsClickHandler = () => {};
+	export let open = false;
 </script>
 
-<header class="h-24 w-full text-white">
-	<nav class="flex p-10">
+<header class="block h-24 w-full text-white md:hidden">
+	<nav class="flex pt-2 px-4 items-center gap-x-2">
+		<img
+			src="/pfp.webp"
+			alt="Riley Smith looking at the aurora borealis"
+			class="rounded-full w-8 h-8"
+		/>
 		<a href="/" class="mr-auto title">
 			<h1 class="text-xl mr-auto ">Riley Smith</h1>
 		</a>
-		<!-- <ul class="hidden sm:flex">
-			<li class="mr-4 p-2">
-				<a href="/about" class="text-md">About</a>
-			</li>
-			<li class="mr-4 p-2">
-				<a href="/projects" class="text-md">Projects</a>
-			</li>
-			<li class="mr-4 p-2">
-				<a href="/blog" class="text-md">Blog</a>
-			</li>
-			<li class="mr-4 p-2 border rounded-lg border-blue-400">
-				<a href="/contact" class="text-md">Contact</a>
-			</li>
-		</ul>
-		<button on:click={barsClickHandler} class="w-7 h-7 sm:hidden">
+		<button on:click={() => (open = !open)} class="w-7 h-7 sm:hidden">
 			<Bars3Icon />
-		</button> -->
+		</button>
 	</nav>
 </header>
 

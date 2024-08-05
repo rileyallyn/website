@@ -3,21 +3,28 @@
 	import Header from 'components/header.svelte';
 	import '../app.postcss';
 	import { fade } from 'svelte/transition';
-	import { browser } from '$app/environment';
+	import Sidebar from 'components/sidebar.svelte';
+	import Navbar from 'components/navbar.svelte';
 	// TODO: Find a way to make this work with SSR
-	let opener = true;
+	let opener = false;
 	setTimeout(() => {
 		opener = true;
 	}, 1500);
+	let open = false;
 </script>
 
-<div class="absolute h-screen w-full z-20" />
-
-<!-- <div class="absolute h-screen w-full z-20">
+<div class="absolute h-screen w-full z-20 overflow-hidden">
+	<Navbar bind:open />
 	{#if opener}
-		<div class="flex flex-col mx-auto container" in:fade={{ delay: 300 }}>
-			<Header />
-			<slot />
+		<div
+			class="mx-auto h-full flex flex-col md:flex-row container max-w-5xl gap-x-20"
+			in:fade={{ delay: 300 }}
+		>
+			<Header bind:open />
+			<Sidebar />
+			<div class="p-4 md:py-36 w-full">
+				<slot />
+			</div>
 		</div>
 	{/if}
 	{#if !opener}
@@ -33,7 +40,7 @@
 			</div>
 		</div>
 	{/if}
-</div> -->
+</div>
 <div class="relative h-full w-full top-0 z-10">
-	<Background />
+	<!-- <Background /> -->
 </div>

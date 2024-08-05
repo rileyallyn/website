@@ -1,0 +1,40 @@
+<script>
+	import { Icon } from 'svelte-awesome';
+	import { github, instagram, linkedin, linkedinSquare } from 'svelte-awesome/icons';
+</script>
+
+<aside class="text-white w-56 sticky top-0 h-screen py-40 hidden md:block">
+	<img
+		src="/pfp.webp"
+		alt="Riley Smith looking at the aurora borealis"
+		class="rounded-full w-24 h-24"
+	/>
+	<h1 class="text-2xl font-bold title">Riley Smith</h1>
+	<p class="text-md text-gray-500 italic">Software Developer</p>
+	<ul class="gap-y-2 mt-4 flex flex-col w-full ">
+		<li>
+			<a href="/">About</a>
+		</li>
+		<li>
+			<a href="/blog">Blog</a>
+		</li>
+		<li>
+			<a href="/contact">Contact</a>
+		</li>
+		<li class="hidden">
+			<a href="/photography">Photography</a>
+		</li>
+	</ul>
+	<!-- socials -->
+	<div class="flex gap-x-2 mt-4 text-white">
+		<a href="https://github.com/rileyallyn" target="_blank" rel="noreferrer">
+			<Icon class="text-white" data={github} scale={1.5} />
+		</a>
+		<a href="https://linkedin.com/in/riley-a-smith" target="_blank" rel="noreferrer">
+			<Icon class="text-white" data={linkedinSquare} scale={1.5} />
+		</a>
+		<a href="https://instagram.com/rileyy.allyn" target="_blank" rel="noreferrer">
+			<Icon class="text-white" data={instagram} scale={1.5} />
+		</a>
+	</div>
+</aside>
