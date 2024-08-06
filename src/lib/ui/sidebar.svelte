@@ -19,6 +19,9 @@
 		<li>
 			<a href="/blog">Blog</a>
 		</li>
+		<li>
+			<a href="https://resume.rileyy.dev">Resume</a>
+		</li>
 		<li class="hidden">
 			<a href="/photography">Photography</a>
 		</li>
