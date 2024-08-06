@@ -7,7 +7,7 @@
 	let iconScale = 3;
 </script>
 
-<aside class="text-white w-full absolute h-full bg-black py-40 md:block z-50" class:open>
+<aside class="text-white w-full absolute h-full bg-black py-40 block sm:hidden z-50" class:open>
 	<div class="absolute top-0 right-0">
 		<button on:click={() => (open = !open)} class=" w-7 h-7 md:hidden mt-2 mx-4">
 			<XMarkIcon />

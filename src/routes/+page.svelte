@@ -15,18 +15,20 @@
 			customClass: 'w-full sm:w-48'
 		},
 		{
-			name: 'React',
+			name: 'React 3',
 			imgSrc: '/react.svg'
 		},
 		{
-			name: 'React',
+			name: 'React 2',
 			imgSrc: '/react.svg'
 		}
 	];
 </script>
 
-<main class="container text-white gap-y-4 flex flex-col tracking-wide overflow-y-auto">
-	<section class="max-w-xl">
+<main
+	class="container text-white gap-y-4 flex h-full flex-col tracking-wide overflow-y-auto scroll-smooth relative"
+>
+	<section class="max-w-xl" id="about">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			About Me
 		</h1>
@@ -38,7 +40,7 @@
 			video games.
 		</p>
 	</section>
-	<section class="sm:max-w-xl">
+	<section class="sm:max-w-xl" id="tech">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			What I Use
 		</h1>
@@ -110,7 +112,7 @@
 		</div>
 		<!-- </div> -->
 	</section>
-	<section>
+	<section id="projects">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			Projects
 		</h1>
