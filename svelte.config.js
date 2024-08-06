@@ -7,12 +7,11 @@ import { preprocessThrelte } from '@threlte/preprocess'
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: seqPreprocessor([preprocess({postcss: true}), preprocessThrelte()]),
+	preprocess: seqPreprocessor([preprocess({ postcss: true }), preprocessThrelte()]),
 
 	kit: {
 		adapter: adapter(),
 		alias: {
-			'components': './src/components/',
 		}
 	}
 };

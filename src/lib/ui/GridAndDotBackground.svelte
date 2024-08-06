@@ -1,0 +1,21 @@
+<script lang="ts">
+	import { cn } from '$lib/utils/cn';
+
+	export let showFade: boolean = true;
+	export let className: string = '';
+</script>
+
+<div
+	class={cn(
+		`relative flex items-center justify-center bg-white bg-grid-black/[0.2] dark:bg-black dark:bg-grid-white/[0.2]`,
+		className
+	)}
+>
+	<!-- Radial gradient for the container to give a faded look -->
+	<slot />
+	{#if showFade}
+		<div
+			class="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"
+		/>
+	{/if}
+</div>

@@ -1,12 +1,12 @@
 <script>
-	import Background from 'components/background.svelte';
-	import Header from 'components/header.svelte';
+	import Header from '$lib/ui/header.svelte';
 	import '../app.postcss';
 	import { fade } from 'svelte/transition';
-	import Sidebar from 'components/sidebar.svelte';
-	import Navbar from 'components/navbar.svelte';
+	import Sidebar from '$lib/ui/sidebar.svelte';
+	import Navbar from '$lib/ui/navbar.svelte';
+	import GridAndDotBackground from '$lib/ui/GridAndDotBackground.svelte';
 	// TODO: Find a way to make this work with SSR
-	let opener = false;
+	let opener = true;
 	setTimeout(() => {
 		opener = true;
 	}, 1500);
@@ -22,7 +22,7 @@
 		>
 			<Header bind:open />
 			<Sidebar />
-			<div class="p-4 md:py-36 w-full">
+			<div class="p-4 md:py-36 w-full scroll-smooth">
 				<slot />
 			</div>
 		</div>
@@ -33,7 +33,7 @@
 			out:fade={{ duration: 250 }}
 		>
 			<div class="p-5">
-				<h1 class="text-lg font-bold ">👋 hey, I’m Riley.</h1>
+				<h1 class="text-lg font-bold">👋 hey, I’m Riley.</h1>
 				<p class="text-md text-left">
 					I’m an experienced software developer who makes s#!t that performs.
 				</p>
@@ -41,6 +41,5 @@
 		</div>
 	{/if}
 </div>
-<div class="relative h-full w-full top-0 z-10">
-	<!-- <Background /> -->
-</div>
+
+<GridAndDotBackground className="h-full w-full" showFade={true} />

@@ -3,7 +3,7 @@
 	export let open = false;
 </script>
 
-<header class="block h-24 w-full text-white md:hidden">
+<header class="block w-full text-white md:hidden">
 	<nav class="flex pt-2 px-4 items-center gap-x-2">
 		<img
 			src="/pfp.webp"
@@ -11,7 +11,7 @@
 			class="rounded-full w-8 h-8"
 		/>
 		<a href="/" class="mr-auto title">
-			<h1 class="text-xl mr-auto ">Riley Smith</h1>
+			<h1 class="text-xl mr-auto">Riley Smith</h1>
 		</a>
 		<button on:click={() => (open = !open)} class="w-7 h-7 sm:hidden">
 			<Bars3Icon />
