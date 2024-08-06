@@ -8,7 +8,7 @@
 		<img
 			src="/pfp.webp"
 			alt="Riley Smith looking at the aurora borealis"
-			class="rounded-full w-8 h-8"
+			class="rounded-full w-10 h-10"
 		/>
 		<a href="/" class="mr-auto title">
 			<h1 class="text-xl mr-auto">Riley Smith</h1>
