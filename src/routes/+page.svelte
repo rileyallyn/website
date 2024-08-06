@@ -86,7 +86,7 @@
 			{/each}
 		</div>
 	</section>
-	<!-- <section id="projects">
+	<section id="projects">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			Projects
 		</h1>
@@ -105,5 +105,5 @@
 				</CardBody>
 			</CardContainer>
 		</div>
-	</section> -->
+	</section>
 </Container>
