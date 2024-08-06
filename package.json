@@ -13,10 +13,9 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.2.2",
-		"@sveltejs/adapter-vercel": "^5.4.1",
+		"@sveltejs/adapter-netlify": "^4.3.1",
 		"@sveltejs/kit": "^2.5.20",
 		"@sveltejs/vite-plugin-svelte": "^3.1.1",
-		"@types/three": "^0.144.0",
 		"@typescript-eslint/eslint-plugin": "^5.62.0",
 		"@typescript-eslint/parser": "^5.62.0",
 		"autoprefixer": "^10.4.20",
@@ -40,12 +39,6 @@
 	"dependencies": {
 		"@babeard/svelte-heroicons": "2.0.0-rc.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@theatre/core": "^0.6.2",
-		"@theatre/studio": "^0.6.2",
-		"@threlte/core": "^5.0.9",
-		"@threlte/extras": "^4.9.3",
-		"@threlte/preprocess": "^0.0.2",
-		"@threlte/theatre": "^0.0.2",
 		"@yushijinhun/three-minifier-rollup": "^0.4.0",
 		"clsx": "^2.1.1",
 		"install": "^0.13.0",
@@ -53,7 +46,6 @@
 		"svelte-awesome": "^3.3.1",
 		"svelte-motion": "^0.12.2",
 		"svelte-sequential-preprocessor": "^1.0.0",
-		"tailwind-merge": "^2.4.0",
-		"three": "^0.146.0"
+		"tailwind-merge": "^2.4.0"
 	}
 }
