@@ -32,6 +32,7 @@
 		{
 			name: 'Rust',
 			imgSrc: '/rust.svg',
+			customClass: 'w-full sm:w-48',
 			imgClass: 'dark:invert'
 		}
 	];
