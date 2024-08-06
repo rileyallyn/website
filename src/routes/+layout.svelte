@@ -22,7 +22,7 @@
 		>
 			<Header bind:open />
 			<Sidebar />
-			<div class="p-4 md:py-36 w-full">
+			<div class="p-4 md:py-36 w-full h-full overflow-auto">
 				<slot />
 			</div>
 		</div>
