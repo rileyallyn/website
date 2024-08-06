@@ -1,12 +1,8 @@
 <script>
-	import { slide } from 'svelte/transition';
+	import Container from '$lib/ui/container.svelte';
 </script>
 
-<main
-	class="container dark:text-white gap-y-4 flex h-full flex-col tracking-wide overflow-y-auto scroll-smooth relative"
-	in:slide={{ duration: 500 }}
-	out:slide={{ duration: 500 }}
->
+<Container>
 	<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">Blog</h1>
 	<h2>Coming Soon</h2>
-</main>
+</Container>

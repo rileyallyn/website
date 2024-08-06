@@ -3,6 +3,7 @@
 	import type { Tech } from '$lib/types';
 	import { fade, slide } from 'svelte/transition';
 	import { cn } from '$lib/utils';
+	import Container from '$lib/ui/container.svelte';
 
 	const techUsed: Tech[] = [
 		{
@@ -44,11 +45,7 @@
 	<meta name="description" content="Software Developer" />
 </svelte:head>
 
-<main
-	class="container dark:text-white gap-y-4 flex flex-col tracking-wide scroll-smooth overflow-auto h-dvh pb-16 md:pb-28"
-	in:slide={{ duration: 500 }}
-	out:slide={{ duration: 500 }}
->
+<Container>
 	<section class="max-w-xl" id="about">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			About Me
@@ -89,9 +86,24 @@
 			{/each}
 		</div>
 	</section>
-	<!-- <section id="projects">
+	<section id="projects">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			Projects
 		</h1>
-	</section> -->
-</main>
+		<div
+			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-8 sm:gap-y-8 py-4"
+		>
+			<CardContainer className="max-w-48">
+				<CardBody
+					className="bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
+				>
+					<CardItem
+						className="text-xl font-bold text-neutral-600 dark:text-white text-center mx-auto"
+					>
+						Project Name
+					</CardItem>
+				</CardBody>
+			</CardContainer>
+		</div>
+	</section>
+</Container>
