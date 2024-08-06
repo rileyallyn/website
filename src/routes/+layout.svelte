@@ -20,7 +20,7 @@
 	<div class="mx-auto h-full flex flex-col md:flex-row container max-w-5xl gap-x-20">
 		<Header bind:open />
 		<Sidebar />
-		<div class="p-4 md:py-24 w-full h-full overflow-auto">
+		<div class="p-4 md:py-24 w-full h-full overflow-auto md:overflow-hidden">
 			<slot />
 		</div>
 	</div>
