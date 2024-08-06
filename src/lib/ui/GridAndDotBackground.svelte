@@ -7,7 +7,7 @@
 
 <div
 	class={cn(
-		`relative flex items-center justify-center bg-white bg-grid-black/[0.2] dark:bg-black dark:bg-grid-white/[0.2]`,
+		`absolute flex items-center justify-center bg-white bg-grid-black/[0.2] dark:bg-black dark:bg-grid-white/[0.2]`,
 		className
 	)}
 >
