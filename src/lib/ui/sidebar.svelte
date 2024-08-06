@@ -3,7 +3,7 @@
 	import { github, instagram, linkedinSquare, envelope } from 'svelte-awesome/icons';
 </script>
 
-<aside class="text-white w-56 sticky top-0 h-screen py-40 hidden md:block">
+<aside class="dark:text-white w-56 sticky top-0 h-screen py-28 hidden md:block">
 	<img
 		src="/pfp.webp"
 		alt="Riley Smith looking at the aurora borealis"
@@ -23,18 +23,18 @@
 		</li>
 	</ul>
 	<!-- socials -->
-	<div class="flex gap-x-2 mt-2 text-white">
+	<div class="flex gap-x-2 mt-2 dark:text-white">
 		<a href="https://github.com/rileyallyn" target="_blank" rel="noreferrer">
-			<Icon class="text-white" data={github} scale={1.5} />
+			<Icon class="dark:text-white" data={github} scale={1.5} />
 		</a>
 		<a href="https://linkedin.com/in/riley-a-smith" target="_blank" rel="noreferrer">
-			<Icon class="text-white" data={linkedinSquare} scale={1.5} />
+			<Icon class="dark:text-white" data={linkedinSquare} scale={1.5} />
 		</a>
 		<a href="https://instagram.com/rileyy.allyn" target="_blank" rel="noreferrer">
-			<Icon class="text-white" data={instagram} scale={1.5} />
+			<Icon class="dark:text-white" data={instagram} scale={1.5} />
 		</a>
 		<a href="mailto:riley@rileysmith.me" target="_blank" rel="noreferrer">
-			<Icon class="text-white" data={envelope} scale={1.5} />
+			<Icon class="dark:text-white" data={envelope} scale={1.5} />
 		</a>
 	</div>
 	<footer class="mt-1">

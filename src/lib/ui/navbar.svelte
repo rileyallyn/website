@@ -7,7 +7,10 @@
 	let iconScale = 3;
 </script>
 
-<aside class="text-white w-full absolute h-full bg-black py-40 block sm:hidden z-50" class:open>
+<aside
+	class="dark:text-white w-full absolute h-full bg-black py-40 block sm:hidden z-50"
+	class:open
+>
 	<div class="absolute top-0 right-0">
 		<button on:click={() => (open = !open)} class=" w-7 h-7 md:hidden mt-2 mx-4">
 			<XMarkIcon />
@@ -30,15 +33,15 @@
 			</li>
 		</ul>
 	</nav>
-	<div class=" flex gap-x-4 mb-4 p-4 text-white">
+	<div class=" flex gap-x-4 mb-4 p-4 dark:text-white">
 		<a href="https://github.com/rileyallyn" target="_blank" rel="noreferrer">
-			<Icon class="text-white" data={github} scale={iconScale} />
+			<Icon class="dark:text-white" data={github} scale={iconScale} />
 		</a>
 		<a href="https://linkedin.com/in/riley-a-smith" target="_blank" rel="noreferrer">
-			<Icon class="text-white" data={linkedinSquare} scale={iconScale} />
+			<Icon class="dark:text-white" data={linkedinSquare} scale={iconScale} />
 		</a>
 		<a href="https://instagram.com/rileyy.allyn" target="_blank" rel="noreferrer">
-			<Icon class="text-white" data={instagram} scale={iconScale} />
+			<Icon class="dark:text-white" data={instagram} scale={iconScale} />
 		</a>
 	</div>
 </aside>

@@ -22,14 +22,14 @@
 		>
 			<Header bind:open />
 			<Sidebar />
-			<div class="p-4 md:py-36 w-full h-full overflow-auto">
+			<div class="p-4 md:py-24 w-full h-full overflow-auto">
 				<slot />
 			</div>
 		</div>
 	{/if}
 	{#if !opener}
 		<div
-			class="text-white bg-black absolute top-0 h-full w-full flex flex-col justify-center items-center"
+			class="dark:dark:text-white bg-black absolute top-0 h-full w-full flex flex-col justify-center items-center"
 			out:fade={{ duration: 250 }}
 		>
 			<div class="p-5">

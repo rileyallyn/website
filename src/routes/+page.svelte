@@ -32,13 +32,13 @@
 		{
 			name: 'Rust',
 			imgSrc: '/rust.svg',
-			imgClass: 'invert'
+			imgClass: 'dark:invert'
 		}
 	];
 </script>
 
 <main
-	class="container text-white gap-y-4 flex flex-col tracking-wide overflow-y-auto scroll-smooth relative"
+	class="container dark:text-white gap-y-4 flex flex-col tracking-wide overflow-y-auto scroll-smooth relative"
 	in:slide={{ duration: 500 }}
 	out:slide={{ duration: 500 }}
 >
@@ -74,7 +74,7 @@
 							/></CardItem
 						>
 						<CardItem
-							className="text-xl font-bold text-neutral-600 dark:text-white text-center mx-auto mt-4"
+							className="text-xl font-bold text-neutral-600 dark:dark:text-white text-center mx-auto mt-4"
 							>{tech.name}</CardItem
 						>
 					</CardBody>

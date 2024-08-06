@@ -3,7 +3,7 @@
 </script>
 
 <main
-	class="container text-white gap-y-4 flex h-full flex-col tracking-wide overflow-y-auto scroll-smooth relative"
+	class="container dark:text-white gap-y-4 flex h-full flex-col tracking-wide overflow-y-auto scroll-smooth relative"
 	in:slide={{ duration: 500 }}
 	out:slide={{ duration: 500 }}
 >

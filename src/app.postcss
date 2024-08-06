@@ -4,14 +4,22 @@
 @tailwind utilities;
 
 html, body {
-	background-color: black;
 	overflow: hidden;
 }
 
 body {
-	width: 100vw;
-	height: 100vh;
+	background-color: #fff;
+	color: #000;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+@media(prefers-color-scheme: dark) {
+	body {
+		background-color: #000;
+		color: #fff;
+	}
+}
+
 
 .title:hover {
 	animation-name: coolTextThing;
