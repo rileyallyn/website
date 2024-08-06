@@ -1,6 +1,7 @@
 <script>
 	import { Icon } from 'svelte-awesome';
 	import { github, instagram, linkedinSquare, envelope } from 'svelte-awesome/icons';
+	import Socials from './socials.svelte';
 </script>
 
 <aside class="dark:text-white w-56 sticky top-0 h-screen py-28 hidden md:block">
@@ -23,20 +24,7 @@
 		</li>
 	</ul>
 	<!-- socials -->
-	<div class="flex gap-x-2 mt-2 dark:text-white">
-		<a href="https://github.com/rileyallyn" target="_blank" rel="noreferrer">
-			<Icon class="dark:text-white" data={github} scale={1.5} />
-		</a>
-		<a href="https://linkedin.com/in/riley-a-smith" target="_blank" rel="noreferrer">
-			<Icon class="dark:text-white" data={linkedinSquare} scale={1.5} />
-		</a>
-		<a href="https://instagram.com/rileyy.allyn" target="_blank" rel="noreferrer">
-			<Icon class="dark:text-white" data={instagram} scale={1.5} />
-		</a>
-		<a href="mailto:riley@rileysmith.me" target="_blank" rel="noreferrer">
-			<Icon class="dark:text-white" data={envelope} scale={1.5} />
-		</a>
-	</div>
+	<Socials scale={1.5} />
 	<footer class="mt-1">
 		<a class="text-xs text-gray-500" href="https://github.com/rileyallyn/website">Source</a>
 		<p class="text-xs text-gray-500">© 2024 Riley Smith</p>

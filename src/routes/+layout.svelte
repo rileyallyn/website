@@ -15,7 +15,7 @@
 	<meta name="description" content="Software Developer" />
 </svelte:head>
 
-<div class="absolute w-full z-20 overflow-hidden">
+<div class="absolute w-full h-screen z-20 overflow-hidden">
 	<Navbar bind:open />
 	<div class="mx-auto h-full flex flex-col md:flex-row container max-w-5xl gap-x-20">
 		<Header bind:open />

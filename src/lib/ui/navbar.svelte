@@ -2,6 +2,7 @@
 	import { XMarkIcon } from '@babeard/svelte-heroicons/solid';
 	import Icon from 'svelte-awesome';
 	import { github, instagram, linkedinSquare } from 'svelte-awesome/icons';
+	import Socials from './socials.svelte';
 
 	export let open = false;
 	let iconScale = 3;
@@ -33,17 +34,8 @@
 			</li>
 		</ul>
 	</nav>
-	<div class=" flex gap-x-4 mb-4 p-4 dark:text-white">
-		<a href="https://github.com/rileyallyn" target="_blank" rel="noreferrer">
-			<Icon class="dark:text-white" data={github} scale={iconScale} />
-		</a>
-		<a href="https://linkedin.com/in/riley-a-smith" target="_blank" rel="noreferrer">
-			<Icon class="dark:text-white" data={linkedinSquare} scale={iconScale} />
-		</a>
-		<a href="https://instagram.com/rileyy.allyn" target="_blank" rel="noreferrer">
-			<Icon class="dark:text-white" data={instagram} scale={iconScale} />
-		</a>
-	</div>
+	<!-- socials -->
+	<Socials scale={iconScale} className="p-4" />
 </aside>
 
 <style>
