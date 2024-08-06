@@ -45,7 +45,7 @@
 </svelte:head>
 
 <main
-	class="container dark:text-white gap-y-4 flex flex-col tracking-wide scroll-smooth relative"
+	class="container dark:text-white gap-y-4 flex flex-col tracking-wide scroll-smooth overflow-auto h-dvh pb-16 md:pb-28"
 	in:slide={{ duration: 500 }}
 	out:slide={{ duration: 500 }}
 >

@@ -4,7 +4,7 @@
 	import Socials from './socials.svelte';
 </script>
 
-<aside class="dark:text-white w-56 sticky top-0 h-screen py-28 hidden md:block">
+<aside class="dark:text-white w-56 sticky top-0 h-screen pt-2 hidden md:block">
 	<img
 		src="/pfp.webp"
 		alt="Riley Smith looking at the aurora borealis"

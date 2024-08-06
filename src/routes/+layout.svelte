@@ -17,10 +17,10 @@
 
 <div class="absolute w-full h-dvh z-20 overflow-hidden">
 	<Navbar bind:open />
-	<div class="mx-auto h-full flex flex-col md:flex-row container max-w-5xl gap-x-20">
+	<div class="relative mx-auto container max-w-5xl md:mt-20 gap-x-20 h-full">
 		<Header bind:open />
 		<Sidebar />
-		<div class="p-4 md:py-24 w-full h-full overflow-auto md:overflow-hidden">
+		<div class="w-full absolute top-0 bottom-0 md:left-52 py-16 md:py-0 md:h-full p-4">
 			<slot />
 		</div>
 	</div>
