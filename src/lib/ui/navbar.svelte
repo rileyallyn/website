@@ -26,9 +26,6 @@
 			<li>
 				<a href="/blog" on:click={() => (open = false)}>Blog</a>
 			</li>
-			<li>
-				<a href="/contact" on:click={() => (open = false)}>Contact</a>
-			</li>
 			<li class="hidden">
 				<a href="/photography">Photography</a>
 			</li>
