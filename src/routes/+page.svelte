@@ -37,6 +37,12 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Riley Smith | About</title>
+	<meta name="title" content="Riley Smith" />
+	<meta name="description" content="Software Developer" />
+</svelte:head>
+
 <main
 	class="container dark:text-white gap-y-4 flex flex-col tracking-wide overflow-y-auto scroll-smooth relative"
 	in:slide={{ duration: 500 }}

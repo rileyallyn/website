@@ -13,6 +13,13 @@
 	let open = false;
 </script>
 
+<svelte:head>
+	<!-- Primary Meta Tags -->
+	<title>Riley Smith</title>
+	<meta name="title" content="Riley Smith" />
+	<meta name="description" content="Software Developer" />
+</svelte:head>
+
 <div class="absolute h-screen w-full z-20 overflow-hidden">
 	<Navbar bind:open />
 	{#if opener}
