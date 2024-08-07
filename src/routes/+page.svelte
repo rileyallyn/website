@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { CardContainer, CardBody, CardItem } from '$lib/ui/Card';
-	import type { Tech } from '$lib/types';
+	import type { Tech, Project } from '$lib/types';
 	import { fade, slide } from 'svelte/transition';
 	import { cn } from '$lib/utils';
 	import Container from '$lib/ui/container.svelte';
+	import { Icon } from 'svelte-awesome';
+	import { github } from 'svelte-awesome/icons';
+	import Button from '$lib/ui/Button/Button.svelte';
 
 	const techUsed: Tech[] = [
 		{
@@ -37,6 +40,25 @@
 			imgClass: 'dark:invert'
 		}
 	];
+	const projects: Project[] = [
+		{
+			name: 'Resume',
+			description:
+				'My resume is a web application that displays my resume in a clean and modern format. It is built with Svelte and Tailwind CSS.',
+			link: 'https://github.com/rileyallyn/resume'
+		},
+		{
+			name: 'ASWWU Web',
+			description:
+				'ASWWU Web is the web team for the Associated Students of Walla Walla University. As the webhead, I maintain the ASWWU website.',
+			link: 'https://github.com/aswwu-web'
+		},
+		{
+			name: 'Womp Womp',
+			description: `Womp Womp is a web application that counts the amount of times I said \'womp womp\'. It is built with Svelte and Tailwind CSS, and is completely deployed on Cloudflare Workers.`,
+			link: 'https://github.com/qpixel/womp-womp'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -45,8 +67,8 @@
 	<meta name="description" content="Software Developer" />
 </svelte:head>
 
-<Container>
-	<section class="max-w-xl" id="about">
+<Container className="max-w-2xl">
+	<section class="" id="about">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			About Me
 		</h1>
@@ -58,7 +80,7 @@
 			video games.
 		</p>
 	</section>
-	<section class="sm:max-w-xl" id="tech">
+	<section class="" id="tech">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			Tech I Use
 		</h1>
@@ -90,20 +112,33 @@
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			Projects
 		</h1>
-		<div
-			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-8 sm:gap-y-8 py-4"
-		>
-			<CardContainer className="max-w-48">
-				<CardBody
-					className="bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
-				>
-					<CardItem
-						className="text-xl font-bold text-neutral-600 dark:text-white text-center mx-auto"
+		<div class="grid grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4">
+			{#each projects as project (project.name)}
+				<CardContainer className="max-w-xs">
+					<CardBody
+						className="bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
 					>
-						Project Name
-					</CardItem>
-				</CardBody>
-			</CardContainer>
+						<CardItem
+							className="text-lg font-bold text-neutral-600 dark:text-white text-center mx-auto flex items-center gap-x-2"
+						>
+							<Icon name="github" data={github} scale={1.5} className="text-center" />
+							{project.name}
+						</CardItem>
+						<CardItem className="text-left mt-4 leading-relaxed tracking-wide">
+							<p>{project.description}</p>
+						</CardItem>
+						<CardItem className="mt-4 w-full">
+							<a href={project.link} target="_blank" class="w-full">
+								<Button
+									variant="link"
+									class="bg-black text-white dark:bg-white dark:text-black"
+									size="lg">View on GitHub</Button
+								>
+							</a>
+						</CardItem>
+					</CardBody>
+				</CardContainer>
+			{/each}
 		</div>
 	</section>
 </Container>
