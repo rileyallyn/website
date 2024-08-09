@@ -35,5 +35,9 @@ export const load: PageLoad = async ({ params, url }) => {
 		},
 		slug,
 		page,
+		meta: {
+			title: `${postTitle}`,
+			description,
+		},
 	};
 }

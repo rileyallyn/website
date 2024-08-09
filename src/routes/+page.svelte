@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { CardContainer, CardBody, CardItem } from '$lib/ui/Card';
 	import type { Tech, Project } from '$lib/types';
-	import { fade, slide } from 'svelte/transition';
 	import { cn } from '$lib/utils';
 	import Container from '$lib/ui/container.svelte';
 	import { Icon } from 'svelte-awesome';

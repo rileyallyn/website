@@ -11,5 +11,11 @@ export async function load() {
 			return { datePublished, lastUpdated, title, description, slug };
 		}),
 	);
-	return { posts };
+	return {
+		posts,
+		meta: {
+			title: 'Riley Smith | Blog',
+			description: 'Software Developer'
+		}
+	};
 }
