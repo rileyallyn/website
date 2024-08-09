@@ -37,7 +37,7 @@ export const load: PageLoad = async ({ params, url }) => {
 		meta: {
 			title: `${postTitle}`,
 			description,
-			image: url.origin + '/blog/og?title=' + encodeURIComponent(postTitle) + '&description=' + encodeURIComponent(description),
+			image: url.origin + '/blog/og?title=' + encodeURIComponent(postTitle) + '&description=' + encodeURIComponent(description) + '&date=' + encodeURIComponent(datePublished),
 			url: url.origin + '/blog/' + slug
 		},
 	};

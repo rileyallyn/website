@@ -2,8 +2,11 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { ImageResponse } from '@ethercorps/sveltekit-og';
 import OG from './og.svelte';
 
-const fontFile = await fetch('https://og-playground.vercel.app/inter-latin-ext-400-normal.woff');
-const fontData: ArrayBuffer = await fontFile.arrayBuffer();
+const fontFile400 = await fetch('https://og-playground.vercel.app/inter-latin-ext-400-normal.woff');
+const fontData400: ArrayBuffer = await fontFile400.arrayBuffer();
+
+const fontFile700 = await fetch('https://og-playground.vercel.app/inter-latin-ext-700-normal.woff');
+const fontData700: ArrayBuffer = await fontFile700.arrayBuffer();
 
 export const GET: RequestHandler = async ({ url }) => {
 	const urlObj = new URL(url);
@@ -11,6 +14,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	const { searchParams } = urlObj;
 	const title = searchParams.get('title');
 	const description = searchParams.get('description');
+	const date = searchParams.get('date');
 
 	if (!title || !description) {
 		return new Response('Missing title or description', { status: 400 });
@@ -22,12 +26,18 @@ export const GET: RequestHandler = async ({ url }) => {
 		fonts: [
 			{
 				name: 'Inter Latin',
-				data: fontData,
+				data: fontData400,
 				weight: 400
+			},
+			{
+				name: 'Inter Latin',
+				data: fontData700,
+				weight: 700
 			}
 		]
 	}, {
 		title,
-		description
+		description,
+		date
 	});
 };
