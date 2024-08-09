@@ -20,5 +20,6 @@
 			<span>{title}</span>
 			<span tw="text-purple-500 font-normal max-w-2xl mt-2">{description}</span>
 		</h2>
+		<h1 tw=" absolute text-white/50 text-2xl text-right bottom-0 right-0 pr-6">Riley Smith</h1>
 	</div>
 </div>
