@@ -9,16 +9,6 @@
 	const { post, page } = data;
 </script>
 
-<svelte:head>
-	<title>{post.postTitle}</title>
-	<meta name="description" content={post.description} />
-	<meta property="og:title" content={post.postTitle} />
-	<meta property="og:description" content={post.description} />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content={post.postTitle} />
-	<meta name="twitter:description" content={post.description} />
-</svelte:head>
-
 <Container>
 	<a href="/blog" class="flex items-center gap-x-2 text-gray-600 hover:underline">
 		<Icon data={arrowLeft} />

@@ -19,7 +19,6 @@ export const load: PageLoad = async ({ params, url }) => {
 	if (!page) {
 		return error(404, 'Not found');
 	}
-
 	const {
 		title: postTitle,
 		datePublished,
@@ -38,6 +37,8 @@ export const load: PageLoad = async ({ params, url }) => {
 		meta: {
 			title: `${postTitle}`,
 			description,
+			image: url.origin + '/blog/og?title=' + encodeURIComponent(postTitle) + '&description=' + encodeURIComponent(description),
+			url: url.origin + '/blog/' + slug
 		},
 	};
 }

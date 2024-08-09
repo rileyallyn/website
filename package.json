@@ -40,6 +40,7 @@
 	"type": "module",
 	"dependencies": {
 		"@babeard/svelte-heroicons": "2.0.0-rc.0",
+		"@ethercorps/sveltekit-og": "^3.0.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",

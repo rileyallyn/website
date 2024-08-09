@@ -1,7 +1,7 @@
 import type { PostMetadata } from "../../types";
 
 /** @type {import('./$types').PageLoad} */
-export async function load() {
+export async function load({ url }) {
 	const mdModules = import.meta.glob('../../posts/**/index.md');
 	const posts = await Promise.all(
 		Object.keys(mdModules).map(async (path) => {
@@ -14,8 +14,9 @@ export async function load() {
 	return {
 		posts,
 		meta: {
-			title: 'Riley Smith | Blog',
-			description: 'Software Developer'
+			title: 'Blog | Riley Smith',
+			description: 'Writing about random things I find interesting.',
+			url: url.origin + '/blog'
 		}
 	};
 }

@@ -15,17 +15,17 @@
 	<meta name="description" content={$page.data.meta.description} />
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="%sveltekit.url%" />
+	<meta property="og:url" content={$page.data.meta.url} />
 	<meta property="og:title" content={$page.data.meta.title} />
 	<meta property="og:description" content={$page.data.meta.description} />
-	<meta property="og:image" content="%sveltekit.assets%/favicon.png" />
+	<meta property="og:image" content={$page.data.meta?.image} />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="%sveltekit.url%" />
+	<meta property="twitter:url" content={$page.data.meta.url} />
 	<meta property="twitter:title" content={$page.data.meta.title} />
 	<meta property="twitter:description" content={$page.data.meta.description} />
-	<meta property="twitter:image" content="%sveltekit.assets%/favicon.png" />
+	<meta property="twitter:image" content={$page.data.meta?.image} />
 </svelte:head>
 
 <div class="absolute w-full h-dvh z-20 overflow-hidden">
