@@ -1,8 +1,25 @@
 <script>
 	import Container from '$lib/ui/container.svelte';
+	export let data;
+	const { posts } = data;
 </script>
 
 <Container>
 	<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">Blog</h1>
-	<h2>Coming Soon</h2>
+	<div class="flex flex-col gap-y-10 max-w-3xl">
+		{#each posts as post}
+			<a
+				href="/blog/{post.slug}"
+				class="flex flex-col gap-y-2 p-4 border-2 rounded-lg border-purple-900 hover:bg-purple-900 bg-neutral-950 transition-colors"
+			>
+				<div class="flex items-center gap-x-2">
+					<div class="flex flex-col">
+						<h2 class="text-lg font-bold">{post.title}</h2>
+						<p class="text-sm text-gray-500">{post.datePublished}</p>
+					</div>
+				</div>
+				<p class="text-sm text-gray-500">{post.description}</p>
+			</a>
+		{/each}
+	</div>
 </Container>

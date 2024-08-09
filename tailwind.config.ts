@@ -1,18 +1,26 @@
 import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
 import aspectRatio from '@tailwindcss/aspect-ratio';
 import svgToDataUri from 'mini-svg-data-uri';
+import typography from '@tailwindcss/typography';
 
 const config = {
 	// ... other properties
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 
 	theme: {
-		extend: {}
+		extend: {
+			typography: (theme) => ({
+				DEFAULT: {
+
+				}
+			})
+		}
 	},
 	plugins: [
 		// ...other plugins
 		aspectRatio,
 		addVariablesForColors,
+		typography,
 		function ({ matchUtilities, theme }: any) {
 			matchUtilities(
 				{
