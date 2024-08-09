@@ -12,22 +12,22 @@
 		{
 			name: 'React',
 			imgSrc: '/react.svg',
-			customClass: 'w-full sm:w-48 h-auto'
+			customClass: 'w-full  h-auto'
 		},
 		{
 			name: 'Next.js',
 			imgSrc: '/nextjs.svg',
-			customClass: 'w-full sm:w-48'
+			customClass: 'w-full '
 		},
 		{
 			name: 'Svelte',
 			imgSrc: '/svelte.svg',
-			customClass: 'w-full sm:w-48'
+			customClass: 'w-full '
 		},
 		{
 			name: 'TypeScript',
 			imgSrc: '/ts.svg',
-			customClass: 'w-full sm:w-48'
+			customClass: 'w-full '
 		},
 		{
 			name: 'Go',
@@ -36,7 +36,7 @@
 		{
 			name: 'Rust',
 			imgSrc: '/rust.svg',
-			customClass: 'w-full sm:w-48',
+			customClass: 'w-full ',
 			imgClass: 'dark:invert'
 		}
 	];
@@ -88,7 +88,7 @@
 			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-8 sm:gap-y-8 py-4"
 		>
 			{#each techUsed as tech (tech.name)}
-				<CardContainer className={cn('sm:max-w-48', tech.customClass)}>
+				<CardContainer className={cn('w-full', tech.customClass)}>
 					<CardBody
 						className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
 					>
@@ -112,33 +112,35 @@
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			Projects
 		</h1>
-		<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4">
+		<ol class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4">
 			{#each projects as project (project.name)}
-				<CardContainer className="sm:max-w-xs">
-					<CardBody
-						className="bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
-					>
-						<CardItem
-							className="text-lg font-bold text-neutral-600 dark:text-white text-center mx-auto flex items-center gap-x-2"
+				<li class="last:col-span-2">
+					<CardContainer className="w-full" containerClassName="">
+						<CardBody
+							className="bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
 						>
-							<Icon name="github" data={github} scale={1.5} className="text-center" />
-							{project.name}
-						</CardItem>
-						<CardItem className="text-left mt-4 leading-relaxed tracking-wide">
-							<p>{project.description}</p>
-						</CardItem>
-						<CardItem className="mt-4 w-full">
-							<a href={project.link} target="_blank" class="w-full">
-								<Button
-									variant="link"
-									class="bg-black text-white dark:bg-white dark:text-black"
-									size="lg">View on GitHub</Button
-								>
-							</a>
-						</CardItem>
-					</CardBody>
-				</CardContainer>
+							<CardItem
+								className="text-lg font-bold text-neutral-600 dark:text-white text-center mx-auto flex items-center gap-x-2"
+							>
+								<Icon name="github" data={github} scale={1.5} className="text-center" />
+								{project.name}
+							</CardItem>
+							<CardItem className="text-left mt-4 leading-relaxed tracking-wide">
+								<p>{project.description}</p>
+							</CardItem>
+							<CardItem className="mt-4 w-full">
+								<a href={project.link} target="_blank" class="w-full">
+									<Button
+										variant="link"
+										class="bg-black text-white dark:bg-white dark:text-black"
+										size="lg">View on GitHub</Button
+									>
+								</a>
+							</CardItem>
+						</CardBody>
+					</CardContainer>
+				</li>
 			{/each}
-		</div>
+		</ol>
 	</section>
 </Container>
