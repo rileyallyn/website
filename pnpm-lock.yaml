@@ -11,6 +11,9 @@ dependencies:
   '@ethercorps/sveltekit-og':
     specifier: ^3.0.0
     version: 3.0.0(svelte@4.2.18)
+  '@resvg/resvg-js':
+    specifier: ^2.6.2
+    version: 2.6.2
   '@tailwindcss/aspect-ratio':
     specifier: ^0.4.2
     version: 0.4.2(tailwindcss@3.4.7)
@@ -20,6 +23,9 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
+  css-tree:
+    specifier: ^2.3.1
+    version: 2.3.1
   date-fns:
     specifier: ^3.6.0
     version: 3.6.0
@@ -61,6 +67,9 @@ devDependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.14
     version: 0.5.14(tailwindcss@3.4.7)
+  '@types/node':
+    specifier: ^22.2.0
+    version: 22.2.0
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.62.0
     version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.57.0)(typescript@5.5.4)
@@ -117,7 +126,7 @@ devDependencies:
     version: 5.5.4
   vite:
     specifier: ^5.3.5
-    version: 5.3.5(sass@1.77.8)
+    version: 5.3.5(@types/node@22.2.0)(sass@1.77.8)
 
 packages:
 
@@ -837,7 +846,7 @@ packages:
       sirv: 2.0.4
       svelte: 4.2.18
       tiny-glob: 0.2.9
-      vite: 5.3.5(sass@1.77.8)
+      vite: 5.3.5(@types/node@22.2.0)(sass@1.77.8)
     dev: true
 
   /@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1)(svelte@4.2.18)(vite@5.3.5):
@@ -851,7 +860,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.5)
       debug: 4.3.6
       svelte: 4.2.18
-      vite: 5.3.5(sass@1.77.8)
+      vite: 5.3.5(@types/node@22.2.0)(sass@1.77.8)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -870,7 +879,7 @@ packages:
       magic-string: 0.30.11
       svelte: 4.2.18
       svelte-hmr: 0.16.0(svelte@4.2.18)
-      vite: 5.3.5(sass@1.77.8)
+      vite: 5.3.5(@types/node@22.2.0)(sass@1.77.8)
       vitefu: 0.2.5(vite@5.3.5)
     transitivePeerDependencies:
       - supports-color
@@ -911,6 +920,12 @@ packages:
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+    dev: true
+
+  /@types/node@22.2.0:
+    resolution: {integrity: sha512-bm6EG6/pCpkxDf/0gDNDdtDILMOHgaQBVOJGdwsqClnxA3xL6jtMv76rLBc006RVMWbmaf0xbmom4Z/5o2nRkQ==}
+    dependencies:
+      undici-types: 6.13.0
     dev: true
 
   /@types/prop-types@15.7.12:
@@ -2940,6 +2955,10 @@ packages:
     hasBin: true
     dev: true
 
+  /undici-types@6.13.0:
+    resolution: {integrity: sha512-xtFJHudx8S2DSoujjMd1WeWvn7KKWFRESZTMeL1RptAYERu29D6jphMjjY+vn96jvN3kVPDNxU/E13VTaXj6jg==}
+    dev: true
+
   /unicode-trie@2.0.0:
     resolution: {integrity: sha512-x7bc76x0bm4prf1VLg79uhAzKw8DVboClSN5VxJuQ+LKDOVEW9CdH+VY7SP+vX7xCYQqzzgQpFqz15zeLvAtZQ==}
     dependencies:
@@ -2980,7 +2999,7 @@ packages:
       unist-util-stringify-position: 2.0.3
     dev: true
 
-  /vite@5.3.5(sass@1.77.8):
+  /vite@5.3.5(@types/node@22.2.0)(sass@1.77.8):
     resolution: {integrity: sha512-MdjglKR6AQXQb9JGiS7Rc2wC6uMjcm7Go/NHNO63EwiJXfuk9PgqiP/n5IDJCziMkfw9n4Ubp7lttNwz+8ZVKA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -3008,6 +3027,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 22.2.0
       esbuild: 0.21.5
       postcss: 8.4.40
       rollup: 4.20.0
@@ -3024,7 +3044,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.3.5(sass@1.77.8)
+      vite: 5.3.5(@types/node@22.2.0)(sass@1.77.8)
     dev: true
 
   /which@2.0.2:
