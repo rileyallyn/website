@@ -26,6 +26,7 @@
 							timeZone: 'UTC'
 						})}
 					</p>
+					<p class="text-sm text-gray-500">{post.timeToRead}</p>
 				</div>
 			</div>
 		</div>

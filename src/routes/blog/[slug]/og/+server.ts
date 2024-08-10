@@ -13,6 +13,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	const slug = url.pathname.split('/')[2];
 	const postPromise = import(`../../../../posts/${slug}/index.md`);
 
+
 	const [postResult] = await Promise.all([postPromise]);
 
 	if (!postResult) {

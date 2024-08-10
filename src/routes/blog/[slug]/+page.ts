@@ -1,24 +1,23 @@
 import { error, redirect } from "@sveltejs/kit";
 import type { PostMetadata } from "../../../types";
+import { browser } from "$app/environment";
+import { readingTime } from "reading-time-estimator";
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = async ({ params, url }) => {
-	const { slug } = params;
-	const { pathname } = url;
+export const prerender = true;
 
+export const load: PageLoad = async ({ params, url, data }) => {
+	const { slug } = params;
 	const postPromise = import(`../../../posts/${slug}/index.md`).catch(() => null);
 
 	const [postResult] = await Promise.all([postPromise]);
 
-	if (!postResult) {
-		return error(404, 'Not found');
-	}
-
-	const { default: page, metadata }: { default: any; metadata: PostMetadata } = postResult;
+	const { default: page, metadata }: { default: any, metadata: PostMetadata } = postResult;
 
 	if (!page) {
 		return error(404, 'Not found');
 	}
+
 	const {
 		title: postTitle,
 		datePublished,
@@ -35,6 +34,7 @@ export const load: PageLoad = async ({ params, url }) => {
 			description,
 			postTitle,
 			slug,
+			timeToRead: data.timeToRead,
 		},
 		slug,
 		page,

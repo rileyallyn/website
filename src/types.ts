@@ -4,4 +4,5 @@ export interface PostMetadata {
 	datePublished: string;
 	lastUpdated: string;
 	locked: boolean;
+	timeToRead?: string;
 }
