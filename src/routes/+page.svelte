@@ -66,7 +66,7 @@
 	<meta name="description" content="Software Developer" />
 </svelte:head>
 
-<Container className="max-w-2xl">
+<Container>
 	<section class="" id="about">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			About Me
@@ -84,12 +84,12 @@
 			Tech I Use
 		</h1>
 		<div
-			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-8 sm:gap-y-8 py-4"
+			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-4 sm:gap-y-8 py-4"
 		>
 			{#each techUsed as tech (tech.name)}
 				<CardContainer className={cn('w-full', tech.customClass)}>
 					<CardBody
-						className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
+						className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border"
 					>
 						<CardItem className="mx-auto"
 							><img
