@@ -19,7 +19,8 @@ export async function load({ url }) {
 		meta: {
 			title: 'Blog | Riley Smith',
 			description: 'Writing about random things I find interesting.',
-			url: url.origin + '/blog'
+			url: url.origin + '/blog',
+			image: '../favicon.png'
 		}
 	};
 }

@@ -22,7 +22,7 @@
 			<span tw="text-purple-500 font-normal max-w-2xl mt-2 text-4xl">"{description}..."</span>
 		</h2>
 	</div>
-	<div tw="absolute bottom-0 left-0 pl-10 flex flex-row items-center w-full">
+	<div tw="absolute bottom-0 left-0 pl-12 flex flex-row items-center w-full pb-10">
 		<!-- svelte-ignore a11y-missing-attribute -->
 		<img
 			tw="rounded-full"
