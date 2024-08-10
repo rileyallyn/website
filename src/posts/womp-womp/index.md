@@ -2,11 +2,15 @@
 title: Womp Womp
 datePublished: 2024-08-09
 description: How I made a funny website to track how many times I say 'Womp Womp'
-locked: true
+locked: false
 ---
 
-As of right now, I have over 300 'womps' tracked on ['Womp Womp'](https://counter.womp.lol).
+*As of right now, I have over 300 'womps' tracked on ['Womp Womp'](https://counter.womp.lol).*
 
+<script>
+	import astrodb from '$lib/imgs/blog/womp-womp/astrodb.png';
+	import mvp from '$lib/imgs/blog/womp-womp/mvp.png';
+</script>
 
 ### Why 'Womp Womp'?
 
@@ -14,22 +18,59 @@ I'm a big fan of the 'Womp Womp' meme. I started saying ironically in early 2024
 
 So I decided to make a website to allow my friends to track how many times I say 'Womp Womp'. Maybe it will help me get over it...
 
-Cillum consectetur ipsum culpa velit. Veniam est nisi cillum labore eiusmod aute anim. Dolor dolore dolor incididunt nostrud voluptate mollit ullamco aute occaecat aute esse consectetur culpa.
+### The original tech stack
 
-Pariatur do magna ex tempor eiusmod ex labore magna Lorem consectetur nulla dolore. Dolore magna pariatur non qui ullamco culpa veniam ut velit incididunt ullamco Lorem veniam velit. Ullamco nulla id fugiat in labore amet proident ut consequat proident aliqua labore. Elit laborum aliqua esse nisi tempor amet officia esse nostrud exercitation. Excepteur ullamco cillum qui et occaecat Lorem anim laboris sit dolore. Excepteur ullamco ad nostrud reprehenderit commodo mollit non esse ipsum Lorem esse. Nostrud do incididunt magna qui officia deserunt elit ea tempor magna.
+The original version of the site was built with [Astro](https://astro.build), using their new DB product called Astro DB. It was meant to be a simple website to track how many times I say 'Womp Womp'. So it did not contain any user authentication or anything fancy.
 
-Sunt labore elit enim aliqua ullamco fugiat non in aliquip nostrud consequat mollit magna. Sunt laborum officia adipisicing adipisicing exercitation sunt cillum proident ullamco deserunt. Officia eiusmod dolore ipsum Lorem nostrud laboris non esse fugiat elit exercitation consectetur elit. Ullamco ut eu adipisicing cillum. Amet ad cupidatat qui do pariatur labore fugiat non non ea sint non reprehenderit non.
+![The MVP of the website]({mvp})
 
-Eu est duis irure sint ut. Cillum Lorem minim id tempor. Laborum ipsum et excepteur ut fugiat magna nisi sit. Minim qui deserunt aliqua minim Lorem enim minim ipsum et duis adipisicing. Voluptate labore qui esse enim excepteur nulla duis magna exercitation reprehenderit est elit irure. Ut qui labore incididunt proident officia velit nulla nisi exercitation aliqua ex. Cupidatat nostrud ex aliquip duis laboris duis mollit ullamco anim elit mollit laboris deserunt commodo.
+In fact! It didn't even store the individual entries of someone pushing the button! I was just running an SQL update transaction.
 
-Irure qui eiusmod ex ad velit. Nostrud sunt anim consectetur anim sunt sit cupidatat exercitation do voluptate. Voluptate nostrud duis mollit amet sunt est velit tempor. Aliquip enim elit anim sit ut deserunt.
+![Astro DB's dashboard]({astrodb})
 
-Reprehenderit reprehenderit nulla aute aliquip quis exercitation amet ullamco tempor sit. Reprehenderit laboris sint aliqua qui cupidatat dolore irure tempor ut eiusmod dolor deserunt. Sit sit officia pariatur enim magna. Minim labore nulla Lorem et minim minim amet nisi consectetur tempor. Minim adipisicing et id aute voluptate dolor deserunt minim id laboris voluptate deserunt id qui.
+After a few days, it became obvious that if I wanted to keep user interaction with the game, I would need to add leaderboards.
 
-Elit laborum qui ullamco deserunt laborum occaecat reprehenderit. Mollit elit laborum exercitation quis deserunt veniam mollit nostrud commodo dolor culpa officia est. Deserunt sunt pariatur in nostrud incididunt culpa pariatur sunt officia qui sint. Cillum velit mollit et aliqua incididunt culpa cillum ea ad. Aliquip commodo irure commodo duis tempor sit quis. Aliqua voluptate irure qui id nisi non adipisicing. Nulla et nostrud adipisicing duis ad reprehenderit magna sunt eiusmod.
+After deciding on adding leaderboards, I realized was not tracking who had clicked the button. So as a stop gap measure, I updated my DB schema to be adding individual button presses.
 
-Sit proident labore ut ex. Duis exercitation enim officia est nisi esse amet ut ut. Ex exercitation nulla incididunt ullamco pariatur et irure ut minim cillum mollit quis quis reprehenderit. Ea cillum cillum ipsum ex elit ipsum dolor aliquip exercitation irure dolore.
 
-Nisi cupidatat minim officia nostrud sit duis labore sit do do voluptate officia. Et aute minim ex est non nisi exercitation exercitation nulla laboris deserunt. Non aliqua est voluptate Lorem pariatur minim. Id excepteur ullamco ut in consectetur.
+```ts
+const { db } = await connectToDatabase();
+const { data } = await db.select().from('womp_womps').where('user_id', '=', userId);
+```
 
-Labore irure do magna incididunt do incididunt cillum deserunt officia. Cupidatat commodo qui minim velit veniam laboris tempor tempor anim non deserunt ipsum et officia. Aliqua magna nisi laborum ex labore aute do et veniam est. Enim laborum non aliqua occaecat do dolor sunt sunt elit elit nostrud consequat consequat. Et do sit amet sit id reprehenderit aute in culpa sint. Magna est fugiat anim in eiusmod fugiat eu nulla cillum ex aute sint id.
+
+### The rewrite, pt. 1
+
+Qui duis duis ullamco ea qui velit tempor laborum minim occaecat. Proident nostrud voluptate velit duis. Dolor exercitation ipsum proident adipisicing cupidatat pariatur mollit cupidatat et in. Sit culpa anim dolore sit culpa ad nulla aliqua proident velit et. Est ad nostrud cupidatat nulla ad nisi exercitation. Ex nulla esse voluptate exercitation ex ex deserunt dolore sunt non aliquip.
+
+Ex id in duis irure. Voluptate ea ullamco ea deserunt adipisicing magna nostrud. Labore dolor enim mollit labore qui ullamco irure ea dolor ipsum amet occaecat deserunt. Exercitation culpa velit ex Lorem.
+
+Deserunt enim voluptate et amet ut ut aliquip eu reprehenderit proident. Ea dolor deserunt amet aliquip reprehenderit officia pariatur mollit sunt cillum voluptate ipsum fugiat. Eiusmod sint amet irure dolore. Aliqua duis elit mollit tempor eu labore pariatur incididunt ut id culpa ex enim. Sunt dolor magna voluptate cillum dolore anim tempor cupidatat anim sunt sunt irure tempor dolore. Aliqua labore mollit consectetur reprehenderit labore elit culpa nulla deserunt ut.
+
+Non nisi culpa ea magna Lorem labore mollit reprehenderit deserunt eiusmod in et ullamco adipisicing. Exercitation amet laborum aliquip id cupidatat exercitation nisi ea sint esse irure deserunt labore. Id adipisicing fugiat enim do ut. Aute eu esse minim tempor nisi.
+
+Incididunt sint nulla irure tempor amet nulla occaecat et laborum veniam sunt. Ut ex velit deserunt ut magna consectetur culpa nisi. Et mollit irure do ipsum qui laboris eiusmod fugiat officia velit nostrud sint.
+
+Reprehenderit ipsum eiusmod tempor nostrud qui enim nisi cupidatat commodo. Labore occaecat duis sit amet nulla tempor fugiat deserunt nisi excepteur. Eiusmod consectetur magna proident esse. Dolore aliquip fugiat veniam in aute dolore sunt cupidatat nostrud.
+
+Tempor ea aliqua excepteur nulla consequat pariatur proident duis mollit laborum. Voluptate laboris quis non adipisicing. Tempor fugiat mollit laboris et culpa laborum ullamco quis nisi elit culpa. Qui consectetur deserunt elit pariatur anim ea Lorem magna nisi ut laboris id ad incididunt. Nulla sunt mollit exercitation esse consectetur proident magna est nulla proident proident enim.
+
+Officia aliqua laboris cillum pariatur anim consectetur excepteur qui velit labore. Exercitation voluptate excepteur ad id nostrud ullamco. Aute et duis duis duis aute sit in sint ut adipisicing. Fugiat proident veniam laborum labore adipisicing.
+
+Ex fugiat qui sunt cillum consectetur. Aliqua non commodo labore veniam enim tempor. Amet laboris pariatur et duis. Non consequat enim ipsum occaecat ipsum anim. Duis incididunt mollit id pariatur tempor reprehenderit cillum proident ea ea ea. Cupidatat occaecat mollit occaecat dolore amet exercitation in sit irure duis. Irure id elit sit in voluptate consectetur reprehenderit.
+
+Incididunt incididunt nisi ullamco culpa id ex commodo exercitation. Sint nisi ullamco commodo sunt minim non enim sunt officia eu. Incididunt ad pariatur fugiat ea ea id cillum adipisicing mollit aute aute Lorem ut. Quis exercitation esse velit reprehenderit veniam fugiat tempor et fugiat. Aute eu ullamco proident nostrud ullamco non quis.
+
+Qui reprehenderit nulla nostrud ipsum dolor esse. Commodo et mollit voluptate ea nisi esse sunt labore exercitation. Quis nostrud exercitation consequat Lorem elit in enim minim adipisicing officia eu sit anim id. Proident aliquip proident labore mollit. Voluptate cillum consequat pariatur esse ipsum eu tempor. Labore eu non deserunt aliqua duis.
+
+Voluptate esse mollit aute dolor ex nostrud enim. Velit ea sit proident aute cillum tempor do voluptate aute aute consectetur ad fugiat. Cupidatat adipisicing minim consectetur incididunt consequat esse et officia in esse labore dolore. Laboris velit sit mollit enim dolor sit labore dolore aliquip sit amet ex in. Mollit dolore ut cupidatat quis laborum culpa sunt anim amet. Ex ad commodo id proident ea aliquip aute consectetur adipisicing pariatur irure nisi pariatur. Irure consequat enim et laborum laborum Lorem elit.
+
+Et duis ipsum esse laborum. Et proident non do adipisicing ad ad deserunt ea laborum qui velit amet. Anim aute labore est exercitation minim ullamco quis anim nostrud in. Veniam ex cupidatat velit ex dolor amet reprehenderit id nulla. Veniam aliquip Lorem aliquip anim exercitation aliquip magna anim nulla deserunt pariatur incididunt ad elit. Amet adipisicing ad magna dolor ea sunt ipsum amet dolor nostrud veniam reprehenderit sint.
+
+Ea minim consequat ad excepteur minim adipisicing deserunt eu veniam nulla aute. Minim aliquip nisi exercitation magna sit aute pariatur amet magna. Consequat ut culpa aliquip aliquip voluptate aliquip pariatur Lorem. Aute nisi enim reprehenderit fugiat id exercitation Lorem Lorem exercitation officia sunt adipisicing ad labore.
+
+Culpa Lorem ullamco sit deserunt ullamco Lorem enim et mollit exercitation. Elit culpa sint qui esse ullamco ut proident pariatur veniam ipsum duis. Dolore esse consequat est eu elit nulla ex dolore enim adipisicing esse irure sint nisi. Deserunt amet non anim qui esse nisi et sit in incididunt irure culpa pariatur.
+
+Anim ex id aliqua enim quis consectetur aute ea eiusmod nisi labore. Eiusmod officia fugiat enim ut nostrud do in fugiat excepteur excepteur. Laboris cillum amet eu enim eu aliqua Lorem esse sint non mollit est id. Cillum aute ipsum dolor voluptate et exercitation. Adipisicing quis eiusmod velit in. Mollit eu in mollit anim aliqua qui labore officia fugiat. Magna anim minim ut nostrud minim tempor mollit elit occaecat minim aliqua.
+
+Cupidatat est nulla non ut velit duis velit ullamco adipisicing veniam minim exercitation do ea. Ad ea aliquip anim mollit. Magna cupidatat voluptate consectetur proident et dolore ex laboris elit dolor veniam aute ullamco duis. Ad aute amet Lorem exercitation dolor consectetur. Sunt aliquip velit aliqua ex in aliquip sint ex qui. Consequat consequat excepteur exercitation quis anim irure dolor cillum eu nulla. Id elit tempor sint enim veniam esse id irure consectetur minim commodo.
