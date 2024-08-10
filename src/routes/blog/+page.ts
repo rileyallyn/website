@@ -7,7 +7,10 @@ export async function load({ url }) {
 		Object.keys(mdModules).map(async (path) => {
 			const slug = path.split('/').at(-2);
 			const { metadata } = await mdModules[path]() as { metadata: PostMetadata };
-			const { datePublished, lastUpdated, title, description } = metadata;
+			const { datePublished, lastUpdated, title, description, locked } = metadata;
+			if (locked) {
+				return null;
+			}
 			return { datePublished, lastUpdated, title, description, slug };
 		}),
 	);

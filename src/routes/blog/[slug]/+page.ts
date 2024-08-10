@@ -1,4 +1,4 @@
-import { error } from "@sveltejs/kit";
+import { error, redirect } from "@sveltejs/kit";
 import type { PostMetadata } from "../../../types";
 import type { PageLoad } from "./$types";
 
@@ -22,11 +22,13 @@ export const load: PageLoad = async ({ params, url }) => {
 	const {
 		title: postTitle,
 		datePublished,
-		description
+		description,
+		locked
 	} = metadata;
 
-	console.log(datePublished);
-
+	if (locked) {
+		redirect(301, `/blog/`);
+	}
 	return {
 		post: {
 			datePublished,

@@ -3,4 +3,5 @@ export interface PostMetadata {
 	description: string;
 	datePublished: string;
 	lastUpdated: string;
+	locked: boolean;
 }
