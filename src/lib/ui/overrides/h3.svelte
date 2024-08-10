@@ -1,7 +1,12 @@
 <script lang="ts">
 	let data: HTMLAnchorElement | undefined;
 	let id: string = '';
-	$: id = data?.innerHTML.toLocaleLowerCase().split(' ').join('-') || '';
+	$: id =
+		data?.innerHTML
+			.toLocaleLowerCase()
+			.replace(/[^a-zA-Z ]/g, '')
+			.split(' ')
+			.join('-') || '';
 </script>
 
 <h3 {id}>
