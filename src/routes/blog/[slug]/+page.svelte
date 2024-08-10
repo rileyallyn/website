@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Container from '$lib/ui/container.svelte';
 	import { Icon } from 'svelte-awesome';
-	import { format } from 'date-fns';
 	import type { PageData } from './$types';
 	import arrowLeft from 'svelte-awesome/icons/arrowLeft';
 
@@ -19,7 +18,13 @@
 			<div class="flex items-center gap-x-2">
 				<div class="flex flex-col">
 					<h1 class="text-xl font-bold">{post.postTitle}</h1>
-					<p class="text-sm text-gray-500">{format(post.datePublished, 'MMMM d, yyyy')}</p>
+					<p class="text-sm text-gray-500">
+						{new Date(post.datePublished).toLocaleDateString('en-US', {
+							month: 'long',
+							day: 'numeric',
+							year: 'numeric'
+						})}
+					</p>
 				</div>
 			</div>
 		</div>

@@ -15,7 +15,13 @@
 				<div class="flex items-center gap-x-2">
 					<div class="flex flex-col">
 						<h2 class="text-lg font-bold">{post.title}</h2>
-						<p class="text-sm text-gray-500">{post.datePublished}</p>
+						<p class="text-sm text-gray-500">
+							{new Date(post.datePublished).toLocaleDateString('en-US', {
+								month: 'long',
+								day: 'numeric',
+								year: 'numeric'
+							})}
+						</p>
 					</div>
 				</div>
 				<p class="text-sm text-gray-500">{post.description}</p>

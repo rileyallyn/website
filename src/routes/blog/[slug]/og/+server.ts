@@ -1,4 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
+import type { PostMetadata } from '../../../../types';
 import { ImageResponse } from '@ethercorps/sveltekit-og';
 import OG from './og.svelte';
 
@@ -9,12 +10,23 @@ const fontFile700 = await fetch('https://og-playground.vercel.app/inter-latin-ex
 const fontData700: ArrayBuffer = await fontFile700.arrayBuffer();
 
 export const GET: RequestHandler = async ({ url }) => {
-	const urlObj = new URL(url);
-	// get query parms from url
-	const { searchParams } = urlObj;
-	const title = searchParams.get('title');
-	const description = searchParams.get('description');
-	const date = searchParams.get('date');
+	const slug = url.pathname.split('/')[2];
+	const postPromise = import(`../../../../posts/${slug}/index.md`);
+
+	const [postResult] = await Promise.all([postPromise]);
+
+	if (!postResult) {
+		return new Response('Not found', { status: 404 });
+	}
+
+	const { metadata }: { metadata: PostMetadata } = postResult;
+
+	if (!metadata) {
+		return new Response('Not found', { status: 404 });
+	}
+
+	const { title, description, datePublished: date } = metadata satisfies PostMetadata;
+
 
 	if (!title || !description) {
 		return new Response('Missing title or description', { status: 400 });
