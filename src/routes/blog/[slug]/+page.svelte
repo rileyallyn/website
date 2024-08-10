@@ -28,7 +28,7 @@
 				</div>
 			</div>
 		</div>
-		<article class="prose prose-invert max-w-none">
+		<article class="prose prose-zinc dark:prose-invert max-w-none">
 			<svelte:component this={page} />
 		</article>
 	</div>

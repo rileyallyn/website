@@ -10,11 +10,11 @@
 		{#each posts as post}
 			<a
 				href="/blog/{post.slug}"
-				class="flex flex-col gap-y-2 p-4 border-2 rounded-lg border-purple-900 hover:bg-purple-900 bg-neutral-950 transition-colors"
+				class="flex flex-col gap-y-2 p-4 border-2 rounded-lg border-purple-900 hover:bg-purple-900 dark:bg-neutral-950 transition-colors hover:text-white bg-neutral-100"
 			>
 				<div class="flex items-center gap-x-2">
 					<div class="flex flex-col">
-						<h2 class="text-lg font-bold">{post.title}</h2>
+						<h2 class="text-lg font-bold hover:underline">{post.title}</h2>
 						<p class="text-sm text-gray-500">
 							{new Date(post.datePublished).toLocaleDateString('en-US', {
 								month: 'long',
