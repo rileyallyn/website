@@ -4,7 +4,7 @@
 	$: id =
 		data?.innerHTML
 			.toLocaleLowerCase()
-			.replace(/[^a-zA-Z ]/g, '')
+			.replace(/[^a-zA-Z0-9 ]/g, '')
 			.split(' ')
 			.join('-') || '';
 </script>
