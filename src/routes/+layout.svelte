@@ -28,14 +28,12 @@
 	<meta property="twitter:image" content={$page.data.meta?.image} />
 </svelte:head>
 
-<div class="absolute md:mx-auto h-dvh z-20 overflow-hidden w-dvw antialiased">
+<div class="absolute h-dvh z-20 overflow-hidden w-dvw antialiased">
 	<Navbar bind:open />
 	<Header bind:open />
-	<div
-		class="flex flex-row mx-auto container max-w-5xl gap-x-8 h-full md:pl-2 p-3 md:p-0 md:mt-[5.5rem]"
-	>
+	<div class="flex flex-row w-full h-full md:mt-[5.5rem] max-w-4xl mx-auto">
 		<Sidebar />
-		<div class="overflow-y-auto max-w-2xl">
+		<div class="overflow-y-auto pr-5 w-full ml-2">
 			<slot />
 		</div>
 	</div>

@@ -6,7 +6,7 @@
 
 <Container>
 	<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">Blog</h1>
-	<div class="flex flex-col gap-y-10 max-w-3xl">
+	<div class="flex flex-col gap-y-10">
 		{#each posts as post}
 			<a
 				href="/blog/{post.slug}"

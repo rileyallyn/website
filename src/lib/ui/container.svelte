@@ -6,7 +6,7 @@
 
 <main
 	class={cn(
-		'dark:text-white gap-y-4 flex flex-col tracking-wide scroll-smooth overflow-y-auto md:pb-28 max-w-fit',
+		'container dark:text-white gap-y-4 flex flex-col tracking-wide scroll-smooth overflow-y-auto md:pb-28 px-4',
 		className
 	)}
 	in:slide={{ duration: 500 }}
