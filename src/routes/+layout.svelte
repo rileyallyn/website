@@ -30,11 +30,13 @@
 <GridBg className="-z-10 h-full w-full" />
 <Navbar bind:open />
 <Header bind:open />
-<div class="relative flex flex-row h-dvh w-full overflow-auto md:mt-8 mt-12">
-	<div class="relative z-40 overflow-hidden md:ml-40 hidden md:block">
+<div class="relative flex flex-row h-dvh w-full overflow-auto pt-8">
+	<div class="relative z-40 overflow-hidden ml-14 lg:ml-40 hidden md:block">
 		<Sidebar />
 	</div>
-	<div class="overflow-y-auto styled-scrollbars md:mt-8 max-w-2xl w-full p-3 md:p-0 pb-20 md:pb-0">
+	<div
+		class="overflow-y-auto styled-scrollbars md:mt-8 sm:max-w-2xl w-full p-3 md:p-0 pb-20 md:pb-0"
+	>
 		<slot />
 	</div>
 </div>
