@@ -25,6 +25,8 @@ export const load: PageLoad = async ({ params, url }) => {
 		description
 	} = metadata;
 
+	console.log(datePublished);
+
 	return {
 		post: {
 			datePublished,

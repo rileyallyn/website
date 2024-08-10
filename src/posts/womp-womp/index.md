@@ -1,6 +1,6 @@
 ---
 title: Womp Womp
-datePublished: 2023-07-01
+datePublished: 2024-08-09
 description: How I made a funny website to track how many times I say 'Womp Womp'
 ---
 
