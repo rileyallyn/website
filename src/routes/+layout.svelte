@@ -27,12 +27,14 @@
 	<meta property="twitter:description" content={$page.data.meta.description} />
 	<meta property="twitter:image" content={$page.data.meta?.image} />
 </svelte:head>
-<GridBg className="absolute -z-10 h-full w-full" />
+<GridBg className="-z-10 h-full w-full" />
 <Navbar bind:open />
 <Header bind:open />
-<div class="fixed top-0 left-0 z-40 overflow-hidden ml-40">
-	<Sidebar />
-</div>
-<div class="overflow-y-auto pr-5 styled-scrollbars w-fit mx-auto mt-8 h-dvh max-w-4xl">
-	<slot />
+<div class="relative flex flex-row h-dvh w-full overflow-auto md:mt-8 mt-12">
+	<div class="relative z-40 overflow-hidden md:ml-40 hidden md:block">
+		<Sidebar />
+	</div>
+	<div class="overflow-y-auto styled-scrollbars md:mt-8 max-w-2xl w-full p-3 md:p-0 pb-20 md:pb-0">
+		<slot />
+	</div>
 </div>

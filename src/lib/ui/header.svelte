@@ -3,7 +3,7 @@
 	export let open = false;
 </script>
 
-<header class="block dark:text-white md:hidden pb-1 z-40">
+<header class="block dark:text-white md:hidden pb-1 z-40 fixed top-0 left-0 w-full bg-black/90">
 	<nav class="flex pt-2 px-3 items-center gap-x-2">
 		<img
 			src="/pfp.webp"

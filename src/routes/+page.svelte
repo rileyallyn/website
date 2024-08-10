@@ -113,7 +113,7 @@
 		</h1>
 		<ol class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4">
 			{#each projects as project (project.name)}
-				<li class="last:col-span-2">
+				<li class="md:last:col-span-2">
 					<CardContainer className="w-full" containerClassName="">
 						<CardBody
 							className="bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
