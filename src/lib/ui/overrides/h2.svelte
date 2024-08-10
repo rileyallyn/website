@@ -1,0 +1,27 @@
+<script lang="ts">
+	let data: HTMLAnchorElement | undefined;
+	let id: string = '';
+	$: id =
+		data?.innerHTML
+			.toLocaleLowerCase()
+			.replace(/[^a-zA-Z0-9 ]/g, '')
+			.split(' ')
+			.join('-') || '';
+</script>
+
+<h2 {id}>
+	<a href={`#${id}`} class="anchor font-bold" bind:this={data}>
+		<slot />
+	</a>
+</h2>
+
+<style>
+	.anchor:hover {
+		text-decoration: underline;
+	}
+
+	.anchor {
+		text-decoration: none;
+		position: relative;
+	}
+</style>

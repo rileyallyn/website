@@ -1,6 +1,7 @@
 import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
+import { importAssets } from 'svelte-preprocess-import-assets'
 
 
 /** @type {import('@sveltejs/kit').Config} */

@@ -9,7 +9,7 @@
 	<div class="flex flex-col gap-y-10">
 		{#each posts as post}
 			{#if post}
-				<section class="block data-[locked]:hidden" data-locked={post.locked}>
+				<section>
 					<a
 						href="/blog/{post.slug}"
 						class="flex flex-col gap-y-2 p-4 border-2 rounded-lg border-purple-900 hover:bg-purple-900 dark:bg-neutral-950 transition-colors hover:text-white bg-neutral-100"

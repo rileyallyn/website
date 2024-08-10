@@ -1,12 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import type { UserConfig } from 'vite';
-import { createRequire } from 'node:module';
-
-const require = createRequire(import.meta.url);
-
+import { enhancedImages } from '@sveltejs/enhanced-img';
 
 const config: UserConfig = {
-	plugins: [sveltekit()],
+	plugins: [enhancedImages(), sveltekit()],
 	build: {
 		rollupOptions: {
 			external: ['@resvg/resvg-js', 'css-tree']

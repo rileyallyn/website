@@ -1,19 +1,20 @@
 <script lang="ts">
 	import { Bars3Icon } from '@babeard/svelte-heroicons/solid';
 	export let open = false;
+	import pfp from '$lib/imgs/pfp.webp?enhanced';
 </script>
 
 <header class="block dark:text-white md:hidden pb-1 z-40 fixed top-0 left-0 w-full bg-black/90">
 	<nav class="flex pt-2 px-3 items-center gap-x-2">
-		<img
-			src="/pfp.webp"
+		<enhanced:img
+			src={pfp}
 			alt="Riley Smith looking at the aurora borealis"
 			class="rounded-full w-10 h-10"
 		/>
 		<a href="/" class="mr-auto title">
 			<h1 class="text-xl mr-auto">Riley Smith</h1>
 		</a>
-		<button on:click={() => (open = !open)} class="w-7 h-7 sm:hidden">
+		<button on:click={() => (open = !open)} class="w-7 h-7 sm:hidden" aria-label="Toggle menu">
 			<Bars3Icon />
 		</button>
 	</nav>

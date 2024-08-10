@@ -35,7 +35,7 @@
 		<Sidebar />
 	</div>
 	<div
-		class="overflow-y-auto styled-scrollbars md:mt-8 sm:max-w-2xl w-full p-3 md:p-0 pb-20 md:pb-0"
+		class="overflow-y-auto styled-scrollbars md:mt-8 sm:max-w-2xl w-full p-3 md:p-0 pb-20 md:pb-0 mt-4"
 	>
 		<slot />
 	</div>

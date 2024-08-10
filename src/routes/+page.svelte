@@ -6,35 +6,40 @@
 	import { Icon } from 'svelte-awesome';
 	import { github } from 'svelte-awesome/icons';
 	import Button from '$lib/ui/Button/Button.svelte';
-
-	const techUsed: Tech[] = [
+	const techImgs = import.meta.glob('$lib/imgs/*.svg', {
+		eager: true,
+		query: {
+			enhanced: true
+		}
+	});
+	let techUsed: Tech[] = [
 		{
 			name: 'React',
-			imgSrc: '/react.svg',
+			imgSrc: 'react.svg',
 			customClass: 'w-full  h-auto'
 		},
 		{
 			name: 'Next.js',
-			imgSrc: '/nextjs.svg',
+			imgSrc: 'nextjs.svg',
 			customClass: 'w-full '
 		},
 		{
 			name: 'Svelte',
-			imgSrc: '/svelte.svg',
+			imgSrc: 'svelte.svg',
 			customClass: 'w-full '
 		},
 		{
 			name: 'TypeScript',
-			imgSrc: '/ts.svg',
+			imgSrc: 'ts.svg',
 			customClass: 'w-full '
 		},
 		{
 			name: 'Go',
-			imgSrc: '/golang.svg'
+			imgSrc: 'golang.svg'
 		},
 		{
 			name: 'Rust',
-			imgSrc: '/rust.svg',
+			imgSrc: 'rust.svg',
 			customClass: 'w-full ',
 			imgClass: 'dark:invert'
 		}
@@ -58,6 +63,14 @@
 			link: 'https://github.com/qpixel/womp-womp'
 		}
 	];
+	for (const tech of techUsed) {
+		if (typeof techImgs === 'undefined' || !techImgs) {
+			break;
+		}
+		// TODO: Figure out the type shit
+		//@ts-ignore
+		tech.imgSrc = Object.entries(techImgs).find(([key, value]) => key.includes(tech.imgSrc))[1];
+	}
 </script>
 
 <svelte:head>
@@ -93,7 +106,7 @@
 					>
 						<CardItem className="mx-auto"
 							><img
-								src={tech.imgSrc}
+								src={tech.imgSrc.default}
 								alt={tech.name + ' logo'}
 								class={cn('w-auto h-32', tech.imgClass)}
 							/></CardItem

@@ -1,6 +1,6 @@
 export interface Tech {
 	name: string;
-	imgSrc: string;
+	imgSrc: any;
 	customClass?: string;
 	imgClass?: string;
 }
