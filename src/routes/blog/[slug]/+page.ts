@@ -1,10 +1,8 @@
 import { error, redirect } from "@sveltejs/kit";
 import type { PostMetadata } from "../../../types";
-import { browser } from "$app/environment";
-import { readingTime } from "reading-time-estimator";
 import type { PageLoad } from "./$types";
 
-export const prerender = true;
+export const prerender = 'auto';
 
 export const load: PageLoad = async ({ params, url, data }) => {
 	const { slug } = params;

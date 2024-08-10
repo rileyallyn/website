@@ -2,7 +2,7 @@
 title: Womp Womp
 datePublished: 2024-08-09
 description: How I made a funny website to track how many times I say 'Womp Womp'
-locked: false
+locked: true
 ---
 
 *As of right now, I have over 300 'womps' tracked on ['Womp Womp'](https://counter.womp.lol).*
