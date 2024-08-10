@@ -8,7 +8,7 @@
 	const { post, page } = data;
 </script>
 
-<Container className="bg-black/25">
+<Container className="dark:bg-black/25 bg-neutral-100/50">
 	<a href="/blog" class="flex items-center gap-x-2 text-gray-600 hover:underline">
 		<Icon data={arrowLeft} />
 		<span>Back to blog</span>

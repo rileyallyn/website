@@ -9,7 +9,7 @@
 </script>
 
 <aside
-	class="dark:text-white w-full absolute h-full bg-black py-40 block sm:hidden z-50"
+	class="dark:text-white w-full absolute h-full dark:bg-black py-40 block sm:hidden z-50 bg-neutral-100"
 	class:open
 >
 	<div class="absolute top-0 right-0">

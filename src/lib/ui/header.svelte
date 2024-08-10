@@ -4,7 +4,9 @@
 	import pfp from '$lib/imgs/pfp.webp?enhanced';
 </script>
 
-<header class="block dark:text-white md:hidden pb-1 z-40 fixed top-0 left-0 w-full bg-black/90">
+<header
+	class="block dark:text-white md:hidden pb-1 z-40 fixed top-0 left-0 w-full dark:bg-black/90 bg-neutral-100/90"
+>
 	<nav class="flex pt-2 px-3 items-center gap-x-2">
 		<enhanced:img
 			src={pfp}
