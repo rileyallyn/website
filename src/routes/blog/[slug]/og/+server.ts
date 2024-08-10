@@ -25,7 +25,11 @@ export const GET: RequestHandler = async ({ url }) => {
 		return new Response('Not found', { status: 404 });
 	}
 
-	const { title, description, datePublished: date } = metadata satisfies PostMetadata;
+	const { title, description, datePublished: date, locked } = metadata satisfies PostMetadata;
+
+	if (locked) {
+		return new Response('Not found', { status: 404 });
+	}
 
 
 	if (!title || !description) {
