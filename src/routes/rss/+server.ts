@@ -4,15 +4,15 @@ import type { PostMetadata } from '../../types';
 // Some code taken from https://kylenazario.com/blog/full-content-rss-feed-with-sveltekit-part-two
 
 async function getRssXml(url: string) {
-	url = url + '/rss.xml';
+	let rssUrl = url + '/rss.xml';
 	const root = create({ version: '1.0', encoding: 'UTF-8' })
 		.ele('feed', {
 			xmlns: 'http://www.w3.org/2005/Atom',
 		})
 		.ele('title').txt(`Riley Smith's Blog`).up()
-		.ele('link', { href: url }).up()
+		.ele('link', { href: rssUrl }).up()
 		.ele('updated').txt(new Date().toISOString()).up()
-		.ele('id').txt(url).up()
+		.ele('id').txt(rssUrl).up()
 		.ele('author')
 		.ele('name').txt('Riley Smith').up()
 		.ele('email').txt('riley@rileysmith.me').up()
