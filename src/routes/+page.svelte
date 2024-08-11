@@ -74,9 +74,7 @@
 </script>
 
 <svelte:head>
-	<title>Riley Smith | About</title>
-	<meta name="title" content="Riley Smith" />
-	<meta name="description" content="Software Developer" />
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
 </svelte:head>
 
 <Container>
