@@ -1,6 +1,6 @@
-import { error, redirect } from "@sveltejs/kit";
-import type { PostMetadata } from "../../../types";
-import type { PageLoad } from "./$types";
+import { error, redirect } from '@sveltejs/kit';
+import type { PostMetadata } from '../../../types';
+import type { PageLoad } from './$types';
 
 export const prerender = 'auto';
 
@@ -10,18 +10,13 @@ export const load: PageLoad = async ({ params, url, data }) => {
 
 	const [postResult] = await Promise.all([postPromise]);
 
-	const { default: page, metadata }: { default: any, metadata: PostMetadata } = postResult;
+	const { default: page, metadata }: { default: any; metadata: PostMetadata } = postResult;
 
 	if (!page) {
 		return error(404, 'Not found');
 	}
 
-	const {
-		title: postTitle,
-		datePublished,
-		description,
-		locked
-	} = metadata;
+	const { title: postTitle, datePublished, description, locked } = metadata;
 
 	if (locked) {
 		redirect(301, `/blog/`);
@@ -32,7 +27,7 @@ export const load: PageLoad = async ({ params, url, data }) => {
 			description,
 			postTitle,
 			slug,
-			timeToRead: data.timeToRead,
+			timeToRead: data.timeToRead
 		},
 		slug,
 		page,
@@ -41,6 +36,6 @@ export const load: PageLoad = async ({ params, url, data }) => {
 			description,
 			image: url.origin + '/blog/' + slug + '/og',
 			url: url.origin + '/blog/' + slug
-		},
+		}
 	};
-}
+};

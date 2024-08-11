@@ -7,12 +7,12 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config = {
 	// ... other properties
-	content: ["./src/**/*.{html,js,svelte,ts}"],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Inter', ...defaultTheme.fontFamily.sans],
+				sans: ['Inter', ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},

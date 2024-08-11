@@ -7,11 +7,11 @@ const config: UserConfig = {
 	build: {
 		rollupOptions: {
 			external: ['@resvg/resvg-js', 'css-tree']
-		},
+		}
 	},
 	optimizeDeps: {
 		exclude: ['@resvg/resvg-js']
-	},
+	}
 };
 
 export default config;

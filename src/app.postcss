@@ -3,7 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
 	overflow: hidden;
 }
 
@@ -13,7 +14,7 @@ body {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media(prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	body {
 		background-color: #000;
 		color: #fff;
@@ -79,25 +80,29 @@ body {
 		width: 10px; /* Mostly for vertical scrollbars */
 		height: 10px; /* Mostly for horizontal scrollbars */
 	}
-	.styled-scrollbars::-webkit-scrollbar-thumb { /* Foreground */
+	.styled-scrollbars::-webkit-scrollbar-thumb {
+		/* Foreground */
 		background: var(--purple-400);
 	}
-	.styled-scrollbars::-webkit-scrollbar-track { /* Background */
+	.styled-scrollbars::-webkit-scrollbar-track {
+		/* Background */
 		background: var(--purple-950);
 	}
 }
 .styled-scrollbars {
-  /* Foreground, Background */
-  scrollbar-color: var(--purple-400) var(--purple-100);
+	/* Foreground, Background */
+	scrollbar-color: var(--purple-400) var(--purple-100);
 	scrollbar-width: thin;
 }
 .styled-scrollbars::-webkit-scrollbar {
-  width: 5px; /* Mostly for vertical scrollbars */
-  height: 5px; /* Mostly for horizontal scrollbars */
+	width: 5px; /* Mostly for vertical scrollbars */
+	height: 5px; /* Mostly for horizontal scrollbars */
 }
-.styled-scrollbars::-webkit-scrollbar-thumb { /* Foreground */
-  background: var(--purple-400);
+.styled-scrollbars::-webkit-scrollbar-thumb {
+	/* Foreground */
+	background: var(--purple-400);
 }
-.styled-scrollbars::-webkit-scrollbar-track { /* Background */
-  background: var(--purple-100);
+.styled-scrollbars::-webkit-scrollbar-track {
+	/* Background */
+	background: var(--purple-100);
 }

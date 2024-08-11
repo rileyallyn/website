@@ -1,4 +1,4 @@
-import type { PostMetadata } from "../../types";
+import type { PostMetadata } from '../../types';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ url }) {
@@ -6,13 +6,13 @@ export async function load({ url }) {
 	const posts = await Promise.all(
 		Object.keys(mdModules).map(async (path) => {
 			const slug = path.split('/').at(-2);
-			const { metadata } = await mdModules[path]() as { metadata: PostMetadata };
+			const { metadata } = (await mdModules[path]()) as { metadata: PostMetadata };
 			const { datePublished, lastUpdated, title, description, locked } = metadata;
 			if (locked) {
 				return null;
 			}
 			return { datePublished, lastUpdated, title, description, slug };
-		}),
+		})
 	);
 	return {
 		posts,

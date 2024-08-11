@@ -13,7 +13,6 @@ export const GET: RequestHandler = async ({ url }) => {
 	const slug = url.pathname.split('/')[2];
 	const postPromise = import(`../../../../posts/${slug}/index.md`);
 
-
 	const [postResult] = await Promise.all([postPromise]);
 
 	if (!postResult) {
@@ -32,29 +31,32 @@ export const GET: RequestHandler = async ({ url }) => {
 		return new Response('Not found', { status: 404 });
 	}
 
-
 	if (!title || !description) {
 		return new Response('Missing title or description', { status: 400 });
 	}
 
-	return new ImageResponse(OG as any, {
-		height: 630,
-		width: 1200,
-		fonts: [
-			{
-				name: 'Inter Latin',
-				data: fontData400,
-				weight: 400
-			},
-			{
-				name: 'Inter Latin',
-				data: fontData700,
-				weight: 700
-			}
-		]
-	}, {
-		title,
-		description,
-		date
-	});
+	return new ImageResponse(
+		OG as any,
+		{
+			height: 630,
+			width: 1200,
+			fonts: [
+				{
+					name: 'Inter Latin',
+					data: fontData400,
+					weight: 400
+				},
+				{
+					name: 'Inter Latin',
+					data: fontData700,
+					weight: 700
+				}
+			]
+		},
+		{
+			title,
+			description,
+			date
+		}
+	);
 };
