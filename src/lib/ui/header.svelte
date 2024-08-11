@@ -16,7 +16,12 @@
 		<a href="/" class="mr-auto title">
 			<h1 class="text-xl mr-auto">Riley Smith</h1>
 		</a>
-		<button on:click={() => (open = !open)} class="w-7 h-7 sm:hidden" aria-label="Toggle menu">
+		<button
+			on:click={() => (open = !open)}
+			class="w-7 h-7 sm:hidden"
+			aria-label="Toggle sidebar menu"
+		>
+			<span class="sr-only">Toggle sidebar menu</span>
 			<Bars3Icon />
 		</button>
 	</nav>

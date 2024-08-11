@@ -98,6 +98,8 @@
 		</h1>
 		<div
 			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-4 sm:gap-y-8 py-4"
+			aria-label="Technologies I use"
+			role="list"
 		>
 			{#each techUsed as tech (tech.name)}
 				<CardContainer className={cn('w-full', tech.customClass)}>
@@ -124,7 +126,11 @@
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			Projects
 		</h1>
-		<ol class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4">
+		<ol
+			class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4"
+			aria-label="Projects I've worked on"
+			role="list"
+		>
 			{#each projects as project (project.name)}
 				<li class="md:last:col-span-2">
 					<CardContainer className="w-full" containerClassName="">
