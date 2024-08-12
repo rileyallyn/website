@@ -2,6 +2,7 @@
 title: Womp Womp
 datePublished: 2024-08-13
 description: How I made a funny website to track how many times I say 'Womp Womp'
+locked: true
 ---
 
 <script>
