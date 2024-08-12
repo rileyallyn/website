@@ -5,8 +5,9 @@ description: How I made a funny website to track how many times I say 'Womp Womp
 ---
 
 <script>
-	import astrodb from '$lib/imgs/blog/womp-womp/astrodb.png';
-	import mvp from '$lib/imgs/blog/womp-womp/mvp.png';
+	import astrodb from '$lib/imgs/blog/womp-womp/astrodb.png?enhanced';
+	import mvp from '$lib/imgs/blog/womp-womp/mvp.png?enhanced';
+	import counter1 from '$lib/imgs/blog/womp-womp/counter-1.png?enhanced';
 </script>
 
 _As of right now, I have over 300 'womps' tracked on ['Womp Womp'](https://counter.womp.lol)._
@@ -66,3 +67,5 @@ Additionally, I wanted to have a way to have usernames. This is where I decided 
 ```ts
 const username = await kv.get<string>(`user:${params.get('id')}`);
 ```
+
+[New UI showing the user's username]({counter1})

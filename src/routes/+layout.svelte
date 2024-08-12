@@ -10,22 +10,25 @@
 
 <svelte:head>
 	<!-- Primary Meta Tags -->
-	<title>{$page.data.meta.title}</title>
-	<meta name="title" content={$page.data.meta.title} />
-	<meta name="description" content={$page.data.meta.description} />
+	<title>{$page.data.meta.title || 'Riley Smith'}</title>
+	<meta name="title" content={$page.data.meta.title || 'Riley Smith'} />
+	<meta name="description" content={$page.data.meta.description || 'Software Engineer'} />
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={$page.data.meta.url} />
-	<meta property="og:title" content={$page.data.meta.title} />
-	<meta property="og:description" content={$page.data.meta.description} />
-	<meta property="og:image" content={$page.data.meta?.image} />
+	<meta property="og:url" content={$page.data.meta.url || 'https://rileyy.dev'} />
+	<meta property="og:title" content={$page.data.meta.title || 'Riley Smith'} />
+	<meta property="og:description" content={$page.data.meta.description || 'Software Engineer'} />
+	<meta property="og:image" content={$page.data.meta?.image || 'favicon.png'} />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content={$page.data.meta.url} />
-	<meta property="twitter:title" content={$page.data.meta.title} />
-	<meta property="twitter:description" content={$page.data.meta.description} />
-	<meta property="twitter:image" content={$page.data.meta?.image} />
+	<meta property="twitter:url" content={$page.data.meta.url || 'https://rileyy.dev'} />
+	<meta property="twitter:title" content={$page.data.meta.title || 'Riley Smith'} />
+	<meta
+		property="twitter:description"
+		content={$page.data.meta.description || 'Software Engineer'}
+	/>
+	<meta property="twitter:image" content={$page.data.meta?.image || 'favicon.png'} />
 </svelte:head>
 <GridBg className="-z-10 h-full w-full" />
 <Navbar bind:open />

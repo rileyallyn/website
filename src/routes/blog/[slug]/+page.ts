@@ -2,7 +2,9 @@ import { error, redirect } from '@sveltejs/kit';
 import type { PostMetadata } from '../../../types';
 import type { PageLoad } from './$types';
 
-export const prerender = 'auto';
+
+// TODO: Figure how to prerender with enhanced:img
+export const prerender = false;
 
 export const load: PageLoad = async ({ params, url, data }) => {
 	const { slug } = params;
