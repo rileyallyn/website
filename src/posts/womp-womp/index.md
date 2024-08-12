@@ -1,6 +1,6 @@
 ---
 title: Womp Womp
-datePublished: 2024-08-09
+datePublished: 2024-08-13
 description: How I made a funny website to track how many times I say 'Womp Womp'
 ---
 
@@ -68,4 +68,4 @@ Additionally, I wanted to have a way to have usernames. This is where I decided 
 const username = await kv.get<string>(`user:${params.get('id')}`);
 ```
 
-[New UI showing the user's username]({counter1})
+![New UI showing the user's username]({counter1})
