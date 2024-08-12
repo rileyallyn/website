@@ -1,18 +1,26 @@
 import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
 import aspectRatio from '@tailwindcss/aspect-ratio';
 import svgToDataUri from 'mini-svg-data-uri';
+import typography from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config = {
 	// ... other properties
-	content: ["./src/**/*.{html,js,svelte,ts}"],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {}
+		extend: {
+			fontFamily: {
+				sans: ['Inter', ...defaultTheme.fontFamily.sans]
+			}
+		}
 	},
 	plugins: [
 		// ...other plugins
 		aspectRatio,
 		addVariablesForColors,
+		typography,
 		function ({ matchUtilities, theme }: any) {
 			matchUtilities(
 				{
@@ -36,7 +44,7 @@ const config = {
 			);
 		}
 	]
-};
+} satisfies Config;
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {

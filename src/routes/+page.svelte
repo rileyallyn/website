@@ -1,41 +1,45 @@
 <script lang="ts">
 	import { CardContainer, CardBody, CardItem } from '$lib/ui/Card';
 	import type { Tech, Project } from '$lib/types';
-	import { fade, slide } from 'svelte/transition';
 	import { cn } from '$lib/utils';
 	import Container from '$lib/ui/container.svelte';
 	import { Icon } from 'svelte-awesome';
 	import { github } from 'svelte-awesome/icons';
 	import Button from '$lib/ui/Button/Button.svelte';
-
-	const techUsed: Tech[] = [
+	const techImgs = import.meta.glob('$lib/imgs/*.svg', {
+		eager: true,
+		query: {
+			enhanced: true
+		}
+	});
+	let techUsed: Tech[] = [
 		{
 			name: 'React',
-			imgSrc: '/react.svg',
+			imgSrc: 'react.svg',
 			customClass: 'w-full  h-auto'
 		},
 		{
 			name: 'Next.js',
-			imgSrc: '/nextjs.svg',
+			imgSrc: 'nextjs.svg',
 			customClass: 'w-full '
 		},
 		{
 			name: 'Svelte',
-			imgSrc: '/svelte.svg',
+			imgSrc: 'svelte.svg',
 			customClass: 'w-full '
 		},
 		{
 			name: 'TypeScript',
-			imgSrc: '/ts.svg',
+			imgSrc: 'ts.svg',
 			customClass: 'w-full '
 		},
 		{
 			name: 'Go',
-			imgSrc: '/golang.svg'
+			imgSrc: 'golang.svg'
 		},
 		{
 			name: 'Rust',
-			imgSrc: '/rust.svg',
+			imgSrc: 'rust.svg',
 			customClass: 'w-full ',
 			imgClass: 'dark:invert'
 		}
@@ -59,15 +63,21 @@
 			link: 'https://github.com/qpixel/womp-womp'
 		}
 	];
+	for (const tech of techUsed) {
+		if (typeof techImgs === 'undefined' || !techImgs) {
+			break;
+		}
+		// TODO: Figure out the type shit
+		//@ts-ignore
+		tech.imgSrc = Object.entries(techImgs).find(([key, value]) => key.includes(tech.imgSrc))[1];
+	}
 </script>
 
 <svelte:head>
-	<title>Riley Smith | About</title>
-	<meta name="title" content="Riley Smith" />
-	<meta name="description" content="Software Developer" />
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
 </svelte:head>
 
-<Container className="max-w-2xl">
+<Container>
 	<section class="" id="about">
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			About Me
@@ -85,16 +95,18 @@
 			Tech I Use
 		</h1>
 		<div
-			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-8 sm:gap-y-8 py-4"
+			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-4 sm:gap-y-8 py-4"
+			aria-label="Technologies I use"
+			role="list"
 		>
 			{#each techUsed as tech (tech.name)}
 				<CardContainer className={cn('w-full', tech.customClass)}>
 					<CardBody
-						className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
+						className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border"
 					>
 						<CardItem className="mx-auto"
 							><img
-								src={tech.imgSrc}
+								src={tech.imgSrc.default}
 								alt={tech.name + ' logo'}
 								class={cn('w-auto h-32', tech.imgClass)}
 							/></CardItem
@@ -112,9 +124,13 @@
 		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
 			Projects
 		</h1>
-		<ol class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4">
+		<ol
+			class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4"
+			aria-label="Projects I've worked on"
+			role="list"
+		>
 			{#each projects as project (project.name)}
-				<li class="last:col-span-2">
+				<li class="md:last:col-span-2">
 					<CardContainer className="w-full" containerClassName="">
 						<CardBody
 							className="bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"

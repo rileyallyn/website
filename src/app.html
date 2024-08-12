@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta name="darkreader-lock" />
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
-
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="%sveltekit.url%" />
-		<meta property="og:title" content="Riley Smith" />
-		<meta property="og:description" content="Software Developer" />
-		<meta property="og:image" content="%sveltekit.assets%/favicon.png" />
-
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="%sveltekit.url%" />
-		<meta property="twitter:title" content="Riley Smith" />
-		<meta property="twitter:description" content="Software Developer" />
-		<meta property="twitter:image" content="%sveltekit.assets%/favicon.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
 
 		%sveltekit.head%
 	</head>
-	<body>
+	<body class="absolute h-dvh w-dvw antialiased">
 		<div class="contents">%sveltekit.body%</div>
 	</body>
 </html>

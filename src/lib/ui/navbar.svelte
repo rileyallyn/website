@@ -9,11 +9,16 @@
 </script>
 
 <aside
-	class="dark:text-white w-full absolute h-full bg-black py-40 block sm:hidden z-50"
+	class="dark:text-white w-full absolute h-full dark:bg-black py-40 block sm:hidden z-50 bg-neutral-100"
 	class:open
 >
 	<div class="absolute top-0 right-0">
-		<button on:click={() => (open = !open)} class=" w-7 h-7 md:hidden mt-2 mx-4">
+		<button
+			on:click={() => (open = !open)}
+			class=" w-7 h-7 md:hidden mt-2 mx-4"
+			aria-label="Toggle sidebar menu"
+		>
+			<span class="sr-only">Toggle sidebar menu</span>
 			<XMarkIcon />
 		</button>
 	</div>

@@ -1,17 +1,23 @@
 import adapter from '@sveltejs/adapter-netlify';
-import preprocess from 'svelte-preprocess';
-import seqPreprocessor from 'svelte-sequential-preprocessor'
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: seqPreprocessor([preprocess({ postcss: true })]),
-
+	extensions: ['.svelte', '.md', '.svx'],
+	preprocess: [
+		vitePreprocess({}),
+		mdsvex({
+			extensions: ['.md', '.svx'],
+			layout: { _: 'src/lib/layouts/blog.svelte' }
+		})
+	],
 	kit: {
 		adapter: adapter({
 			edge: false,
-			split: false,
+			split: false
 		})
 	}
 };
