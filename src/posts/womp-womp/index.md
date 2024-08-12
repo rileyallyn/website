@@ -97,7 +97,7 @@ I wanted to add a little polish to the site, so I decided that it needed a bit o
 
 ![The redesigned site]({counter3})
 
-While being similar to the original verison, I think the counter being a bit more prominent works a lot better.
+While being similar to the original version, I think the counter being a bit more prominent works a lot better.
 
 
 ### Vercel kinda sucks
@@ -117,13 +117,13 @@ Because of the great integration that Astro has with Cloudflare, I had minimal c
 
 ### The future
 
-I've made a small amount of changes since the CloudFlare upgrade. I've optimized database calls using batching, and I've added quarterly resets to the leaderboard. 
+I've made a small amount of changes since the CloudFlare upgrade. Furthermore, I've optimized database calls using batching, and I've added quarterly resets to the leaderboard. 
 
 ![Leaderboard with the quarter tabs]({counterQuarters})
 
 I also migrated from Astro to SvelteKit, since my plans changed to have a more dynamic site. That migration, while not painless, wasn't too bad.
 
-Near the end of my academic year, it became more of a burden to put entires on the counter. Especially since I was having issues with user authentication. So it's been left as a side project for now. I might revisit it and give it a proper android/ios app. This would allow them to have a widget on their homescreen to easily track their 'womps'.
+Near the end of my academic year, it became more of a burden to put entries on the counter. Especially since I was having issues with user authentication. So it's been left as a side project for now. I might revisit it and give it a proper Android/iOS app. This would allow them to have a widget on their home screen to easily track their 'womps'.
 
 This was a fun project to make, and I'm glad I was able to make it. It taught me a lot about SQL, and how to make proper migrations. I'm excited to see what future 'meme' projects I will make.
 
