@@ -33,7 +33,7 @@
 <GridBg className="-z-10 h-full w-full" />
 <Navbar bind:open />
 <Header bind:open />
-<div class="relative flex flex-row h-dvh w-full overflow-auto pt-8">
+<div class="relative flex flex-row h-dvh w-full pt-8">
 	<div class="relative z-40 overflow-hidden ml-14 lg:ml-40 hidden md:block">
 		<Sidebar />
 	</div>
