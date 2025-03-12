@@ -1,6 +1,4 @@
 <script>
-	import { Icon } from 'svelte-awesome';
-	import { github, instagram, linkedinSquare, envelope } from 'svelte-awesome/icons';
 	import Socials from './socials.svelte';
 	import pfp from '$lib/imgs/pfp.webp?enhanced';
 
