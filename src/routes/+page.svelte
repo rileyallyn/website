@@ -12,6 +12,7 @@
 			enhanced: true
 		}
 	});
+
 	let techUsed: Tech[] = [
 		{
 			name: 'React',
@@ -44,6 +45,7 @@
 			imgClass: 'dark:invert'
 		}
 	];
+
 	const projects: Project[] = [
 		{
 			name: 'Resume',
@@ -63,6 +65,7 @@
 			link: 'https://github.com/qpixel/womp-womp'
 		}
 	];
+
 	for (const tech of techUsed) {
 		if (typeof techImgs === 'undefined' || !techImgs) {
 			break;
