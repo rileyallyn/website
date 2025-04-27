@@ -1,6 +1,5 @@
-<script>
-	export let src;
-	export let alt;
+<script lang="ts">
+	let { src, alt } = $props();
 </script>
 
 <div class="flex flex-col items-center justify-center">

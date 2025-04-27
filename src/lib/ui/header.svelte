@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { Bars3Icon } from '@babeard/svelte-heroicons/solid';
-	export let open = false;
 	import pfp from '$lib/imgs/pfp.webp?enhanced';
+	interface Props {
+		open?: boolean;
+	}
+
+	let { open = $bindable(false) }: Props = $props();
 </script>
 
 <header
@@ -17,7 +21,7 @@
 			<h1 class="text-xl mr-auto">Riley Smith</h1>
 		</a>
 		<button
-			on:click={() => (open = !open)}
+			onclick={() => (open = !open)}
 			class="w-7 h-7 sm:hidden"
 			aria-label="Toggle sidebar menu"
 		>

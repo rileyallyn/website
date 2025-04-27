@@ -1,8 +1,13 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/cn';
 
-	export let showFade: boolean = true;
-	export let className: string = '';
+	interface Props {
+		showFade?: boolean;
+		className?: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { showFade = true, className = '', children }: Props = $props();
 </script>
 
 <div
@@ -12,10 +17,10 @@
 	)}
 >
 	<!-- Radial gradient for the container to give a faded look -->
-	<slot />
+	{@render children?.()}
 	{#if showFade}
 		<div
 			class="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"
-		/>
+		></div>
 	{/if}
 </div>

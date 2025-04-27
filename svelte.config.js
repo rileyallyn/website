@@ -18,7 +18,11 @@ const config = {
 		adapter: adapter({
 			edge: false,
 			split: false
-		})
+		}),
+		alias: {
+			$lib: 'src/lib',
+			'~/*': 'src/*'
+		}
 	}
 };
 

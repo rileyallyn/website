@@ -1,17 +1,24 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	let data: HTMLAnchorElement | undefined;
-	let id: string = '';
-	$: id =
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
+	let data: HTMLAnchorElement | undefined = $state();
+	let id: string = $state('');
+	let cleanedId = $derived(
 		data?.innerHTML
 			.toLocaleLowerCase()
 			.replace(/[^a-zA-Z0-9 ]/g, '')
 			.split(' ')
-			.join('-') || '';
+			.join('-') || ''
+	);
 	// Copy the link to the clipboard
-	$: copy = false;
+	let copy = $state(false);
+
 	const onClickCopy = () => {
-		const url = `${window.location.origin}${window.location.pathname}#${id}`;
+		const url = `${window.location.origin}${window.location.pathname}#${cleanedId}`;
 		copy = true;
 		navigator.clipboard.writeText(url);
 		setTimeout(() => {
@@ -21,8 +28,13 @@
 </script>
 
 <h3 {id} class="flex flex-row gap-y-2">
-	<a href={`#${id}`} class="anchor font-bold max-w-fit" bind:this={data} on:click={onClickCopy}>
-		<slot />
+	<a
+		href={`#${cleanedId}`}
+		class="anchor font-bold max-w-fit"
+		bind:this={data}
+		onclick={onClickCopy}
+	>
+		{@render children?.()}
 	</a>
 	{#if copy}
 		<div

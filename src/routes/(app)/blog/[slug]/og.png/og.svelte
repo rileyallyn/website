@@ -1,8 +1,13 @@
 <script lang="ts">
-	// @ts-nocheck
-	export let title: string;
-	export let description: string;
-	export let date: string;
+	
+	interface Props {
+		// @ts-nocheck
+		title: string;
+		description: string;
+		date: string;
+	}
+
+	let { title, description, date }: Props = $props();
 </script>
 
 <div tw="bg-neutral-900 flex w-full h-full">
@@ -16,14 +21,14 @@
 				  })
 				: ''}
 		</h1>
-		<div tw="max-w-xs border-b-2 border-purple-500 w-full flex" />
+		<div tw="max-w-xs border-b-2 border-purple-500 w-full flex"></div>
 		<h2 tw="flex flex-col font-bold text-white text-left">
 			<span tw="text-6xl tracking-tight">{title}</span>
 			<span tw="text-purple-500 font-normal max-w-2xl mt-2 text-4xl">"{description}..."</span>
 		</h2>
 	</div>
 	<div tw="absolute bottom-0 left-0 pl-12 flex flex-row items-center w-full pb-10">
-		<!-- svelte-ignore a11y-missing-attribute -->
+		<!-- svelte-ignore a11y_missing_attribute -->
 		<img
 			tw="rounded-full"
 			height="50"

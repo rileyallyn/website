@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	import Container from '$lib/ui/container.svelte';
-	export let data;
+	let { data } = $props();
 	const { posts } = data;
 </script>
 

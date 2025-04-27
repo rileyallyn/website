@@ -2,14 +2,15 @@ import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { readingTime } from 'reading-time-estimator';
 import type { EntryGenerator } from './$types';
-import type { PostMetadata } from '../../../types';
+import type { PostMetadata } from '~/types';
+import { render } from 'svelte/server';
 
 function getReadingTime(input: string) {
 	return readingTime(input).text;
 }
 
 export const entries: EntryGenerator = async () => {
-	const mdModules = import.meta.glob('../../../posts/**/index.md');
+	const mdModules = import.meta.glob('~/posts/**/index.md');
 	const posts = await Promise.all(
 		Object.keys(mdModules).map(async (path) => {
 			const slug = path.split('/').at(-2);
@@ -30,7 +31,9 @@ export const load: PageServerLoad = async ({ params: { slug } }) => {
 	if (!postResult) {
 		return error(404, 'Not found');
 	}
-	const timeToRead = getReadingTime(postResult.default.render().html);
+
+	const timeToRead = getReadingTime(render(postResult.default).body);
+
 	return {
 		timeToRead
 	};

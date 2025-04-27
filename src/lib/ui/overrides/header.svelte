@@ -6,22 +6,27 @@
 		tag?: HeadingLevel;
 	};
 
-	let className: $$Props['class'] = undefined;
-	export let tag: $$Props['tag'] = 'h3';
+	interface Props {
+		class?: $$Props['class'];
+		tag?: $$Props['tag'];
+		children?: import('svelte').Snippet;
+	}
 
-	let data: HTMLAnchorElement | undefined;
-	let id: string = '';
-	$: id =
-		data?.innerHTML
+	let { class: className = undefined, tag = 'h3', children }: Props = $props();
+
+	let data: HTMLAnchorElement | undefined = $state();
+	let id: string = $state('');
+	let id =
+		$derived(data?.innerHTML
 			.toLocaleLowerCase()
 			.replace(/[^a-zA-Z0-9 ]/g, '')
 			.split(' ')
-			.join('-') || '';
-	export { className as class };
+			.join('-') || '');
+	
 </script>
 
 <svelte:element this={tag} class={className}>
 	<a href={`#${id}`} class="anchor font-bold" bind:this={data}>
-		<slot />
+		{@render children?.()}
 	</a>
 </svelte:element>

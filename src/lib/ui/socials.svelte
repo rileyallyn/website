@@ -2,8 +2,12 @@
 	import { cn } from '$lib/utils';
 	import Icon from 'svelte-awesome';
 	import { github, linkedinSquare, instagram, envelope } from 'svelte-awesome/icons';
-	export let scale = 1.5;
-	export let className: string = '';
+	interface Props {
+		scale?: number;
+		className?: string;
+	}
+
+	let { scale = 1.5, className = '' }: Props = $props();
 </script>
 
 <div class={cn('flex gap-x-2 mt-2 dark:text-white', className)}>

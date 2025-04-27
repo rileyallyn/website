@@ -1,10 +1,14 @@
-<script>
+<script lang="ts">
 	import { XMarkIcon } from '@babeard/svelte-heroicons/solid';
 	import Icon from 'svelte-awesome';
 	import { github, instagram, linkedinSquare } from 'svelte-awesome/icons';
 	import Socials from './socials.svelte';
 
-	export let open = false;
+	interface Props {
+		open?: boolean;
+	}
+
+	let { open = $bindable(false) }: Props = $props();
 	let iconScale = 3;
 </script>
 
@@ -14,7 +18,7 @@
 >
 	<div class="absolute top-0 right-0">
 		<button
-			on:click={() => (open = !open)}
+			onclick={() => (open = !open)}
 			class=" w-7 h-7 md:hidden mt-2 mx-4"
 			aria-label="Toggle sidebar menu"
 		>
@@ -26,10 +30,10 @@
 	<nav class="flex pt-2 px-4 items-center gap-x-2">
 		<ul class="font-bold text-4xl gap-y-2 mt-4 flex flex-col w-full">
 			<li>
-				<a href="/" on:click={() => (open = false)}>About</a>
+				<a href="/" onclick={() => (open = false)}>About</a>
 			</li>
 			<li>
-				<a href="/blog" on:click={() => (open = false)}>Blog</a>
+				<a href="/blog" onclick={() => (open = false)}>Blog</a>
 			</li>
 			<li>
 				<a href="https://resume.rileyy.dev">Resume</a>

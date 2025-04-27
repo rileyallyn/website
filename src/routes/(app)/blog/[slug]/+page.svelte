@@ -4,7 +4,11 @@
 	import type { PageData } from './$types';
 	import arrowLeft from 'svelte-awesome/icons/arrowLeft';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	const { post, page } = data;
 </script>
 
@@ -13,6 +17,7 @@
 		<Icon data={arrowLeft} />
 		<span>Back to blog</span>
 	</a>
+	{@const SvelteComponent = page}
 	<div class="flex flex-col gap-y-6">
 		<div class="flex flex-col gap-y-2 border-b-2 border-purple-900 pb-4">
 			<div class="flex items-center gap-x-2">
@@ -31,7 +36,7 @@
 			</div>
 		</div>
 		<article class="prose prose-zinc dark:prose-invert max-w-[40rem]">
-			<svelte:component this={page} />
+			<SvelteComponent />
 		</article>
 	</div>
 </Container>

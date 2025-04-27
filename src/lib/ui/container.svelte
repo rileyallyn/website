@@ -1,7 +1,12 @@
-<script>
+<script lang="ts">
 	import { cn } from '$lib/utils';
 	import { slide } from 'svelte/transition';
-	export let className = '';
+	interface Props {
+		className?: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { className = '', children }: Props = $props();
 </script>
 
 <main
@@ -12,5 +17,5 @@
 	in:slide={{ duration: 500 }}
 	out:slide={{ duration: 500 }}
 >
-	<slot />
+	{@render children?.()}
 </main>

@@ -1,10 +1,18 @@
-<script context="module">
+<script module>
 	import 'prism-themes/themes/prism-duotone-dark.css';
 
 	import h2 from '$lib/ui/overrides/h2.svelte';
 	import h3 from '$lib/ui/overrides/h3.svelte';
 	import img from '$lib/ui/Image.svelte';
-	export { h2, h3, img };
+	export { h2, h3 };
 </script>
 
-<slot />
+<script lang="ts">
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
+</script>
+
+{@render children?.()}
