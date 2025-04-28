@@ -11,14 +11,28 @@
 		<div class="flex items-center gap-x-2">
 			<div class="flex flex-col">
 				<a href="/blog/{post.slug}" class="text-lg font-bold hover:underline">{post.title}</a>
-				<p class="text-sm text-gray-500">
-					{new Date(post.datePublished).toLocaleDateString('en-US', {
-						month: 'long',
-						day: 'numeric',
-						year: 'numeric',
-						timeZone: 'UTC'
-					})}
-				</p>
+				<div class="flex items-center gap-x-2">
+					<p class="text-sm text-gray-500">
+						{new Date(post.datePublished).toLocaleDateString('en-US', {
+							month: 'long',
+							day: 'numeric',
+							year: 'numeric',
+							timeZone: 'America/Los_Angeles'
+						})}
+					</p>
+					{#if post.lastUpdated}
+						<p class="text-xs text-gray-600 italic">
+							(Last updated: {new Date(post.lastUpdated).toLocaleDateString('en-US', {
+								month: 'long',
+								day: 'numeric',
+								year: 'numeric',
+								hour: 'numeric',
+								minute: 'numeric',
+								timeZone: 'America/Los_Angeles'
+							})})
+						</p>
+					{/if}
+				</div>
 			</div>
 		</div>
 		<p class="text-sm text-gray-500">{post.description}</p>

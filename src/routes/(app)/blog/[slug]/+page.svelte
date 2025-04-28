@@ -34,14 +34,28 @@
 			<div class="flex items-center gap-x-2">
 				<div class="flex flex-col">
 					<h1 class="text-xl font-bold">{post.postTitle}</h1>
-					<p class="text-sm text-gray-500">
-						{new Date(post.datePublished).toLocaleDateString('en-US', {
-							month: 'long',
-							day: 'numeric',
-							year: 'numeric',
-							timeZone: 'UTC'
-						})}
-					</p>
+					<div class="flex flex-row gap-x-2">
+						<p class="text-sm text-gray-500">
+							{new Date(post.datePublished).toLocaleDateString('en-US', {
+								month: 'long',
+								day: 'numeric',
+								year: 'numeric',
+								timeZone: 'UTC'
+							})}
+						</p>
+						{#if post.lastUpdated}
+							<p class="text-sm text-gray-600 italic">
+								(Last updated: {new Date(post.lastUpdated).toLocaleDateString('en-US', {
+									month: 'long',
+									day: 'numeric',
+									year: 'numeric',
+									hour: 'numeric',
+									minute: 'numeric',
+									timeZone: 'UTC'
+								})})
+							</p>
+						{/if}
+					</div>
 					<p class="text-sm text-gray-500">{post.timeToRead}</p>
 					{#if post.tags}
 						<div class="flex flex-wrap gap-x-2 mt-2">

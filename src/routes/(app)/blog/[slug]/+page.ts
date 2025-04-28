@@ -17,7 +17,7 @@ export const load: PageLoad = async ({ params, url, data }) => {
 		return error(404, 'Not found');
 	}
 
-	const { title: postTitle, datePublished, description, locked, tags } = metadata;
+	const { title: postTitle, datePublished, lastUpdated, description, locked, tags } = metadata;
 
 	if (locked) {
 		redirect(301, `/blog/`);
@@ -25,6 +25,7 @@ export const load: PageLoad = async ({ params, url, data }) => {
 	return {
 		post: {
 			datePublished,
+			lastUpdated,
 			description,
 			postTitle,
 			slug,
