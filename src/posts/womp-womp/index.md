@@ -2,11 +2,12 @@
 title: Womp Womp
 datePublished: 2024-08-12
 description: How I made a funny website to track how many times I say 'Womp Womp'
+tags: [projects, webdev]
 ---
 
 <script>
 	import astrodb from '$lib/imgs/blog/womp-womp/astrodb.png?enhanced';
-	import mvp from '$lib/imgs/blog/womp-womp/mvp.png?enhanced';
+	import mvp from '$lib/imgs/blog/womp-womp/mvp.png';
 	import counter1 from '$lib/imgs/blog/womp-womp/counter-1.png?enhanced';
 	import counter2 from '$lib/imgs/blog/womp-womp/counter-2.png?enhanced';
 	import counter3 from '$lib/imgs/blog/womp-womp/counter-3.png?enhanced';
@@ -25,11 +26,13 @@ So I decided to make a website to allow my friends to track how many times I say
 
 The original version of the site was built with [Astro](https://astro.build), using their new DB product called Astro DB. It was meant to be a simple website to track how many times I say 'Womp Womp'.
 
-![The MVP of the website]({mvp})
+![The MVP of the website]($lib/imgs/blog/womp-womp/mvp.png)
 
 In fact! It didn't even store the individual entries of someone pushing the button! I was just running an SQL update transaction.
 
+
 ![Astro DB's dashboard]({astrodb})
+
 
 After a few days, it became obvious that if I wanted to keep user interaction with the game, I would need to add leaderboards.
 

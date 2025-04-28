@@ -3,7 +3,7 @@
 	import { Icon } from 'svelte-awesome';
 	import type { PageData } from './$types';
 	import arrowLeft from 'svelte-awesome/icons/arrowLeft';
-
+	import { Badge } from '$lib/ui/Badge';
 	interface Props {
 		data: PageData;
 	}
@@ -13,10 +13,21 @@
 </script>
 
 <Container className="dark:bg-black/25 bg-neutral-100/50">
-	<a href="/blog" class="flex items-center gap-x-2 text-gray-600 hover:underline">
-		<Icon data={arrowLeft} />
-		<span>Back to blog</span>
-	</a>
+	{#if post.slug}
+		<nav aria-label="Breadcrumb" class="py-2">
+			<ol class="flex items-center space-x-2 text-sm">
+				<li>
+					<a href="/blog" class="text-gray-600 hover:text-purple-400 hover:underline">Blog</a>
+				</li>
+				<li class="flex items-center">
+					<span class="mx-1 text-gray-400">/</span>
+					<a href="/blog/{post.slug}" class="font-medium text-purple-400 hover:underline"
+						>{post.postTitle}</a
+					>
+				</li>
+			</ol>
+		</nav>
+	{/if}
 	{@const SvelteComponent = page}
 	<div class="flex flex-col gap-y-6">
 		<div class="flex flex-col gap-y-2 border-b-2 border-purple-900 pb-4">
@@ -32,6 +43,15 @@
 						})}
 					</p>
 					<p class="text-sm text-gray-500">{post.timeToRead}</p>
+					{#if post.tags}
+						<div class="flex flex-wrap gap-x-2 mt-2">
+							{#each post.tags as tag}
+								<a href={`/blog/tags/${tag}`}>
+									<Badge variant="outline">{tag}</Badge>
+								</a>
+							{/each}
+						</div>
+					{/if}
 				</div>
 			</div>
 		</div>

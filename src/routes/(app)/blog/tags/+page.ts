@@ -3,19 +3,22 @@ import type { PostMetadata } from '~/types';
 /** @type {import('./$types').PageLoad} */
 export async function load({ url }) {
 	const mdModules = import.meta.glob('~/posts/**/index.md');
-	const posts = await Promise.all(
+	const tags = await Promise.all(
 		Object.keys(mdModules).map(async (path) => {
-			const slug = path.split('/').at(-2);
 			const { metadata } = (await mdModules[path]()) as { metadata: PostMetadata };
-			const { datePublished, lastUpdated, title, description, locked, tags } = metadata;
+			const { tags, locked } = metadata;
+
 			if (locked) {
 				return null;
 			}
-			return { datePublished, lastUpdated, title, description, slug, tags };
+			return tags;
 		})
 	);
+	// flatten tags
+	const flattenedTags = tags.flat().filter((x) => x !== null);
+	const uniqueTags = [...new Set(flattenedTags)];
 	return {
-		posts,
+		tags: uniqueTags,
 		meta: {
 			title: 'Blog | Riley Smith',
 			description: 'Writing about random things I find interesting.',

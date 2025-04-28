@@ -1,5 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import type { PostMetadata } from '../../../../types';
+import type { PostMetadata } from '~/types';
 import { ImageResponse } from '@ethercorps/sveltekit-og';
 import OG from './og.svelte';
 
@@ -11,7 +11,7 @@ const fontData700: ArrayBuffer = await fontFile700.arrayBuffer();
 
 export const GET: RequestHandler = async ({ url }) => {
 	const slug = url.pathname.split('/')[2];
-	const postPromise = import(`../../../../posts/${slug}/index.md`);
+	const postPromise = import(`~/posts/${slug}/index.md`);
 
 	const [postResult] = await Promise.all([postPromise]);
 

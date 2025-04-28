@@ -1,7 +1,8 @@
-import type { PostMetadata } from '~/types';
+import type { PostMetadata } from "~/types";
 
-/** @type {import('./$types').PageLoad} */
-export async function load({ url }) {
+
+
+export const load = async ({ params: { slug: tag } }) => {
 	const mdModules = import.meta.glob('~/posts/**/index.md');
 	const posts = await Promise.all(
 		Object.keys(mdModules).map(async (path) => {
@@ -11,16 +12,28 @@ export async function load({ url }) {
 			if (locked) {
 				return null;
 			}
-			return { datePublished, lastUpdated, title, description, slug, tags };
+			if (!tags?.includes(tag)) {
+				return null;
+			}
+			return {
+				datePublished,
+				lastUpdated,
+				title,
+				description,
+				slug,
+				tags
+			};
 		})
 	);
+
 	return {
 		posts,
+		tag,
 		meta: {
-			title: 'Blog | Riley Smith',
-			description: 'Writing about random things I find interesting.',
-			url: url.origin + '/blog',
-			image: '../favicon.png'
+			title: `Blog | ${tag}`,
+			description: `Blog posts tagged with ${tag}`,
+			url: `/blog/tags/${tag}`,
+			image: `/favicon.png`
 		}
 	};
-}
+};

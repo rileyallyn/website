@@ -5,4 +5,5 @@ export interface PostMetadata {
 	lastUpdated: string;
 	locked: boolean;
 	timeToRead?: string;
+	tags?: string[];
 }

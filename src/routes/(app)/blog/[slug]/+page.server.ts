@@ -6,7 +6,7 @@ import type { PostMetadata } from '~/types';
 import { render } from 'svelte/server';
 
 function getReadingTime(input: string) {
-	return readingTime(input).text;
+	return readingTime(input, 200).text;
 }
 
 export const entries: EntryGenerator = async () => {
@@ -26,13 +26,13 @@ export const entries: EntryGenerator = async () => {
 };
 
 export const load: PageServerLoad = async ({ params: { slug } }) => {
-	const postPromise = import(`../../../posts/${slug}/index.md`).catch(() => null);
+	const postPromise = import(`~/posts/${slug}/index.md`).catch(() => null);
 	const [postResult] = await Promise.all([postPromise]);
 	if (!postResult) {
 		return error(404, 'Not found');
 	}
-
-	const timeToRead = getReadingTime(render(postResult.default).body);
+	const body = render(postResult.default).body;
+	const timeToRead = getReadingTime(body);
 
 	return {
 		timeToRead
