@@ -17,7 +17,7 @@ export async function load({ url }) {
 	return {
 		posts,
 		meta: {
-			title: 'Blog | Riley Smith',
+			title: 'Blog',
 			description: 'Writing about random things I find interesting.',
 			url: url.origin + '/blog',
 			image: '../favicon.png'

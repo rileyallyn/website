@@ -20,7 +20,7 @@ export async function load({ url }) {
 	return {
 		tags: uniqueTags,
 		meta: {
-			title: 'Blog | Riley Smith',
+			title: 'Blog',
 			description: 'Writing about random things I find interesting.',
 			url: url.origin + '/blog',
 			image: '../favicon.png'

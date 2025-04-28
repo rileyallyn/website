@@ -3,7 +3,7 @@ import type { PageLoad } from './$types';
 export const load: PageLoad = ({ url }) => {
 	return {
 		meta: {
-			title: 'About | Riley Smith',
+			title: 'About',
 			description: 'Software Developer',
 			image: '/favicon.png',
 			url: url.origin
