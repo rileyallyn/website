@@ -1,6 +1,7 @@
 ---
 title: OG Images and why caching is important
 datePublished: 2025-04-28
+locked: true
 description: How I made the OG images for my blog and why you need to cache heavily read resources
 tags: [projects, webdev, svelte]
 ---
