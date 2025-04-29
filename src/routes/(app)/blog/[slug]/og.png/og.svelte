@@ -1,5 +1,4 @@
 <script lang="ts">
-	
 	interface Props {
 		// @ts-nocheck
 		title: string;
@@ -18,7 +17,7 @@
 						month: 'long',
 						day: 'numeric',
 						year: 'numeric'
-				  })
+					})
 				: ''}
 		</h1>
 		<div tw="max-w-xs border-b-2 border-purple-500 w-full flex"></div>
