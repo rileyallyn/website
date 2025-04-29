@@ -1,8 +1,11 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import type { PostMetadata } from '~/types';
 import { ImageResponse } from '@ethercorps/sveltekit-og';
-import { getStore } from '@netlify/blobs';
+import { connectLambda, getStore } from '@netlify/blobs';
 import OG from './og.svelte';
+
+// lmao.
+type LambdaEvent = Parameters<typeof connectLambda>[0];
 
 const fontFile400 = await fetch('https://og-playground.vercel.app/inter-latin-ext-400-normal.woff');
 const fontData400: ArrayBuffer = await fontFile400.arrayBuffer();
@@ -10,7 +13,7 @@ const fontData400: ArrayBuffer = await fontFile400.arrayBuffer();
 const fontFile700 = await fetch('https://og-playground.vercel.app/inter-latin-ext-700-normal.woff');
 const fontData700: ArrayBuffer = await fontFile700.arrayBuffer();
 
-export const GET: RequestHandler = async ({ url }) => {
+export const GET: RequestHandler = async ({ url, platform }) => {
 	const slug = url.pathname.split('/')[2];
 	const postPromise = import(`~/posts/${slug}/index.md`);
 
@@ -35,18 +38,35 @@ export const GET: RequestHandler = async ({ url }) => {
 	if (!title || !description) {
 		return new Response('Missing title or description', { status: 400 });
 	}
-	const store = getStore('og-images');
+
+	connectLambda(platform?.context as LambdaEvent);
+
+	const store = getStore({
+		name: 'og-images',
+		siteID: process.env.SITE_ID,
+		token: process.env.NETLIFY_BLOB
+	});
+
+	console.log(process.env);
+
 	// this should be a blob, but it's not
-	const { data: image } = await store.getWithMetadata(`${slug}.png`, { type: 'arrayBuffer' });
+	const data = await store.getWithMetadata(`${slug}.png`, { type: 'arrayBuffer' });
+	// cache miss, we need to generate the image
 	let shouldReturnCache = true;
 
+	let image: ArrayBuffer | null = null;
+
+	if (!data) {
+		shouldReturnCache = false;
+		image = null;
+	} else {
+		image = data.data;
+	}
 
 	// if the last updated date is within the last 24 hours, return the cached image
 	if (lastUpdated && new Date(lastUpdated).getTime() > Date.now() - 24 * 60 * 60 * 1000) {
 		shouldReturnCache = false;
 	}
-
-	console.log(shouldReturnCache);
 
 	if (image && shouldReturnCache) {
 		return new Response(image, {

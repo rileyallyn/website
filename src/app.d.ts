@@ -12,5 +12,7 @@ declare namespace App {
 		};
 	}
 	// interface Error {}
-	// interface Platform {}
+	interface Platform {
+		context: {}
+	}
 }

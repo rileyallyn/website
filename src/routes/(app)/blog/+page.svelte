@@ -8,12 +8,14 @@
 <Container>
 	<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">Blog</h1>
 	<div class="flex flex-col gap-y-10">
-		{#each posts as post}
-			{#if post}
-				<BlogPost {post} />
-			{:else}
-				<span>No posts found!</span>
-			{/if}
-		{/each}
+		{#if posts.length > 0}
+			{#each posts as post}
+				{#if post}
+					<BlogPost {post} />
+				{/if}
+			{/each}
+		{:else}
+			<span>No blog posts found!</span>
+		{/if}
 	</div>
 </Container>
