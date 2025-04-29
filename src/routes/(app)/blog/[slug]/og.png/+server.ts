@@ -64,6 +64,7 @@ const GET: RequestHandler = async ({ url }) => {
 	}
 
 	if (image && shouldReturnCache) {
+		console.log("returning cached image", shouldReturnCache);
 		return new Response(image, {
 			headers: {
 				'x-og-image-cache': 'true',
