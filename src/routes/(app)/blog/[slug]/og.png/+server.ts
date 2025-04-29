@@ -1,11 +1,8 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import type { PostMetadata } from '~/types';
 import { ImageResponse } from '@ethercorps/sveltekit-og';
-import { connectLambda, getStore } from '@netlify/blobs';
+import { getStore } from '@netlify/blobs';
 import OG from './og.svelte';
-
-// lmao.
-type LambdaEvent = Parameters<typeof connectLambda>[0];
 
 const fontFile400 = await fetch('https://og-playground.vercel.app/inter-latin-ext-400-normal.woff');
 const fontData400: ArrayBuffer = await fontFile400.arrayBuffer();
@@ -13,7 +10,7 @@ const fontData400: ArrayBuffer = await fontFile400.arrayBuffer();
 const fontFile700 = await fetch('https://og-playground.vercel.app/inter-latin-ext-700-normal.woff');
 const fontData700: ArrayBuffer = await fontFile700.arrayBuffer();
 
-const GET: RequestHandler = async ({ url, platform }) => {
+const GET: RequestHandler = async ({ url }) => {
 	const slug = url.pathname.split('/')[2];
 	const postPromise = import(`~/posts/${slug}/index.md`);
 
@@ -39,15 +36,13 @@ const GET: RequestHandler = async ({ url, platform }) => {
 		return new Response('Missing title or description', { status: 400 });
 	}
 
-	connectLambda(platform?.context as LambdaEvent);
-
+	// temp fix until i can get the adapter fixed
 	const store = getStore({
 		name: 'og-images',
 		siteID: process.env.SITE_ID,
-		token: process.env.NETLIFY_BLOB
+		token: process.env.NETLIFY_PAT
 	});
 
-	console.log(process.env);
 
 	// this should be a blob, but it's not
 	const data = await store.getWithMetadata(`${slug}.png`, { type: 'arrayBuffer' });
@@ -117,4 +112,6 @@ const GET: RequestHandler = async ({ url, platform }) => {
 	return response;
 };
 
-// export { GET };
+export { GET };
+
+
