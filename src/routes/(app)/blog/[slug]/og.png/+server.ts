@@ -13,7 +13,7 @@ const fontData400: ArrayBuffer = await fontFile400.arrayBuffer();
 const fontFile700 = await fetch('https://og-playground.vercel.app/inter-latin-ext-700-normal.woff');
 const fontData700: ArrayBuffer = await fontFile700.arrayBuffer();
 
-export const GET: RequestHandler = async ({ url, platform }) => {
+const GET: RequestHandler = async ({ url, platform }) => {
 	const slug = url.pathname.split('/')[2];
 	const postPromise = import(`~/posts/${slug}/index.md`);
 
@@ -115,4 +115,6 @@ export const GET: RequestHandler = async ({ url, platform }) => {
 	});
 
 	return response;
-};	
+};
+
+// export { GET };
