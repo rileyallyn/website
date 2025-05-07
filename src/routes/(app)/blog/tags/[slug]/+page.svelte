@@ -31,12 +31,14 @@
 		Blog posts tagged with {data.tag}
 	</h1>
 	<div class="flex flex-col gap-y-10">
-		{#each data.posts as post}
-			{#if post}
-				<BlogPost {post} />
-			{:else}
-				<span>No posts found!</span>
-			{/if}
-		{/each}
+		{#if data.posts}
+			{#each data.posts as post}
+				{#if post}
+					<BlogPost {post} />
+				{/if}
+			{/each}
+		{:else}
+			<span>No posts found!</span>
+		{/if}
 	</div>
 </Container>
