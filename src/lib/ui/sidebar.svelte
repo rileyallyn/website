@@ -12,7 +12,7 @@
 		class="rounded-full w-24 h-24"
 	/>
 	<h1 class="text-2xl font-bold title">Riley Smith</h1>
-	<p class="text-md text-gray-500 italic">Software Developer</p>
+	<p class="text-md text-gray-300 italic">Software Developer</p>
 	<ul class="gap-y-2 mt-2 flex flex-col w-full">
 		<li class="hover:underline">
 			<a href="/">About</a>
@@ -30,7 +30,13 @@
 	<!-- socials -->
 	<Socials scale={1.5} />
 	<footer class="mt-1">
-		<a class="text-xs text-gray-500" href="https://github.com/rileyallyn/website">Source</a>
-		<p class="text-xs text-gray-500">© 2024-{year} Riley Smith</p>
+		<a
+			class="text-xs text-gray-500"
+			href="https://github.com/rileyallyn/website"
+			aria-label="Source Code"
+		>
+			Source
+		</a>
+		<p class="text-xs text-gray-500" aria-label="Copyright">© 2024-{year} Riley Smith</p>
 	</footer>
 </aside>

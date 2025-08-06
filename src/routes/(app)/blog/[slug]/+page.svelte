@@ -4,6 +4,7 @@
 	import type { PageData } from './$types';
 	import arrowLeft from 'svelte-awesome/icons/arrowLeft';
 	import { Badge } from '$lib/ui/Badge';
+	import { TIMEZONE } from '$lib/constants';
 	interface Props {
 		data: PageData;
 	}
@@ -40,7 +41,7 @@
 								month: 'long',
 								day: 'numeric',
 								year: 'numeric',
-								timeZone: 'UTC'
+								timeZone: TIMEZONE
 							})}
 						</p>
 						{#if post.lastUpdated}
@@ -51,7 +52,7 @@
 									year: 'numeric',
 									hour: 'numeric',
 									minute: 'numeric',
-									timeZone: 'UTC'
+									timeZone: TIMEZONE
 								})})
 							</p>
 						{/if}

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PostMetadata } from '~/types';
 	import { Badge } from './Badge';
+	import { TIMEZONE } from '$lib/constants';
 	let { post }: { post: Omit<PostMetadata, 'locked'> & { slug: string | undefined } } = $props();
 </script>
 
@@ -17,7 +18,7 @@
 							month: 'long',
 							day: 'numeric',
 							year: 'numeric',
-							timeZone: 'America/Los_Angeles'
+							timeZone: TIMEZONE
 						})}
 					</p>
 					{#if post.lastUpdated}
@@ -28,7 +29,7 @@
 								year: 'numeric',
 								hour: 'numeric',
 								minute: 'numeric',
-								timeZone: 'America/Los_Angeles'
+								timeZone: TIMEZONE
 							})})
 						</p>
 					{/if}

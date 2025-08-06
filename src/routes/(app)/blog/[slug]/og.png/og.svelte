@@ -6,6 +6,7 @@
 		date: string;
 	}
 
+	import { TIMEZONE } from '$lib/constants';
 	let { title, description, date }: Props = $props();
 </script>
 
@@ -16,7 +17,8 @@
 				? new Date(date).toLocaleDateString('en-US', {
 						month: 'long',
 						day: 'numeric',
-						year: 'numeric'
+						year: 'numeric',
+						timeZone: TIMEZONE
 					})
 				: ''}
 		</h1>
