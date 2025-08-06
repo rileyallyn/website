@@ -70,7 +70,7 @@
 				</div>
 			</div>
 		</div>
-		<article class="prose prose-zinc dark:prose-invert max-w-[40rem]">
+		<article class="prose prose-zinc dark:prose-invert max-w-2xl">
 			<SvelteComponent />
 		</article>
 	</div>

@@ -34,7 +34,8 @@
           </svg>
         `;
 		}
-
+		// i realize having a global function is not the best practice, but it's the only way to get the copy button to work
+		// i'll eventually revisit and write a rehype/remark plugin to handle this
 		window.copyCode = async function (button) {
 			// Target the correct container class: shiki-code-container
 			const codeContainer = button.closest('.shiki-code-container');
