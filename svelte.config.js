@@ -46,6 +46,9 @@ const config = {
 		alias: {
 			$lib: 'src/lib',
 			'~/*': 'src/*'
+		},
+		prerender: {
+			handleHttpError: 'warn'
 		}
 	}
 };
