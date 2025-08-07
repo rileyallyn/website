@@ -9,7 +9,8 @@
 	<enhanced:img
 		src={pfp}
 		alt="Riley Smith looking at the aurora borealis"
-		class="rounded-xl w-36 h-36"
+		class="rounded-xl w-36 h-36 object-cover"
+		fetchpriority="high"
 	/>
 	<h1 class="text-2xl font-bold title pt-0.5">Riley Smith</h1>
 	<p class="text-md text-gray-500 italic dark:text-gray-300" aria-label="byline">
