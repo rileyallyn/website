@@ -13,7 +13,7 @@
 	const { post, page } = data;
 </script>
 
-<Container className="dark:bg-black/25 bg-neutral-100/50">
+<Container className="dark:bg-zinc-900/25 bg-stone-300/30 p-4 rounded-xl">
 	{#if post.slug}
 		<nav aria-label="Breadcrumb" class="py-2">
 			<ol class="flex items-center space-x-2 text-sm">
@@ -62,7 +62,12 @@
 						<div class="flex flex-wrap gap-x-2 mt-2">
 							{#each post.tags as tag}
 								<a href={`/blog/tags/${tag}`}>
-									<Badge variant="outline">{tag}</Badge>
+									<Badge
+										variant="outline"
+										class="backdrop-blur-sm hover:bg-purple-700 hover:text-white"
+									>
+										{tag}
+									</Badge>
 								</a>
 							{/each}
 						</div>

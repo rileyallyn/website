@@ -30,6 +30,16 @@
 			customClass: 'w-full '
 		},
 		{
+			name: 'Laravel',
+			imgSrc: 'laravel.svg',
+			customClass: 'w-full '
+		},
+		{
+			name: 'Vue.js',
+			imgSrc: 'vue.svg',
+			customClass: 'w-full '
+		},
+		{
 			name: 'TypeScript',
 			imgSrc: 'ts.svg',
 			customClass: 'w-full '
@@ -82,9 +92,12 @@
 
 <Container>
 	<section class="" id="about">
-		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
-			About Me
-		</h1>
+		<h2
+			class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed"
+			aria-label="About me"
+		>
+			about me
+		</h2>
 		<p>
 			I am a software developer and creative from Southern California with a passion for building
 			things. With over seven years of experience in various technologies, I specialize in creating
@@ -94,9 +107,9 @@
 		</p>
 	</section>
 	<section class="" id="tech">
-		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
-			Tech I Use
-		</h1>
+		<h2 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
+			tech i use
+		</h2>
 		<div
 			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-4 sm:gap-y-8 py-4"
 			aria-label="Technologies I use"
@@ -104,9 +117,7 @@
 		>
 			{#each techUsed as tech (tech.name)}
 				<CardContainer className={cn('w-full', tech.customClass)}>
-					<CardBody
-						className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border"
-					>
+					<CardBody className="relative group/card  w-full h-auto rounded-xl p-6 border">
 						<CardItem className="mx-auto"
 							><img
 								src={tech.imgSrc.default}
@@ -124,9 +135,9 @@
 		</div>
 	</section>
 	<section id="projects">
-		<h1 class="text-xl font-bold border-b-2 border-purple-900 max-w-fit leading-relaxed">
-			Projects
-		</h1>
+		<h2 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
+			projects
+		</h2>
 		<ol
 			class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4"
 			aria-label="Projects I've worked on"
@@ -135,9 +146,7 @@
 			{#each projects as project (project.name)}
 				<li class="md:last:col-span-2">
 					<CardContainer className="w-full" containerClassName="">
-						<CardBody
-							className="bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border"
-						>
+						<CardBody className="  w-full sm:w-[30rem] h-auto rounded-xl p-6 border">
 							<CardItem
 								className="text-lg font-bold text-neutral-600 dark:text-white text-center mx-auto flex items-center gap-x-2"
 							>
@@ -148,7 +157,7 @@
 								<p>{project.description}</p>
 							</CardItem>
 							<CardItem className="mt-4 w-full">
-								<a href={project.link} target="_blank" class="w-full">
+								<a href={project.link} target="_blank" rel="noopener noreferrer" class="w-full">
 									<Button
 										variant="link"
 										class="bg-black text-white dark:bg-white dark:text-black"

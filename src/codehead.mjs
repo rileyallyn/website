@@ -15,8 +15,11 @@ const codeHeaderTransformer = (options = {}) => {
 			if (!lang) {
 				return; // Only apply to code blocks with a language defined
 			}
-			const themeBackground = node.properties.style?.split(';')[0].split(':')[1].trim();
-			const themeText = node.properties.style?.split(';')[1].split(':')[1].trim();
+			const style = node.properties.style.split(';');
+			const lightBg = style.find(s => s.includes('--shiki-light-bg')).split(':')[1].trim();
+			const darkBg = style.find(s => s.includes('--shiki-dark-bg')).split(':')[1].trim();
+			const lightText = style.find(s => s.includes('--shiki-light:')).split(':')[1].trim();
+			const darkText = style.find(s => s.includes('--shiki-dark:')).split(':')[1].trim();
 
 			// Create the header element
 			const header = {
@@ -24,7 +27,7 @@ const codeHeaderTransformer = (options = {}) => {
 				tagName: "div",
 				properties: {
 					class: "shiki-code-header",
-					style: `--shiki-color-background: ${themeBackground}; --shiki-color-text: ${themeText};`
+					style: `--shiki-dark-bg: ${darkBg}; --shiki-dark: ${darkText}; --shiki-light-bg: ${lightBg}; --shiki-light: ${lightText};`
 				},
 				children: [
 					{

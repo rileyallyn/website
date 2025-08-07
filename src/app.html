@@ -7,6 +7,9 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<meta name="color-scheme" content="dark light" />
+		<meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
+		<meta name="theme-color" content="#e7e5e4" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 			rel="stylesheet"
@@ -14,7 +17,7 @@
 
 		%sveltekit.head%
 	</head>
-	<body class="absolute h-dvh w-dvw antialiased">
+	<body class="absolute h-dvh w-dvw antialiased bg-stone-200 dark:bg-zinc-900">
 		<div class="contents">%sveltekit.body%</div>
 	</body>
 	<script>
