@@ -7,7 +7,7 @@
 </script>
 
 <section>
-	<CardContainer className="h-auto" containerClassName="">
+	<CardContainer className="h-auto w-full max-w-xl" containerClassName="">
 		<CardBody className="h-auto w-full p-4 border-2 rounded-lg ">
 			<CardItem className="w-full">
 				<div class="flex flex-col gap-y-2">

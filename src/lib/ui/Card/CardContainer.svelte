@@ -43,6 +43,7 @@
 		onmouseenter={handleMouseEnter}
 		onmousemove={handleMouseMove}
 		onmouseleave={handleMouseLeave}
+		role="article"
 		class={cn(
 			'relative flex items-center justify-center transition-all duration-200 ease-linear',
 			className
