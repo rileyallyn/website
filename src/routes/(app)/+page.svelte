@@ -82,9 +82,12 @@
 
 <Container>
 	<section class="" id="about">
-		<h1 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
+		<h2
+			class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed"
+			aria-label="About me"
+		>
 			about me
-		</h1>
+		</h2>
 		<p>
 			I am a software developer and creative from Southern California with a passion for building
 			things. With over seven years of experience in various technologies, I specialize in creating
@@ -94,9 +97,9 @@
 		</p>
 	</section>
 	<section class="" id="tech">
-		<h1 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
+		<h2 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
 			tech i use
-		</h1>
+		</h2>
 		<div
 			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-4 sm:gap-y-8 py-4"
 			aria-label="Technologies I use"
@@ -122,9 +125,9 @@
 		</div>
 	</section>
 	<section id="projects">
-		<h1 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
+		<h2 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
 			projects
-		</h1>
+		</h2>
 		<ol
 			class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4"
 			aria-label="Projects I've worked on"
@@ -144,7 +147,7 @@
 								<p>{project.description}</p>
 							</CardItem>
 							<CardItem className="mt-4 w-full">
-								<a href={project.link} target="_blank" class="w-full">
+								<a href={project.link} target="_blank" rel="noopener noreferrer" class="w-full">
 									<Button
 										variant="link"
 										class="bg-black text-white dark:bg-white dark:text-black"

@@ -37,16 +37,9 @@
 	};
 </script>
 
-<div
-	class={cn('flex', containerClassName)}
-	style="perspective: 1000px;"
-	aria-roledescription="card"
-	role="listitem"
->
+<div class={cn('flex', containerClassName)} style="perspective: 1000px;" role="article">
 	<div
 		bind:this={containerRef}
-		aria-roledescription="card"
-		role="main"
 		onmouseenter={handleMouseEnter}
 		onmousemove={handleMouseMove}
 		onmouseleave={handleMouseLeave}
