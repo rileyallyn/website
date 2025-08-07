@@ -43,12 +43,13 @@
 <GridBg className="-z-10 h-full w-full" />
 <Navbar bind:open />
 <Header bind:open />
-<div class="relative flex flex-row h-dvh w-full pt-8">
-	<div class="relative z-40 overflow-hidden ml-14 lg:ml-40 hidden md:block">
+<div class="relative flex flex-row h-dvh w-full pt-8 justify-center">
+	<div class="relative z-40 overflow-hidden hidden md:block w-fit">
 		<Sidebar />
 	</div>
 	<div
-		class="overflow-y-auto styled-scrollbars md:mt-8 sm:max-w-2xl lg:max-w-3xl w-full p-3 md:p-0 pb-20 md:pb-0 mt-4"
+		class="overflow-y-auto styled-scrollbars md:mt-8 sm:max-w-2xl lg:max-w-3xl w-full p-3 md:p-0 md:px-4 pb-20 md:pb-0 mt-4"
+		style="padding-right: 1rem"
 	>
 		{@render children?.()}
 	</div>

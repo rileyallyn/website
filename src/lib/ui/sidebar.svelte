@@ -9,22 +9,24 @@
 	<enhanced:img
 		src={pfp}
 		alt="Riley Smith looking at the aurora borealis"
-		class="rounded-full w-24 h-24"
+		class="rounded-xl w-36 h-36"
 	/>
-	<h1 class="text-2xl font-bold title">Riley Smith</h1>
-	<p class="text-md text-gray-300 italic">Software Developer</p>
+	<h1 class="text-2xl font-bold title pt-0.5">Riley Smith</h1>
+	<p class="text-md text-gray-500 italic dark:text-gray-300" aria-label="byline">
+		Software Developer
+	</p>
 	<ul class="gap-y-2 mt-2 flex flex-col w-full">
 		<li class="hover:underline">
-			<a href="/">About</a>
+			<a href="/">about</a>
 		</li>
 		<li class="hover:underline">
-			<a href="/blog">Blog</a>
+			<a href="/blog">blog</a>
 		</li>
 		<li class="hover:underline">
-			<a href="https://resume.rileyy.dev">Resume</a>
+			<a href="https://resume.rileyy.dev">resume</a>
 		</li>
 		<li class="hidden hover:underline">
-			<a href="/photography">Photography</a>
+			<a href="/photography">photography</a>
 		</li>
 	</ul>
 	<!-- socials -->

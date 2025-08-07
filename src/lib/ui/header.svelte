@@ -9,7 +9,7 @@
 </script>
 
 <header
-	class="block dark:text-white md:hidden pb-1 z-40 fixed top-0 left-0 w-full dark:bg-black/90 bg-neutral-100/90"
+	class="block dark:text-white md:hidden pb-1 z-40 fixed top-0 left-0 w-full dark:bg-zinc-700/5 bg-stone-200/5 backdrop-blur-sm"
 >
 	<nav class="flex pt-2 px-3 items-center gap-x-2">
 		<enhanced:img
@@ -53,8 +53,9 @@
 			font-family: Georgia, 'Times New Roman', Times, serif;
 		}
 		40% {
-			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
-				Geneva, Verdana, sans-serif;
+			font-family:
+				'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+				Verdana, sans-serif;
 			font-weight: bold;
 		}
 		50% {

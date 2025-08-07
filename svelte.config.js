@@ -6,6 +6,7 @@ import rehypeUnwrapImages from 'rehype-unwrap-images';
 import { join } from 'path';
 import highlighterPromise from './src/highlighter.mjs';
 import tokyoNight from 'shiki/themes/tokyo-night.mjs';
+import catppuccin from 'shiki/themes/catppuccin-latte.mjs';
 import { transformerTwoslash } from '@shikijs/twoslash';
 import codeHeaderTransformer from './src/codehead.mjs';
 
@@ -28,7 +29,10 @@ const config = {
 					const twoslash = metastring?.includes('twoslash');
 					const highlighter = await highlighterPromise;
 					const html = escapeSvelte(highlighter.codeToHtml(code, {
-						lang, theme: tokyoNight, transformers: [transformerTwoslash({
+						lang, themes: {
+							light: catppuccin,
+							dark: tokyoNight
+						}, defaultColor: 'light-dark()', transformers: [transformerTwoslash({
 							explicitTrigger: !twoslash,
 							langs: twoslash ? ['ts'] : undefined
 						}), codeHeaderTransformer({ meta: { lang } })],
