@@ -30,6 +30,16 @@
 			customClass: 'w-full '
 		},
 		{
+			name: 'Laravel',
+			imgSrc: 'laravel.svg',
+			customClass: 'w-full '
+		},
+		{
+			name: 'Vue.js',
+			imgSrc: 'vue.svg',
+			customClass: 'w-full '
+		},
+		{
 			name: 'TypeScript',
 			imgSrc: 'ts.svg',
 			customClass: 'w-full '
