@@ -4,6 +4,7 @@
 	import type { PageData } from './$types';
 	import arrowLeft from 'svelte-awesome/icons/arrowLeft';
 	import { Badge } from '$lib/ui/Badge';
+	import { TIMEZONE } from '$lib/constants';
 	interface Props {
 		data: PageData;
 	}
@@ -12,7 +13,7 @@
 	const { post, page } = data;
 </script>
 
-<Container className="dark:bg-black/25 bg-neutral-100/50">
+<Container className="dark:bg-zinc-900/25 bg-stone-300/30 p-4 rounded-xl">
 	{#if post.slug}
 		<nav aria-label="Breadcrumb" class="py-2">
 			<ol class="flex items-center space-x-2 text-sm">
@@ -40,7 +41,7 @@
 								month: 'long',
 								day: 'numeric',
 								year: 'numeric',
-								timeZone: 'UTC'
+								timeZone: TIMEZONE
 							})}
 						</p>
 						{#if post.lastUpdated}
@@ -51,7 +52,7 @@
 									year: 'numeric',
 									hour: 'numeric',
 									minute: 'numeric',
-									timeZone: 'UTC'
+									timeZone: TIMEZONE
 								})})
 							</p>
 						{/if}
@@ -61,7 +62,12 @@
 						<div class="flex flex-wrap gap-x-2 mt-2">
 							{#each post.tags as tag}
 								<a href={`/blog/tags/${tag}`}>
-									<Badge variant="outline">{tag}</Badge>
+									<Badge
+										variant="outline"
+										class="backdrop-blur-sm hover:bg-purple-700 hover:text-white"
+									>
+										{tag}
+									</Badge>
 								</a>
 							{/each}
 						</div>
@@ -69,7 +75,7 @@
 				</div>
 			</div>
 		</div>
-		<article class="prose prose-zinc dark:prose-invert max-w-[40rem]">
+		<article class="prose prose-zinc dark:prose-invert max-w-2xl">
 			<SvelteComponent />
 		</article>
 	</div>

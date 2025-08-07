@@ -52,7 +52,7 @@ await db
 
 ```ts
 // Figure out how to condense this into a single query
-let data = await db
+await db
 	.insert(Womps)
 	.values({
 		last_updated: new Date(),
@@ -84,10 +84,14 @@ Now that I have a way to store user data, I can start to add leaderboards.
 My first idea for the leaderboard was to just show the top 5 people who had pressed the button the most. I could do this by using the `count` function in the DB.
 
 ```ts
-let wompTotals = await db.select({
-        updated_by: Womps.updated_by,
-        total: sql<number>`count(*)`.as("total"),
-    }).from(Womps).groupBy(Womps.updated_by).orderBy(desc(sql`total`)).limit(10);
+// get totals
+await db.select({
+    updated_by: Womps.updated_by,
+    total: sql<number>`count(*)`.as("total"),
+}).from(Womps)
+	.groupBy(Womps.updated_by)
+	.orderBy(desc(sql`total`))
+	.limit(10);
 ```
 
 This would give me the top 10 users who have pressed the button the most.
@@ -136,4 +140,3 @@ Till next time,
 
 
 > If you want to see the code for this site, it's [here](https://github.com/qpixel/womp-womp).
-

@@ -27,7 +27,7 @@
 	};
 </script>
 
-<h3 {id} class="flex flex-row gap-y-2">
+<h3 id={cleanedId} class="flex flex-row gap-y-2">
 	<a
 		href={`#${cleanedId}`}
 		class="anchor font-bold max-w-fit"
@@ -38,7 +38,7 @@
 	</a>
 	{#if copy}
 		<div
-			class=" text-xs text-gray-500 bg-neutral-100 px-2 rounded-md max-w-fit text-center flex items-center ml-2 z-10"
+			class=" text-xs text-gray-500 bg-neutral-100 dark:text-gray-100 dark:bg-neutral-900 px-2 rounded-md max-w-fit text-center flex items-center ml-2 z-10"
 			transition:fade={{ duration: 80 }}
 		>
 			Copied to clipboard!

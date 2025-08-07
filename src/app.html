@@ -7,6 +7,9 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<meta name="color-scheme" content="dark light" />
+		<meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
+		<meta name="theme-color" content="#e7e5e4" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 			rel="stylesheet"
@@ -14,7 +17,70 @@
 
 		%sveltekit.head%
 	</head>
-	<body class="absolute h-dvh w-dvw antialiased">
+	<body class="absolute h-dvh w-dvw antialiased bg-stone-200 dark:bg-zinc-900">
 		<div class="contents">%sveltekit.body%</div>
 	</body>
+	<script>
+		function getCopySvg() {
+			return `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+        `;
+		}
+
+		function getCheckSvg() {
+			return `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        `;
+		}
+		// i realize having a global function is not the best practice, but it's the only way to get the copy button to work
+		// i'll eventually revisit and write a rehype/remark plugin to handle this
+		window.copyCode = async function (button) {
+			// Target the correct container class: shiki-code-container
+			const codeContainer = button.closest('.shiki-code-container');
+			if (!codeContainer) return;
+
+			const codeElement = codeContainer.querySelector('pre.shiki code');
+			if (!codeElement || !codeElement.textContent) return;
+
+			const originalHtml = button.innerHTML;
+
+			try {
+				await navigator.clipboard.writeText(codeElement.textContent);
+
+				// Use the correct feedback class names: shiki-copy-feedback
+				button.classList.add('shiki-copy-feedback');
+				button.innerHTML = getCheckSvg();
+
+				setTimeout(() => {
+					button.classList.remove('shiki-copy-feedback');
+					button.innerHTML = originalHtml;
+				}, 2000);
+			} catch (err) {
+				console.error('Failed to copy text: ', err);
+				// Fallback
+				const textarea = document.createElement('textarea');
+				textarea.value = codeElement.textContent;
+				textarea.style.position = 'fixed';
+				textarea.style.opacity = '0';
+				document.body.appendChild(textarea);
+				textarea.select();
+				document.execCommand('copy');
+				document.body.removeChild(textarea);
+
+				// Use the correct fallback class name: shiki-copy-fallback-feedback
+				button.classList.add('shiki-copy-fallback-feedback');
+				button.innerHTML = getCheckSvg();
+
+				setTimeout(() => {
+					button.classList.remove('shiki-copy-fallback-feedback');
+					button.innerHTML = originalHtml;
+				}, 2000);
+			}
+		};
+	</script>
 </html>

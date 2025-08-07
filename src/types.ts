@@ -7,3 +7,10 @@ export interface PostMetadata {
 	timeToRead?: string;
 	tags?: string[];
 }
+
+
+interface CodeHeaderOptions {
+	meta: {
+		lang: string;
+	}
+}

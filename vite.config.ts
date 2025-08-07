@@ -11,6 +11,9 @@ const config: UserConfig = {
 	},
 	optimizeDeps: {
 		exclude: ['@resvg/resvg-js']
+	},
+	server: {
+		allowedHosts: ['.trycloudflare.com']
 	}
 };
 

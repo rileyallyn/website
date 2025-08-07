@@ -13,7 +13,7 @@
 </script>
 
 <aside
-	class="dark:text-white w-full absolute h-full dark:bg-black py-40 block sm:hidden z-50 bg-neutral-100"
+	class="dark:text-white w-full absolute h-full dark:bg-zinc-950/95 backdrop-blur-sm py-40 block sm:hidden z-50 bg-stone-200/95"
 	class:open
 >
 	<div class="absolute top-0 right-0">
@@ -30,16 +30,16 @@
 	<nav class="flex pt-2 px-4 items-center gap-x-2">
 		<ul class="font-bold text-4xl gap-y-2 mt-4 flex flex-col w-full">
 			<li>
-				<a href="/" onclick={() => (open = false)}>About</a>
+				<a href="/" onclick={() => (open = false)}>about</a>
 			</li>
 			<li>
-				<a href="/blog" onclick={() => (open = false)}>Blog</a>
+				<a href="/blog" onclick={() => (open = false)}>blog</a>
 			</li>
 			<li>
-				<a href="https://resume.rileyy.dev">Resume</a>
+				<a href="https://resume.rileyy.dev">resume</a>
 			</li>
 			<li class="hidden">
-				<a href="/photography">Photography</a>
+				<a href="/photography">photography</a>
 			</li>
 		</ul>
 	</nav>
