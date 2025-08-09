@@ -1,7 +1,36 @@
 /* Write your global styles here, in PostCSS syntax */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@plugin './lib/ui/grid-plugin.ts';
+
+
+@theme {
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+:root {
+	--mask-custom-radial: radial-gradient(ellipse at center, transparent 15%, black);
+}
 
 html,
 body {
@@ -9,16 +38,9 @@ body {
 }
 
 body {
-	background-color: #fff;
-	color: #000;
+	/* background-color: #fff; */
+	/* color: #000; */
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-	body {
-		background-color: #000;
-		color: #fff;
-	}
 }
 
 .title:hover {
@@ -74,7 +96,7 @@ body {
 @media (prefers-color-scheme: dark) {
 	.styled-scrollbars {
 		/* Foreground, Background */
-		scrollbar-color: var(--purple-900) var(--purple-900);
+		scrollbar-color: var(--color-purple-900) var(--color-purple-900);
 	}
 	.styled-scrollbars::-webkit-scrollbar {
 		width: 10px; /* Mostly for vertical scrollbars */
@@ -82,16 +104,16 @@ body {
 	}
 	.styled-scrollbars::-webkit-scrollbar-thumb {
 		/* Foreground */
-		background: var(--purple-400);
+		background: var(--color-purple-400);
 	}
 	.styled-scrollbars::-webkit-scrollbar-track {
 		/* Background */
-		background: var(--purple-900);
+		background: var(--color-purple-900);
 	}
 }
 .styled-scrollbars {
 	/* Foreground, Background */
-	scrollbar-color: var(--purple-400) var(--purple-100);
+	scrollbar-color: var(--color-purple-400) var(--color-purple-100);
 	scrollbar-width: thin;
 }
 .styled-scrollbars::-webkit-scrollbar {
@@ -100,11 +122,11 @@ body {
 }
 .styled-scrollbars::-webkit-scrollbar-thumb {
 	/* Foreground */
-	background: var(--purple-400);
+	background: var(--color-purple-400);
 }
 .styled-scrollbars::-webkit-scrollbar-track {
 	/* Background */
-	background: var(--purple-100);
+	background: var(--color-purple-100);
 }
 
 .shiki-code-container pre {

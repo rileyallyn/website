@@ -146,7 +146,7 @@
 			{#each projects as project (project.name)}
 				<li class="md:last:col-span-2">
 					<CardContainer className="w-full" containerClassName="">
-						<CardBody className="  w-full sm:w-[30rem] h-auto rounded-xl p-6 border">
+						<CardBody className="  w-full sm:w-120 h-auto rounded-xl p-6 border">
 							<CardItem
 								className="text-lg font-bold text-neutral-600 dark:text-white text-center mx-auto flex items-center gap-x-2"
 							>

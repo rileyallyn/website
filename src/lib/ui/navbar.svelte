@@ -13,7 +13,7 @@
 </script>
 
 <aside
-	class="dark:text-white w-full absolute h-full dark:bg-zinc-950/95 backdrop-blur-sm py-40 block sm:hidden z-50 bg-stone-200/95"
+	class="dark:text-white w-full absolute h-full dark:bg-zinc-950/95 backdrop-blur-xs py-40 block sm:hidden z-50 bg-stone-200/95"
 	class:open
 >
 	<div class="absolute top-0 right-0">

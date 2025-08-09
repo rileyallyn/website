@@ -20,7 +20,7 @@
 	{@render children?.()}
 	{#if showFade}
 		<div
-			class="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-300 [mask-image:radial-gradient(ellipse_at_center,transparent_15%,black)] dark:bg-zinc-950"
+			class="pointer-events-none absolute inset-0 flex items-center justify-center mask-(--mask-custom-radial) bg-stone-300 dark:bg-zinc-950"
 		></div>
 	{/if}
 </div>

@@ -1,9 +1,10 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import type { UserConfig } from 'vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
+import tailwindcss from '@tailwindcss/vite';
 
 const config: UserConfig = {
-	plugins: [enhancedImages(), sveltekit()],
+	plugins: [tailwindcss(), enhancedImages(), sveltekit()],
 	build: {
 		rollupOptions: {
 			external: ['@resvg/resvg-js', 'css-tree']

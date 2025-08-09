@@ -9,7 +9,7 @@
 </script>
 
 <header
-	class="block dark:text-white md:hidden pb-1 z-40 fixed top-0 left-0 w-full dark:bg-zinc-700/5 bg-stone-200/5 backdrop-blur-sm"
+	class="block dark:text-white md:hidden pb-1 z-40 fixed top-0 left-0 w-full dark:bg-zinc-700/5 bg-stone-200/5 backdrop-blur-xs"
 >
 	<nav class="flex pt-2 px-3 items-center gap-x-2">
 		<enhanced:img

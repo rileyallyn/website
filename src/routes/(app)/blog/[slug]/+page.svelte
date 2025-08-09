@@ -64,7 +64,7 @@
 								<a href={`/blog/tags/${tag}`}>
 									<Badge
 										variant="outline"
-										class="backdrop-blur-sm hover:bg-purple-700 hover:text-white"
+										class="backdrop-blur-xs hover:bg-purple-700 hover:text-white"
 									>
 										{tag}
 									</Badge>
