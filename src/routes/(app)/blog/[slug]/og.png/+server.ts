@@ -47,7 +47,7 @@ const GET: RequestHandler = async ({ url }) => {
 	// this should be a blob, but it's not
 	const data = await store.getWithMetadata(`${slug}.png`, { type: 'arrayBuffer' });
 	// cache miss, we need to generate the image
-	let shouldReturnCache = true;
+	let shouldReturnCache = process.env.NODE_ENV !== 'development';
 
 	let image: ArrayBuffer | null = null;
 
@@ -64,7 +64,7 @@ const GET: RequestHandler = async ({ url }) => {
 	}
 
 	if (image && shouldReturnCache) {
-		console.log("returning cached image", shouldReturnCache);
+		console.log("returning cached image, shouldReturnCache:", shouldReturnCache);
 		return new Response(image, {
 			headers: {
 				'x-og-image-cache': 'true',
@@ -73,6 +73,8 @@ const GET: RequestHandler = async ({ url }) => {
 			}
 		});
 	}
+
+	console.log("generating new image, shouldReturnCache:", shouldReturnCache);
 
 	const response = new ImageResponse(
 		// todo: fix the library to accept a svelte 5 component

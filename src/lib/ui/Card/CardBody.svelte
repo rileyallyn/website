@@ -3,7 +3,7 @@
 
 	interface Props {
 		className: string;
-		style: keyof typeof styles;
+		style?: keyof typeof styles;
 		children?: import('svelte').Snippet;
 	}
 

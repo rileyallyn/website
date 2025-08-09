@@ -28,7 +28,7 @@
 		content={data.meta?.title ? `${data.meta.title} | Riley Smith` : 'Riley Smith'}
 	/>
 	<meta property="og:description" content={data.meta?.description || 'Software Engineer'} />
-	<meta property="og:image" content={data.meta?.image || 'favicon.png'} />
+	<meta property="og:image" content={data.meta?.image || '/favicon.png'} />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
@@ -38,7 +38,7 @@
 		content={data.meta?.title ? `${data.meta.title} | Riley Smith` : 'Riley Smith'}
 	/>
 	<meta property="twitter:description" content={data.meta?.description || 'Software Engineer'} />
-	<meta property="twitter:image" content={data.meta?.image || 'favicon.png'} />
+	<meta property="twitter:image" content={data.meta?.image || '/favicon.png'} />
 </svelte:head>
 <GridBg className="-z-10 h-full w-full" />
 <Navbar bind:open />

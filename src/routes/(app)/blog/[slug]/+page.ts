@@ -38,7 +38,7 @@ export const load: PageLoad = async ({ params, url, data }) => {
 			title: postTitle,
 			description,
 			url: url.origin + '/blog/' + slug,
-			image: url.origin + '/blog/' + slug + '/og.png'
+			image: '/blog/' + slug + '/og.png'
 		}
 	};
 };
