@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/components/ui/header.svelte';
 	import Sidebar from '$lib/components/ui/sidebar.svelte';
-	import Navbar from '$lib/components/ui/navbar.svelte';
 	import GridBg from '$lib/components/ui/gridbg.svelte';
 	import { page } from '$app/state';
 	import ModeWatcher from '$lib/components/ui/modewatcher.svelte';
@@ -10,7 +9,6 @@
 	}
 	let data: App.PageData = $derived(page.data);
 	let { children }: Props = $props();
-	let open = $state(false);
 </script>
 
 <svelte:head>
@@ -42,7 +40,7 @@
 	<meta property="twitter:image" content={data.meta?.image || '/favicon.png'} />
 </svelte:head>
 <GridBg className="-z-10 h-full w-full" />
-<Header bind:open />
+<Header />
 <div
 	class=" relative flex flex-row justify-center styled-scrollbars overflow-y-auto max-h-dvh pt-16"
 >

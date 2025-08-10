@@ -10,7 +10,7 @@
 		<enhanced:img
 			src={pfp}
 			alt="Riley Smith looking at the aurora borealis"
-			class="rounded-full w-10 h-10"
+			class="rounded-lg w-10 h-10"
 		/>
 		<a href="/" class="mr-auto title">
 			<h1 class="text-xl mr-auto">Riley Smith</h1>

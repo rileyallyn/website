@@ -15,7 +15,7 @@
 		children
 	}: Props = $props();
 
-	let containerRef: HTMLDivElement = $state();
+	let containerRef: HTMLDivElement | undefined = $state();
 
 	const handleMouseMove = (e: MouseEvent) => {
 		if (!containerRef) return;

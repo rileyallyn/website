@@ -26,7 +26,6 @@ export default defineConfig([
 
 			sourceType: 'module',
 			ecmaVersion: 2020,
-			parserOptions: {},
 
 			globals: {
 				...globals.browser,

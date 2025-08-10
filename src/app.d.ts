@@ -14,6 +14,7 @@ declare namespace App {
 	}
 	// interface Error {}
 	interface Platform {
-		context: {};
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		context: any;
 	}
 }
