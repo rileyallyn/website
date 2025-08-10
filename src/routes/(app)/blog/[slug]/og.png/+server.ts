@@ -1,8 +1,8 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import type { PostMetadata } from '~/types';
 import { ImageResponse } from '@ethercorps/sveltekit-og';
 import { getStore } from '@netlify/blobs';
 import OG from './og.svelte';
+import { getBlogPostMetadata } from '$lib/blog';
 
 const fontFile400 = await fetch('https://og-playground.vercel.app/inter-latin-ext-400-normal.woff');
 const fontData400: ArrayBuffer = await fontFile400.arrayBuffer();
@@ -12,27 +12,13 @@ const fontData700: ArrayBuffer = await fontFile700.arrayBuffer();
 
 const GET: RequestHandler = async ({ url }) => {
 	const slug = url.pathname.split('/')[2];
-	const postPromise = import(`~/posts/${slug}/index.md`);
+	const postMetadata = await getBlogPostMetadata(slug);
 
-	const [postResult] = await Promise.all([postPromise]);
-
-	if (!postResult) {
+	if (!postMetadata) {
 		return new Response('Not found', { status: 404 });
 	}
 
-	const { metadata }: { metadata: PostMetadata } = postResult;
-
-	if (!metadata) {
-		return new Response('Not found', { status: 404 });
-	}
-
-	const {
-		title,
-		description,
-		datePublished: date,
-		locked,
-		lastUpdated
-	} = metadata satisfies PostMetadata;
+	const { title, description, datePublished: date, locked, lastUpdated } = postMetadata;
 
 	if (locked) {
 		return new Response('Not found', { status: 404 });

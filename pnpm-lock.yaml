@@ -56,6 +56,9 @@ importers:
       rehype-unwrap-images:
         specifier: github:rileyallyn/rehype-unwrap-images
         version: https://codeload.github.com/rileyallyn/rehype-unwrap-images/tar.gz/d8d02853e848add33f506ca03c1842d21bd6e1bf
+      schema-dts:
+        specifier: ^1.1.5
+        version: 1.1.5
       svelte-awesome:
         specifier: ^3.3.5
         version: 3.3.5(svelte@5.38.0)
@@ -4746,6 +4749,9 @@ packages:
 
   sax@1.4.1:
     resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==}
+
+  schema-dts@1.1.5:
+    resolution: {integrity: sha512-RJr9EaCmsLzBX2NDiO5Z3ux2BVosNZN5jo0gWgsyKvxKIUL5R3swNvoorulAeL9kLB0iTSX7V6aokhla2m7xbg==}
 
   secure-json-parse@2.7.0:
     resolution: {integrity: sha512-6aU+Rwsezw7VR8/nyvKTx8QpWH9FrcYiXXlqC4z5d5XQBDRqtbfsRjnwGyqbi3gddNtWHuEk9OANUotL26qKUw==}
@@ -10369,6 +10375,8 @@ snapshots:
       yoga-wasm-web: 0.3.3
 
   sax@1.4.1: {}
+
+  schema-dts@1.1.5: {}
 
   secure-json-parse@2.7.0: {}
 

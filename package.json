@@ -74,6 +74,7 @@
 		"prismjs": "^1.30.0",
 		"reading-time-estimator": "^1.14.0",
 		"rehype-unwrap-images": "github:rileyallyn/rehype-unwrap-images",
+		"schema-dts": "^1.1.5",
 		"svelte-awesome": "^3.3.5",
 		"svelte-motion": "^0.12.2",
 		"tailwind-merge": "^3.3.1",

@@ -1,19 +1,8 @@
-import type { PostMetadata } from '~/types';
+import { getBlogPosts } from '$lib/blog';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ url }) {
-	const mdModules = import.meta.glob('~/posts/**/index.md');
-	const posts = await Promise.all(
-		Object.keys(mdModules).map(async (path) => {
-			const slug = path.split('/').at(-2);
-			const { metadata } = (await mdModules[path]()) as { metadata: PostMetadata };
-			const { datePublished, lastUpdated, title, description, locked, tags } = metadata;
-			if (locked) {
-				return null;
-			}
-			return { datePublished, lastUpdated, title, description, slug, tags };
-		})
-	);
+	const posts = await getBlogPosts();
 	return {
 		posts,
 		meta: {

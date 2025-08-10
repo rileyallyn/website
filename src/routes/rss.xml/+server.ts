@@ -1,5 +1,6 @@
 import { create } from 'xmlbuilder2';
 import type { PostMetadata } from '../../types';
+import { getBlogPosts, getBlogPostsMetadata } from '$lib/blog';
 
 // Some code taken from https://kylenazario.com/blog/full-content-rss-feed-with-sveltekit-part-two
 
@@ -29,46 +30,23 @@ async function getRssXml(url: string) {
 		.up()
 		.ele('atom:link', { rel: 'self', href: rssUrl })
 		.up();
-	const mdModules = import.meta.glob('../../posts/**/index.md');
-	const posts = await Promise.all(
-		Object.keys(mdModules).map(async (path) => {
-			const slug = path.split('/').at(-2);
-			const { metadata } = (await mdModules[path]()) as { metadata: PostMetadata };
-			const { datePublished, title, description, locked } = metadata;
-			if (locked) {
-				return null;
-			}
-			return { datePublished, title, description, slug };
-		})
-	);
+	const posts = await getBlogPostsMetadata();
 	if (posts.length === 0 || posts.every((post) => post === null)) {
 		return root.up().end();
 	}
 
 	for (const post of posts) {
-		const postUrl = url + '/blog/' + post!.slug;
-		const postDate = new Date(post!.datePublished);
-
-		root
-			.ele('item')
-			.ele('title')
-			.txt(post!.title)
-			.up()
-			.ele('pubDate')
-			.txt(postDate.toUTCString())
-			.up()
-			.ele('link')
-			.txt(postUrl)
-			.up()
-			.ele('guid')
-			.txt(postUrl)
-			.up()
-			.ele('description')
-			.txt(post!.description)
-			.up()
-			.up();
+		const item = root.ele('item');
+		item.ele('title').txt(post!.title);
+		item.ele('pubDate').txt(new Date(post!.datePublished).toUTCString());
+		item.ele('link').txt(url + '/blog/' + post!.slug);
+		item.ele('guid').txt(url + '/blog/' + post!.slug);
+		item.ele('description').txt(post!.description);
+		for (const tag of post.tags || []) {
+			item.ele('category', { domain: `${url}/blog/tags/${tag}` }).txt(tag);
+		}
+		root.up();
 	}
-
 	return root.up().end();
 }
 

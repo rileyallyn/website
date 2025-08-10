@@ -8,8 +8,7 @@ export interface PostMetadata {
 	tags?: string[];
 }
 
-interface CodeHeaderOptions {
-	meta: {
-		lang: string;
-	};
-}
+export type BlogPost = {
+	metadata: PostMetadata;
+	default: () => { render: () => Promise<string> };
+};
