@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Header from '$lib/components/ui/header.svelte';
 	import Sidebar from '$lib/components/ui/sidebar.svelte';
 	import GridBg from '$lib/components/ui/gridbg.svelte';
 	import { page } from '$app/state';
@@ -40,22 +39,24 @@
 	<meta property="twitter:image" content={data.meta?.image || '/favicon.png'} />
 </svelte:head>
 <GridBg className="-z-10 h-full w-full" />
-<Header />
 <div
-	class=" relative flex flex-row justify-center styled-scrollbars overflow-y-auto max-h-dvh pt-16"
+	class="relative flex flex-row justify-center styled-scrollbars overflow-y-auto max-h-dvh pt-16"
 >
-	<div class="hidden md:block sticky w-1/3 top-0">
-		<div class="relative left-64 w-fit flex flex-col gap-2">
+	<div class="sticky md:w-1/3 top-0 z-10">
+		<div class="relative sm:left-8 md:left-16 lg:left-32 xl:left-64 w-fit flex flex-col gap-2">
 			<Sidebar />
-			<ModeWatcher />
+			<div class="md:block hidden">
+				<ModeWatcher />
+			</div>
 		</div>
 	</div>
 	<!-- Fixed sidebar taking 25% of the page -->
 	<!-- Main content taking 75% of the page with scrollable content -->
-	<div class="w-full sm:w-2/3 md:pb-0 p-2 sm:p-0 md:pr-2.5 md:pl-2 h-full relative">
-		<div class="max-w-2xl w-full">
+	<div
+		class="w-full md:w-2/3 md:pb-0 p-2 md:p-0 md:pr-2.5 md:pl-2 h-full relative mr-0 md:mr-8 lg:mr-0"
+	>
+		<div class="md:max-w-2xl w-full">
 			{@render children?.()}
 		</div>
 	</div>
 </div>
-<div class="absolute top-16 right-64"></div>

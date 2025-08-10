@@ -30,13 +30,13 @@
 			customClass: 'w-full '
 		},
 		{
-			name: 'Laravel',
-			imgSrc: 'laravel.svg',
+			name: 'Vue.js',
+			imgSrc: 'vue.svg',
 			customClass: 'w-full '
 		},
 		{
-			name: 'Vue.js',
-			imgSrc: 'vue.svg',
+			name: 'Laravel',
+			imgSrc: 'laravel.svg',
 			customClass: 'w-full '
 		},
 		{
