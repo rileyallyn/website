@@ -25,12 +25,12 @@
 		containerRef.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
 	};
 
-	const handleMouseEnter = (e: MouseEvent) => {
+	const handleMouseEnter = () => {
 		isMouseEntered = true;
 		if (!containerRef) return;
 	};
 
-	const handleMouseLeave = (e: MouseEvent) => {
+	const handleMouseLeave = () => {
 		if (!containerRef) return;
 		isMouseEntered = false;
 		containerRef.style.transform = `rotateY(0deg) rotateX(0deg)`;

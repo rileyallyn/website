@@ -43,7 +43,7 @@
 						{#if post.tags && post.tags.length > 0}
 							<ul class="m-0 flex list-none flex-wrap gap-x-2 p-0">
 								{#each post.tags as tag}
-									<li>
+									<li id={tag}>
 										<a href="/blog/tags/{tag}" aria-label="View posts tagged with {tag}">
 											<Badge variant="outline" class="hover:bg-purple-700 hover:text-white">
 												{tag}
