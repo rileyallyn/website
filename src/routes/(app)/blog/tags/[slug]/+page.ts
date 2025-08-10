@@ -1,6 +1,4 @@
-import type { PostMetadata } from "~/types";
-
-
+import type { PostMetadata } from '~/types';
 
 export const load = async ({ params: { slug: tag } }) => {
 	const mdModules = import.meta.glob('~/posts/**/index.md');

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Container from '$lib/ui/container.svelte';
+	import Container from '$lib/components/ui/container.svelte';
 	import { Icon } from 'svelte-awesome';
 	import type { PageData } from './$types';
 	import arrowLeft from 'svelte-awesome/icons/arrowLeft';
-	import { Badge } from '$lib/ui/Badge';
+	import { Badge } from '$lib/components/ui/Badge';
 	import { TIMEZONE } from '$lib/constants';
 	interface Props {
 		data: PageData;
@@ -13,7 +13,7 @@
 	const { post, page } = data;
 </script>
 
-<Container className="dark:bg-zinc-900/25 bg-stone-300/30 p-4 rounded-xl">
+<Container className="rounded-xl">
 	{#if post.slug}
 		<nav aria-label="Breadcrumb" class="py-2">
 			<ol class="flex items-center space-x-2 text-sm">

@@ -30,9 +30,7 @@ The original version of the site was built with [Astro](https://astro.build), us
 
 In fact! It didn't even store the individual entries of someone pushing the button! I was just running an SQL update transaction.
 
-
 ![Astro DB's dashboard]({astrodb})
-
 
 After a few days, it became obvious that if I wanted to keep user interaction with the game, I would need to add leaderboards.
 
@@ -76,7 +74,6 @@ const username = await kv.get<string>(`user:${params.get('id')}`);
 
 ![New UI showing the user's username]({counter1})
 
-
 Now that I have a way to store user data, I can start to add leaderboards.
 
 ### The leaderboard
@@ -85,10 +82,12 @@ My first idea for the leaderboard was to just show the top 5 people who had pres
 
 ```ts
 // get totals
-await db.select({
-    updated_by: Womps.updated_by,
-    total: sql<number>`count(*)`.as("total"),
-}).from(Womps)
+await db
+	.select({
+		updated_by: Womps.updated_by,
+		total: sql<number>`count(*)`.as('total')
+	})
+	.from(Womps)
 	.groupBy(Womps.updated_by)
 	.orderBy(desc(sql`total`))
 	.limit(10);
@@ -106,25 +105,21 @@ I wanted to add a little polish to the site, so I decided that it needed a bit o
 
 While being similar to the original version, I think the counter being a bit more prominent works a lot better.
 
-
 ### Vercel kinda sucks
 
 The original hosting for this site was on Vercel, using their free tier. At some point, I started getting a lot of errors relating to usernames. Remember, I was using Vercel's K/V store to store usernames.
 
 Turns out, I had hit the limit of how many GET requests to the KV I could make. This prompted me to look into other options.
 
-
 #### Cloudflare
 
 I decided to switch to Cloudflare, since they have a free tier. With Cloudflare, I could use their entire worker suite to power all parts of the site. This would allow me to use one interface to handle of the database, KV store, and the frontend.
 
-
 Because of the great integration that Astro has with Cloudflare, I had minimal code changes to make. I was able to use Drizzle to handle the database, and the KV store API was very similar to Vercel's KV store API.
-
 
 ### The future
 
-I've made a small amount of changes since the CloudFlare upgrade. Furthermore, I've optimized database calls using batching, and I've added quarterly resets to the leaderboard. 
+I've made a small amount of changes since the CloudFlare upgrade. Furthermore, I've optimized database calls using batching, and I've added quarterly resets to the leaderboard.
 
 ![Leaderboard with the quarter tabs]({counterQuarters})
 
@@ -137,6 +132,5 @@ This was a fun project to make, and I'm glad I was able to make it. It taught me
 Till next time,
 
 -- Riley
-
 
 > If you want to see the code for this site, it's [here](https://github.com/qpixel/womp-womp).

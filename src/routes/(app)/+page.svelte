@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { CardContainer, CardBody, CardItem } from '$lib/ui/Card';
+	import { CardContainer, CardBody, CardItem } from '$lib/components/ui/Card';
 	import type { Tech, Project } from '$lib/types';
 	import { cn } from '$lib/utils';
-	import Container from '$lib/ui/container.svelte';
+	import Container from '$lib/components/ui/container.svelte';
 	import { Icon } from 'svelte-awesome';
 	import { github } from 'svelte-awesome/icons';
-	import Button from '$lib/ui/Button/Button.svelte';
+	import Button from '$lib/components/ui/Button/Button.svelte';
 	const techImgs = import.meta.glob('$lib/imgs/*.svg', {
 		eager: true,
 		query: {

@@ -26,7 +26,13 @@ const GET: RequestHandler = async ({ url }) => {
 		return new Response('Not found', { status: 404 });
 	}
 
-	const { title, description, datePublished: date, locked, lastUpdated } = metadata satisfies PostMetadata;
+	const {
+		title,
+		description,
+		datePublished: date,
+		locked,
+		lastUpdated
+	} = metadata satisfies PostMetadata;
 
 	if (locked) {
 		return new Response('Not found', { status: 404 });
@@ -42,7 +48,6 @@ const GET: RequestHandler = async ({ url }) => {
 		siteID: process.env.SITE_ID,
 		token: process.env.NETLIFY_PAT
 	});
-
 
 	// this should be a blob, but it's not
 	const data = await store.getWithMetadata(`${slug}.png`, { type: 'arrayBuffer' });
@@ -64,7 +69,7 @@ const GET: RequestHandler = async ({ url }) => {
 	}
 
 	if (image && shouldReturnCache) {
-		console.log("returning cached image, shouldReturnCache:", shouldReturnCache);
+		console.log('returning cached image, shouldReturnCache:', shouldReturnCache);
 		return new Response(image, {
 			headers: {
 				'x-og-image-cache': 'true',
@@ -74,7 +79,7 @@ const GET: RequestHandler = async ({ url }) => {
 		});
 	}
 
-	console.log("generating new image, shouldReturnCache:", shouldReturnCache);
+	console.log('generating new image, shouldReturnCache:', shouldReturnCache);
 
 	const response = new ImageResponse(
 		// todo: fix the library to accept a svelte 5 component
@@ -116,5 +121,3 @@ const GET: RequestHandler = async ({ url }) => {
 };
 
 export { GET };
-
-

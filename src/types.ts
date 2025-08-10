@@ -8,9 +8,8 @@ export interface PostMetadata {
 	tags?: string[];
 }
 
-
 interface CodeHeaderOptions {
 	meta: {
 		lang: string;
-	}
+	};
 }

@@ -2,7 +2,6 @@ import { error, redirect } from '@sveltejs/kit';
 import type { PostMetadata } from '~/types';
 import type { PageLoad } from './$types';
 
-
 // TODO: Figure how to prerender with enhanced:img
 export const prerender = true;
 
@@ -11,7 +10,10 @@ export const load: PageLoad = async ({ params, url, data }) => {
 	const postPromise = import(`~/posts/${slug}/index.md`).catch(() => null);
 
 	const [postResult] = await Promise.all([postPromise]);
-	const { default: page, metadata }: { default: () => { render: () => Promise<string> }; metadata: PostMetadata } = postResult;
+	const {
+		default: page,
+		metadata
+	}: { default: () => { render: () => Promise<string> }; metadata: PostMetadata } = postResult;
 
 	if (!page) {
 		return error(404, 'Not found');

@@ -9,97 +9,109 @@
  */
 const codeHeaderTransformer = (options = {}) => {
 	return {
-		name: "code-header",
+		name: 'code-header',
 		pre(node) {
 			const lang = options.meta.lang;
 			if (!lang) {
 				return; // Only apply to code blocks with a language defined
 			}
 			const style = node.properties.style.split(';');
-			const lightBg = style.find(s => s.includes('--shiki-light-bg')).split(':')[1].trim();
-			const darkBg = style.find(s => s.includes('--shiki-dark-bg')).split(':')[1].trim();
-			const lightText = style.find(s => s.includes('--shiki-light:')).split(':')[1].trim();
-			const darkText = style.find(s => s.includes('--shiki-dark:')).split(':')[1].trim();
+			const lightBg = style
+				.find((s) => s.includes('--shiki-light-bg'))
+				.split(':')[1]
+				.trim();
+			const darkBg = style
+				.find((s) => s.includes('--shiki-dark-bg'))
+				.split(':')[1]
+				.trim();
+			const lightText = style
+				.find((s) => s.includes('--shiki-light:'))
+				.split(':')[1]
+				.trim();
+			const darkText = style
+				.find((s) => s.includes('--shiki-dark:'))
+				.split(':')[1]
+				.trim();
 
 			// Create the header element
 			const header = {
-				type: "element",
-				tagName: "div",
+				type: 'element',
+				tagName: 'div',
 				properties: {
-					class: "shiki-code-header",
+					class: 'shiki-code-header',
 					style: `--shiki-dark-bg: ${darkBg}; --shiki-dark: ${darkText}; --shiki-light-bg: ${lightBg}; --shiki-light: ${lightText};`
 				},
 				children: [
 					{
-						type: "element",
-						tagName: "span",
+						type: 'element',
+						tagName: 'span',
 						properties: {
-							class: "shiki-code-lang-name",
+							class: 'shiki-code-lang-name'
 						},
-						children: [{ type: "text", value: lang }],
+						children: [{ type: 'text', value: lang }]
 					},
 					{
-						type: "element",
-						tagName: "button",
+						type: 'element',
+						tagName: 'button',
 						properties: {
-							class: "shiki-copy-button",
-							title: "Copy code",
-							onclick: "window.copyCode(this)", // JavaScript function to handle copying
+							class: 'shiki-copy-button',
+							title: 'Copy code',
+							onclick: 'window.copyCode(this)' // JavaScript function to handle copying
 						},
 						children: [
 							{
-								type: "element",
-								tagName: "svg",
+								type: 'element',
+								tagName: 'svg',
 								properties: {
-									xmlns: "http://www.w3.org/2000/svg",
-									width: "16",
-									height: "16",
-									viewBox: "0 0 24 24",
-									fill: "none",
-									stroke: "currentColor",
-									"stroke-width": "2",
-									"stroke-linecap": "round",
-									"stroke-linejoin": "round",
+									xmlns: 'http://www.w3.org/2000/svg',
+									width: '16',
+									height: '16',
+									viewBox: '0 0 24 24',
+									fill: 'none',
+									stroke: 'currentColor',
+									'stroke-width': '2',
+									'stroke-linecap': 'round',
+									'stroke-linejoin': 'round'
 								},
 								children: [
 									{
-										type: "element",
-										tagName: "rect",
+										type: 'element',
+										tagName: 'rect',
 										properties: {
-											x: "9",
-											y: "9",
-											width: "13",
-											height: "13",
-											rx: "2",
-											ry: "2",
-										},
+											x: '9',
+											y: '9',
+											width: '13',
+											height: '13',
+											rx: '2',
+											ry: '2'
+										}
 									},
 									{
-										type: "element",
-										tagName: "path",
+										type: 'element',
+										tagName: 'path',
 										properties: {
-											d: "M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1",
-										},
-									},
-								],
-							},
-						],
-					},
-				],
+											d: 'M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'
+										}
+									}
+								]
+							}
+						]
+					}
+				]
 			};
 
 			// Wrap the original code node and the header in a new div
 			const wrapper = {
-				type: "element",
-				tagName: "div",
+				type: 'element',
+				tagName: 'div',
 				properties: {
-					class: "shiki-code-container",
+					class: 'shiki-code-container'
 				},
-				children: [header, node],
+				children: [header, node]
 			};
 
 			return wrapper;
-		},
+		}
 	};
 };
 

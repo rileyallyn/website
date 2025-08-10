@@ -28,15 +28,23 @@ const config = {
 				highlighter: async (code, lang, metastring) => {
 					const twoslash = metastring?.includes('twoslash');
 					const highlighter = await highlighterPromise;
-					const html = escapeSvelte(highlighter.codeToHtml(code, {
-						lang, themes: {
-							light: catppuccin,
-							dark: tokyoNight
-						}, defaultColor: 'light-dark()', transformers: [transformerTwoslash({
-							explicitTrigger: !twoslash,
-							langs: twoslash ? ['ts'] : undefined
-						}), codeHeaderTransformer({ meta: { lang } })],
-					}));
+					const html = escapeSvelte(
+						highlighter.codeToHtml(code, {
+							lang,
+							themes: {
+								light: catppuccin,
+								dark: tokyoNight
+							},
+							defaultColor: 'light-dark()',
+							transformers: [
+								transformerTwoslash({
+									explicitTrigger: !twoslash,
+									langs: twoslash ? ['ts'] : undefined
+								}),
+								codeHeaderTransformer({ meta: { lang } })
+							]
+						})
+					);
 					return `{@html \`${html}\`}`;
 				}
 			}

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Container from '$lib/ui/container.svelte';
-	import BlogPost from '$lib/ui/blog-post.svelte';
+	import Container from '$lib/components/ui/container.svelte';
+	import BlogPost from '$lib/components/ui/blog-post.svelte';
 	let { data } = $props();
 	const { posts } = data;
 </script>

@@ -10,7 +10,6 @@
 
 	export let url: string;
 
-
 	let playing = writable(false);
 
 	const toggle = () => {

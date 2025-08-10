@@ -1,6 +1,6 @@
 <script module>
-	import h2 from '$lib/ui/overrides/h2.svelte';
-	import h3 from '$lib/ui/overrides/h3.svelte';
+	import h2 from '$lib/components/ui/overrides/h2.svelte';
+	import h3 from '$lib/components/ui/overrides/h3.svelte';
 	export { h2, h3 };
 </script>
 
