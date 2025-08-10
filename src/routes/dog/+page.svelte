@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
 </script>
 
 <div class="flex h-screen flex-col items-center justify-center bg-black">

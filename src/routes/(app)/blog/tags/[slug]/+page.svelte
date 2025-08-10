@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Container from '$lib/components/ui/container.svelte';
-	import { Badge } from '$lib/components/ui/Badge';
 	import BlogPost from '$lib/components/ui/blog-post.svelte';
 
 	let { data }: { data: PageData } = $props();
@@ -12,11 +11,11 @@
 		<nav aria-label="Breadcrumb" class="py-2">
 			<ol class="flex items-center space-x-2 text-sm">
 				<li>
-					<a href="/blog" class="text-gray-600 hover:text-purple-400 hover:underline">blog</a>
+					<a href="/blog" class="text-gray-600 hover:text-purple-400 hover:underline">Blog</a>
 				</li>
 				<li class="flex items-center">
 					<span class="mx-1 text-gray-400">/</span>
-					<a href="/blog/tags" class="font-medium text-gray-600 hover:underline">tags</a>
+					<a href="/blog/tags" class="font-medium text-gray-600 hover:underline">Tags</a>
 				</li>
 				<li class="flex items-center">
 					<span class="mx-1 text-gray-400">/</span>
@@ -28,13 +27,13 @@
 		</nav>
 	{/if}
 	<h1 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
-		blog posts tagged with {data.tag}
+		Blog posts tagged with {data.tag}
 	</h1>
 	<div class="flex flex-col gap-y-10">
 		{#if data.posts}
 			{#each data.posts as post}
 				{#if post}
-					<BlogPost {post} />
+					<BlogPost {post} slug={post.slug} />
 				{/if}
 			{/each}
 		{:else}

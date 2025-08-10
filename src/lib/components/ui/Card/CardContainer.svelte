@@ -6,13 +6,15 @@
 		containerClassName?: string | undefined;
 		isMouseEntered?: boolean;
 		children?: import('svelte').Snippet;
+		role?: string | undefined;
 	}
 
 	let {
 		className = undefined,
 		containerClassName = undefined,
 		isMouseEntered = $bindable(false),
-		children
+		children,
+		role = 'article'
 	}: Props = $props();
 
 	let containerRef: HTMLDivElement | undefined = $state();
@@ -37,13 +39,13 @@
 	};
 </script>
 
-<div class={cn('flex', containerClassName)} style="perspective: 1000px;" role="article">
+<div class={cn('flex', containerClassName)} style="perspective: 1000px;" {role}>
 	<div
 		bind:this={containerRef}
 		onmouseenter={handleMouseEnter}
 		onmousemove={handleMouseMove}
 		onmouseleave={handleMouseLeave}
-		role="article"
+		{role}
 		class={cn(
 			'relative flex items-center justify-center transition-all duration-200 ease-linear',
 			className

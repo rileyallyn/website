@@ -96,7 +96,7 @@
 			class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold"
 			aria-label="About me"
 		>
-			about me
+			About Me
 		</h2>
 		<p>
 			I am a software developer and creative from Southern California with a passion for building
@@ -108,7 +108,7 @@
 	</section>
 	<section class="" id="tech">
 		<h2 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
-			tech i use
+			Tech I Use
 		</h2>
 		<div
 			class="grid grid-cols-2 gap-x-1 gap-y-4 py-4 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-4 sm:gap-y-8"
@@ -116,7 +116,7 @@
 			role="list"
 		>
 			{#each techUsed as tech (tech.name)}
-				<CardContainer className={cn('w-full', tech.customClass)}>
+				<CardContainer className={cn('w-full', tech.customClass)} role="listitem">
 					<CardBody className="relative group/card  w-full h-auto rounded-xl p-6 border">
 						<CardItem className="mx-auto"
 							><img
@@ -136,7 +136,7 @@
 	</section>
 	<section id="projects">
 		<h2 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
-			projects
+			Projects
 		</h2>
 		<ol
 			class="grid grid-cols-1 gap-x-1 gap-y-4 py-4 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8"

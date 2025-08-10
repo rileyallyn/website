@@ -36,16 +36,16 @@
 		</p>
 		<ul class="flex w-full flex-col gap-y-2">
 			<li class="hover:underline">
-				<a href="/">about</a>
+				<a href="/">About</a>
 			</li>
 			<li class="hover:underline">
-				<a href="/blog">blog</a>
+				<a href="/blog">Blog</a>
 			</li>
 			<li class="hover:underline">
-				<a href="https://resume.rileyy.dev">resume</a>
+				<a href="https://resume.rileyy.dev">Resume</a>
 			</li>
 			<li class="hidden hover:underline">
-				<a href="/photography">photography</a>
+				<a href="/photography">Photography</a>
 			</li>
 		</ul>
 		<!-- socials -->

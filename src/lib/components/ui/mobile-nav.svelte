@@ -19,16 +19,16 @@
 			<nav class="flex items-center gap-x-2 px-4 pt-2">
 				<ol class="mt-4 flex w-full flex-col gap-y-2 text-4xl font-bold">
 					<li>
-						<a href="/" onclick={() => (open = false)}>about</a>
+						<a href="/" onclick={() => (open = false)}>About</a>
 					</li>
 					<li>
-						<a href="/blog" onclick={() => (open = false)}>blog</a>
+						<a href="/blog" onclick={() => (open = false)}>Blog</a>
 					</li>
 					<li>
-						<a href="https://resume.rileyy.dev">resume</a>
+						<a href="https://resume.rileyy.dev">Resume</a>
 					</li>
 					<li class="hidden">
-						<a href="/photography">photography</a>
+						<a href="/photography">Photography</a>
 					</li>
 				</ol>
 			</nav>
