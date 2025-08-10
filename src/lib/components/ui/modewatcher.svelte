@@ -18,14 +18,14 @@
 	<DropdownMenu.Trigger
 		class={cn(
 			buttonVariants({ variant: 'outline', size }),
-			'backdrop-blur-sm dark:bg-zinc-900/50 cursor-pointer bg-stone-200 hover:bg-stone-200/50'
+			'cursor-pointer bg-stone-200 backdrop-blur-sm hover:bg-stone-200/50 dark:bg-zinc-900/50'
 		)}
 	>
 		<SunIcon
-			class="h-[1.1rem] w-[1.1rem] rotate-0 scale-100 !transition-all dark:-rotate-90 dark:scale-0"
+			class="h-[1.1rem] w-[1.1rem] scale-100 rotate-0 !transition-all dark:scale-0 dark:-rotate-90"
 		/>
 		<MoonIcon
-			class="absolute h-[1.1rem] w-[1.1rem] rotate-90 scale-0 !transition-all dark:rotate-0 dark:scale-100"
+			class="absolute h-[1.1rem] w-[1.1rem] scale-0 rotate-90 !transition-all dark:scale-100 dark:rotate-0"
 		/>
 		<span class="sr-only">Toggle theme</span>
 	</DropdownMenu.Trigger>

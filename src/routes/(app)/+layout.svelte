@@ -2,7 +2,6 @@
 	import Sidebar from '$lib/components/ui/sidebar.svelte';
 	import GridBg from '$lib/components/ui/gridbg.svelte';
 	import { page } from '$app/state';
-	import ModeWatcher from '$lib/components/ui/modewatcher.svelte';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
@@ -40,22 +39,21 @@
 </svelte:head>
 <GridBg className="-z-10 h-full w-full" />
 <div
-	class="relative flex flex-row justify-center styled-scrollbars overflow-y-auto max-h-dvh pt-16"
+	class="styled-scrollbars relative flex max-h-dvh flex-row justify-center overflow-y-auto pt-16"
 >
-	<div class="sticky md:w-1/3 top-0 z-10">
-		<div class="relative sm:left-8 md:left-16 lg:left-32 xl:left-64 w-fit flex flex-col gap-2">
+	<div class="sticky top-0 z-10 md:w-1/3">
+		<div
+			class="relative flex w-fit flex-col gap-2 sm:left-8 md:left-16 lg:left-26 xl:left-56 2xl:left-96"
+		>
 			<Sidebar />
-			<div class="md:block hidden">
-				<ModeWatcher />
-			</div>
 		</div>
 	</div>
 	<!-- Fixed sidebar taking 25% of the page -->
 	<!-- Main content taking 75% of the page with scrollable content -->
 	<div
-		class="w-full md:w-2/3 md:pb-0 p-2 md:p-0 md:pr-2.5 md:pl-2 h-full relative mr-0 md:mr-8 lg:mr-0"
+		class="relative mr-0 h-full w-full p-2 md:mr-8 md:w-2/3 md:p-0 md:pr-2.5 md:pb-0 md:pl-2 lg:mr-0"
 	>
-		<div class="md:max-w-2xl w-full">
+		<div class="w-full md:max-w-2xl">
 			{@render children?.()}
 		</div>
 	</div>

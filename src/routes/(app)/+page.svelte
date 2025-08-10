@@ -93,7 +93,7 @@
 <Container>
 	<section class="" id="about">
 		<h2
-			class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed"
+			class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold"
 			aria-label="About me"
 		>
 			about me
@@ -107,11 +107,11 @@
 		</p>
 	</section>
 	<section class="" id="tech">
-		<h2 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
+		<h2 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
 			tech i use
 		</h2>
 		<div
-			class="grid grid-cols-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-4 sm:gap-y-8 py-4"
+			class="grid grid-cols-2 gap-x-1 gap-y-4 py-4 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-4 sm:gap-y-8"
 			aria-label="Technologies I use"
 			role="list"
 		>
@@ -122,11 +122,11 @@
 							><img
 								src={tech.imgSrc.default}
 								alt={tech.name + ' logo'}
-								class={cn('w-auto h-32', tech.imgClass)}
+								class={cn('h-32 w-auto', tech.imgClass)}
 							/></CardItem
 						>
 						<CardItem
-							className="text-xl font-bold text-neutral-600 dark:dark:text-white text-center mx-auto mt-4"
+							className="text-xl font-bold text-zinc-900 dark:text-white text-center mx-auto mt-4"
 							>{tech.name}</CardItem
 						>
 					</CardBody>
@@ -135,11 +135,11 @@
 		</div>
 	</section>
 	<section id="projects">
-		<h2 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
+		<h2 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
 			projects
 		</h2>
 		<ol
-			class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-1 sm:gap-x-8 sm:gap-y-8 py-4"
+			class="grid grid-cols-1 gap-x-1 gap-y-4 py-4 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8"
 			aria-label="Projects I've worked on"
 			role="list"
 		>
@@ -148,7 +148,7 @@
 					<CardContainer className="w-full" containerClassName="">
 						<CardBody className="  w-full sm:w-120 h-auto rounded-xl p-6 border">
 							<CardItem
-								className="text-lg font-bold text-neutral-600 dark:text-white text-center mx-auto flex items-center gap-x-2"
+								className="text-lg font-bold text-zinc-900 dark:text-white text-center mx-auto flex items-center gap-x-2"
 							>
 								<Icon name="github" data={github} scale={1.5} className="text-center" />
 								{project.name}

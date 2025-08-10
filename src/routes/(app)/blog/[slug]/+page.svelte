@@ -59,7 +59,7 @@
 					</div>
 					<p class="text-sm text-gray-500">{post.timeToRead}</p>
 					{#if post.tags}
-						<div class="flex flex-wrap gap-x-2 mt-2">
+						<div class="mt-2 flex flex-wrap gap-x-2">
 							{#each post.tags as tag}
 								<a href={`/blog/tags/${tag}`}>
 									<Badge
@@ -75,7 +75,7 @@
 				</div>
 			</div>
 		</div>
-		<article class="prose prose-zinc dark:prose-invert max-w-3xl">
+		<article class="prose max-w-3xl prose-zinc dark:prose-invert">
 			<SvelteComponent />
 		</article>
 	</div>

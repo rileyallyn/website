@@ -30,7 +30,7 @@
 <h3 id={cleanedId} class="flex flex-row gap-y-2">
 	<a
 		href={`#${cleanedId}`}
-		class="anchor font-bold max-w-fit"
+		class="anchor max-w-fit font-bold"
 		bind:this={data}
 		onclick={onClickCopy}
 	>
@@ -38,7 +38,7 @@
 	</a>
 	{#if copy}
 		<div
-			class=" text-xs text-gray-500 bg-neutral-100 dark:text-gray-100 dark:bg-neutral-900 px-2 rounded-md max-w-fit text-center flex items-center ml-2 z-10"
+			class=" z-10 ml-2 flex max-w-fit items-center rounded-md bg-neutral-100 px-2 text-center text-xs text-gray-500 dark:bg-neutral-900 dark:text-gray-100"
 			transition:fade={{ duration: 80 }}
 		>
 			Copied to clipboard!

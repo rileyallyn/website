@@ -41,7 +41,7 @@
 					<p class="text-sm text-gray-600 dark:text-gray-200">{post.description}</p>
 					<div class="flex flex-wrap gap-x-2">
 						{#if post.tags && post.tags.length > 0}
-							<ul class="flex flex-wrap gap-x-2 list-none p-0 m-0">
+							<ul class="m-0 flex list-none flex-wrap gap-x-2 p-0">
 								{#each post.tags as tag}
 									<li>
 										<a href="/blog/tags/{tag}" aria-label="View posts tagged with {tag}">

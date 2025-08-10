@@ -2,60 +2,66 @@
 	import Socials from './socials.svelte';
 	import pfp from '$lib/imgs/pfp.webp?enhanced';
 	import Navbar from './mobile-nav.svelte';
+	import ModeWatcher from './modewatcher.svelte';
 
 	const year = new Date().getFullYear();
 </script>
 
 <header
-	class="block dark:text-white md:hidden pb-1 z-40 fixed top-0 left-0 w-full dark:bg-zinc-700/5 bg-stone-200/5 backdrop-blur-xs"
+	class="fixed top-0 left-0 z-40 block w-full bg-stone-200/5 pb-1 backdrop-blur-xs md:hidden dark:bg-zinc-700/5 dark:text-white"
 >
-	<nav class="flex pt-2 px-3 items-center gap-x-2">
+	<nav class="flex items-center gap-x-2 px-3 pt-2">
 		<enhanced:img
 			src={pfp}
 			alt="Riley Smith looking at the aurora borealis"
-			class="rounded-lg w-10 h-10"
+			class="h-10 w-10 rounded-lg"
 		/>
-		<a href="/" class="mr-auto title">
-			<h1 class="text-xl mr-auto">Riley Smith</h1>
+		<a href="/" class="title mr-auto">
+			<h1 class="mr-auto text-xl">Riley Smith</h1>
 		</a>
 		<Navbar />
 	</nav>
 </header>
-<aside class="dark:text-white w-fit hidden md:block">
+<aside class="hidden w-fit md:block dark:text-white">
 	<enhanced:img
 		src={pfp}
 		alt="Riley Smith looking at the aurora borealis"
-		class="rounded-xl w-36 h-36 object-cover"
+		class="h-36 w-36 rounded-xl object-cover"
 		fetchpriority="high"
 	/>
-	<h1 class="text-2xl font-bold title pt-0.5">Riley Smith</h1>
-	<p class="text-md text-gray-500 italic dark:text-gray-300" aria-label="byline">
-		Software Developer
-	</p>
-	<ul class="gap-y-2 mt-2 flex flex-col w-full">
-		<li class="hover:underline">
-			<a href="/">about</a>
-		</li>
-		<li class="hover:underline">
-			<a href="/blog">blog</a>
-		</li>
-		<li class="hover:underline">
-			<a href="https://resume.rileyy.dev">resume</a>
-		</li>
-		<li class="hidden hover:underline">
-			<a href="/photography">photography</a>
-		</li>
-	</ul>
-	<!-- socials -->
-	<Socials scale={1.5} />
-	<footer class="mt-1">
+	<div class="mt-3 flex flex-col gap-y-1">
+		<h1 class="title text-2xl font-bold">Riley Smith</h1>
+		<p class="text-md text-zinc-900 italic dark:text-gray-300" aria-label="byline">
+			Software Developer
+		</p>
+		<ul class="flex w-full flex-col gap-y-2">
+			<li class="hover:underline">
+				<a href="/">about</a>
+			</li>
+			<li class="hover:underline">
+				<a href="/blog">blog</a>
+			</li>
+			<li class="hover:underline">
+				<a href="https://resume.rileyy.dev">resume</a>
+			</li>
+			<li class="hidden hover:underline">
+				<a href="/photography">photography</a>
+			</li>
+		</ul>
+		<!-- socials -->
+		<Socials scale={1.5} />
+	</div>
+	<footer class="">
 		<a
-			class="text-xs text-gray-500"
+			class="text-xs text-zinc-300"
 			href="https://github.com/rileyallyn/website"
 			aria-label="Source Code"
 		>
 			Source
 		</a>
-		<p class="text-xs text-gray-500" aria-label="Copyright">© 2024-{year} Riley Smith</p>
+		<p class="text-xs text-zinc-300 font-stretch-105%" aria-label="Copyright">
+			© 2024-{year} Riley Smith
+		</p>
+		<ModeWatcher />
 	</footer>
 </aside>

@@ -10,7 +10,7 @@
 	let { title, description, date }: Props = $props();
 </script>
 
-<div tw="bg-zinc-950 flex w-full h-full">
+<div tw="bg-zinc-900 flex w-full h-full">
 	<div tw="flex flex-col w-full py-12 px-4 p-10">
 		<h1 tw="text-2xl tracking-tight text-white text-left text-gray-400">
 			{date

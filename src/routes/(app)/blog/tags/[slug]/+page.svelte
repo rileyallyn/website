@@ -27,7 +27,7 @@
 			</ol>
 		</nav>
 	{/if}
-	<h1 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">
+	<h1 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
 		blog posts tagged with {data.tag}
 	</h1>
 	<div class="flex flex-col gap-y-10">

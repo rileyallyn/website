@@ -8,15 +8,16 @@
 </script>
 
 <Sheet.Root bind:open>
-	<Sheet.Trigger class={buttonVariants({ variant: 'outline', size: 'iconSm' })}
-		><MenuIcon /></Sheet.Trigger
+	<Sheet.Trigger
+		class={buttonVariants({ variant: 'outline', size: 'iconSm' })}
+		aria-label="Toggle mobile navigation"><MenuIcon /></Sheet.Trigger
 	>
 	<Sheet.Content
-		class="w-full h-full flex flex-col bg-zinc-900/50 dark:bg-zinc-900/50 backdrop-blur-sm"
+		class="flex h-full w-full flex-col bg-zinc-900/50 backdrop-blur-sm dark:bg-zinc-900/50"
 	>
-		<div class="flex flex-col gap-y-2 h-full justify-center">
-			<nav class="flex pt-2 px-4 items-center gap-x-2">
-				<ul class="font-bold text-4xl gap-y-2 mt-4 flex flex-col w-full">
+		<div class="flex h-full flex-col justify-center gap-y-2">
+			<nav class="flex items-center gap-x-2 px-4 pt-2">
+				<ol class="mt-4 flex w-full flex-col gap-y-2 text-4xl font-bold">
 					<li>
 						<a href="/" onclick={() => (open = false)}>about</a>
 					</li>
@@ -29,11 +30,11 @@
 					<li class="hidden">
 						<a href="/photography">photography</a>
 					</li>
-				</ul>
+				</ol>
 			</nav>
 			<Socials scale={3} className="p-4" />
 		</div>
-		<Sheet.Footer class="justify-self-end flex justify-end">
+		<Sheet.Footer class="flex justify-end justify-self-end">
 			<ModeWatcher size="icon" />
 		</Sheet.Footer>
 	</Sheet.Content>

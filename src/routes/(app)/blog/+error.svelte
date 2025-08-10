@@ -4,7 +4,7 @@
 	import { arrowLeft } from 'svelte-awesome/icons';
 </script>
 
-<a href="/blog" class="flex items-center mb-2 gap-x-2 text-gray-600 hover:underline">
+<a href="/blog" class="mb-2 flex items-center gap-x-2 text-gray-600 hover:underline">
 	<Icon data={arrowLeft} />
 	<span>Back to blog</span>
 </a>

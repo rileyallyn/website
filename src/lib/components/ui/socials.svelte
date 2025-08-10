@@ -10,37 +10,45 @@
 	let { scale = 1.5, className = '' }: Props = $props();
 </script>
 
-<div class={cn('flex gap-x-2 mt-2 dark:text-white', className)}>
-	<a
-		href="https://github.com/rileyallyn"
-		target="_blank"
-		rel="noreferrer"
-		aria-label="Link to my GitHub profile"
-	>
-		<Icon class="dark:text-white" data={github} {scale} />
-	</a>
-	<a
-		href="https://linkedin.com/in/riley-a-smith"
-		target="_blank"
-		rel="noreferrer"
-		aria-label="Link to my LinkedIn profile"
-	>
-		<Icon class="dark:text-white" data={linkedinSquare} {scale} />
-	</a>
-	<a
-		href="https://instagram.com/rileyy.allyn"
-		target="_blank"
-		rel="noreferrer"
-		aria-label="Link to my Instagram profile"
-	>
-		<Icon class="dark:text-white" data={instagram} {scale} />
-	</a>
-	<a
-		href="mailto:riley@rileysmith.me"
-		target="_blank"
-		rel="noreferrer"
-		aria-label="Link to my email"
-	>
-		<Icon class="dark:text-white" data={envelope} {scale} />
-	</a>
-</div>
+<ol class={cn('mt-2 flex list-none gap-x-2 dark:text-white', className)}>
+	<li>
+		<a
+			href="https://github.com/rileyallyn"
+			target="_blank"
+			rel="noreferrer"
+			aria-label="Link to my GitHub profile"
+		>
+			<Icon class="dark:text-white" data={github} {scale} />
+		</a>
+	</li>
+	<li>
+		<a
+			href="https://linkedin.com/in/riley-a-smith"
+			target="_blank"
+			rel="noreferrer"
+			aria-label="Link to my LinkedIn profile"
+		>
+			<Icon class="dark:text-white" data={linkedinSquare} {scale} />
+		</a>
+	</li>
+	<li>
+		<a
+			href="https://instagram.com/rileyy.allyn"
+			target="_blank"
+			rel="noreferrer"
+			aria-label="Link to my Instagram profile"
+		>
+			<Icon class="dark:text-white" data={instagram} {scale} />
+		</a>
+	</li>
+	<li>
+		<a
+			href="mailto:riley@rileysmith.me"
+			target="_blank"
+			rel="noreferrer"
+			aria-label="Link to my email"
+		>
+			<Icon class="dark:text-white" data={envelope} {scale} />
+		</a>
+	</li>
+</ol>

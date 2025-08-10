@@ -18,7 +18,7 @@
 			</li>
 		</ol>
 	</nav>
-	<h1 class="text-xl font-bold border-b-2 border-purple-700 max-w-fit leading-relaxed">tags</h1>
+	<h1 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">tags</h1>
 	<div class="flex flex-row gap-x-2">
 		{#each data.tags as tag}
 			<a href={`/blog/tags/${tag}`}>
