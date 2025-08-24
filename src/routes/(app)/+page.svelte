@@ -157,13 +157,14 @@
 								<p>{project.description}</p>
 							</CardItem>
 							<CardItem className="mt-4 w-full">
-								<a href={project.link} target="_blank" rel="noopener noreferrer" class="w-full">
-									<Button
-										variant="link"
-										class="bg-black text-white dark:bg-white dark:text-black"
-										size="lg">View on GitHub</Button
-									>
-								</a>
+								<Button
+									href={project.link}
+									variant="link"
+									class="bg-black text-white dark:bg-white dark:text-black"
+									size="lg"
+								>
+									View on GitHub
+								</Button>
 							</CardItem>
 						</CardBody>
 					</CardContainer>

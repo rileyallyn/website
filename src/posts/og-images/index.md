@@ -1,7 +1,7 @@
 ---
 title: OG Images
 datePublished: 2025-05-01
-locked: false
+locked: true
 description: How I made the OG images for my blog and why you need to cache heavily read resources
 tags: [projects, webdev, svelte]
 ---
