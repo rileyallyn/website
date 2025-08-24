@@ -53,7 +53,10 @@ export const getBlogTags = async () => {
 	const tags = await Promise.all(
 		Object.keys(mdModules).map(async (path) => {
 			const { metadata } = (await mdModules[path]()) as { metadata: PostMetadata };
-			const { tags } = metadata;
+			const { tags, locked } = metadata;
+			if (locked) {
+				return null;
+			}
 			return tags;
 		})
 	);
