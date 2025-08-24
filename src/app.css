@@ -279,11 +279,14 @@ code .line::before {
 	user-select: none; /* Prevent selection of header text */
 }
 
-@media (prefers-color-scheme: dark) {
-	.shiki-code-header {
-		background-color: var(--shiki-dark-bg);
-		color: var(--shiki-dark);
-	}
+html.dark .shiki,
+html.dark .shiki span {
+	color: var(--shiki-dark) !important;
+	background-color: var(--shiki-dark-bg) !important;
+	/* Optional, if you also want font styles */
+	font-style: var(--shiki-dark-font-style) !important;
+	font-weight: var(--shiki-dark-font-weight) !important;
+	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
 .shiki-code-lang-name {
@@ -329,15 +332,4 @@ code .line::before {
 	border-top-right-radius: 0;
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
-}
-@media (prefers-color-scheme: dark) {
-	.shiki,
-	.shiki span {
-		color: var(--shiki-dark) !important;
-		background-color: var(--shiki-dark-bg) !important;
-		/* Optional, if you also want font styles */
-		font-style: var(--shiki-dark-font-style) !important;
-		font-weight: var(--shiki-dark-font-weight) !important;
-		text-decoration: var(--shiki-dark-text-decoration) !important;
-	}
 }

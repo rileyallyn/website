@@ -22,7 +22,7 @@
 	<div class="flex flex-row gap-x-2">
 		{#each data.tags as tag}
 			<a href={`/blog/tags/${tag}`}>
-				<Badge variant="outline">{tag}</Badge>
+				<Badge variant="default">{tag}</Badge>
 			</a>
 		{/each}
 	</div>

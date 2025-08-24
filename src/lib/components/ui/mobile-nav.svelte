@@ -15,7 +15,7 @@
 	<Sheet.Content
 		class="flex h-full w-full flex-col bg-zinc-900/50 backdrop-blur-sm dark:bg-zinc-900/50"
 	>
-		<div class="flex h-full flex-col justify-center gap-y-2">
+		<div class="flex h-full flex-col justify-center gap-y-2 text-white">
 			<nav class="flex items-center gap-x-2 px-4 pt-2">
 				<ol class="mt-4 flex w-full flex-col gap-y-2 text-4xl font-bold">
 					<li>
@@ -41,13 +41,13 @@
 </Sheet.Root>
 
 <!-- <aside
-	class="dark:text-white w-full absolute h-full dark:bg-zinc-950/95 backdrop-blur-xs py-40 block sm:hidden z-50 bg-stone-200/95"
+	class="block absolute z-50 py-40 w-full h-full dark:text-white dark:bg-zinc-950/95 backdrop-blur-xs sm:hidden bg-stone-200/95"
 	class:open
 >
 	<div class="absolute top-0 right-0">
 		<button
 			onclick={() => (open = !open)}
-			class=" w-7 h-7 md:hidden mt-2 mx-4"
+			class="mx-4 mt-2 w-7 h-7  md:hidden"
 			aria-label="Toggle sidebar menu"
 		>
 			<span class="sr-only">Toggle sidebar menu</span>
@@ -55,8 +55,8 @@
 		</button>
 	</div> -->
 <!-- TODO: Make this into a reuable component -->
-<!-- <nav class="flex pt-2 px-4 items-center gap-x-2">
-		<ul class="font-bold text-4xl gap-y-2 mt-4 flex flex-col w-full">
+<!-- <nav class="flex gap-x-2 items-center px-4 pt-2">
+		<ul class="flex flex-col gap-y-2 mt-4 w-full text-4xl font-bold">
 			<li>
 				<a href="/" onclick={() => (open = false)}>about</a>
 			</li>

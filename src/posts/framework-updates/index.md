@@ -1,5 +1,5 @@
 ---
-title: Updates are fun
+title: The migration to Svelte 5
 datePublished: 2025-05-01
 description: All I wanted to do was update my website to Svelte 5....
 tags: [webdev, svelte]
