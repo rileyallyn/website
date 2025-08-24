@@ -53,13 +53,13 @@
 	</div>
 	<footer class="">
 		<a
-			class="text-xs text-zinc-300"
+			class="text-xs text-zinc-600 dark:text-zinc-300"
 			href="https://github.com/rileyallyn/website"
 			aria-label="Source Code"
 		>
 			Source
 		</a>
-		<p class="text-xs text-zinc-300 font-stretch-105%" aria-label="Copyright">
+		<p class="text-xs text-zinc-600 font-stretch-105% dark:text-zinc-300" aria-label="Copyright">
 			© 2024-{year} Riley Smith
 		</p>
 		<ModeWatcher />

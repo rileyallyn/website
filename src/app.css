@@ -248,16 +248,17 @@ code .line::before {
 .shiki-code-container {
 	position: relative;
 	margin-bottom: 1rem;
+	overflow-x: auto;
 	/* Inherit background and text color from the Shiki pre element,
      or explicitly set it if you prefer. */
 	/* background-color: var(--shiki-color-background, #2d2d2d); */
 	/* color: var(--shiki-color-text, #cccccc); */
 }
 
-.twoslash .twoslash-hover {
+/* .twoslash .twoslash-hover {
 	position: static !important;
 	z-index: 1000 !important;
-}
+} */
 
 .shiki-code-header {
 	/* Use the Shiki background color, potentially a slightly darker/lighter shade */

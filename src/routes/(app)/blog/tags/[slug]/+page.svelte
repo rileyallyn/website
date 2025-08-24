@@ -33,7 +33,7 @@
 		{#if data.posts}
 			{#each data.posts as post}
 				{#if post}
-					<BlogPost {post} slug={post.slug} />
+					<BlogPost {post} />
 				{/if}
 			{/each}
 		{:else}

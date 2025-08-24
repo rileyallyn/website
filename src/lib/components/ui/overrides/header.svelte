@@ -15,7 +15,7 @@
 	let { class: className = undefined, tag = 'h3', children }: Props = $props();
 
 	let data: HTMLAnchorElement | undefined = $state();
-	let id: string = $state('');
+	// let id: string = $state('');
 	let id = $derived(
 		data?.innerHTML
 			.toLocaleLowerCase()

@@ -30,11 +30,11 @@ export const getBlogPosts = async () => {
 		Object.keys(mdModules).map(async (path) => {
 			const slug = path.split('/').at(-2);
 			const { metadata } = (await mdModules[path]()) as { metadata: PostMetadata };
-			const { datePublished, title, description, locked, tags } = metadata;
+			const { datePublished, lastUpdated, title, description, locked, tags } = metadata;
 			if (locked) {
 				return null;
 			}
-			return { datePublished, title, description, slug, tags };
+			return { datePublished, lastUpdated, title, description, slug, tags };
 		})
 	);
 	return posts;
@@ -65,12 +65,16 @@ export const getBlogTags = async () => {
 export const getBlogPostsByTag = async (tag: string) => {
 	const posts = await Promise.all(
 		Object.keys(mdModules).map(async (path) => {
+			const slug = path.split('/').at(-2);
 			const { metadata } = (await mdModules[path]()) as { metadata: PostMetadata };
-			const { tags } = metadata;
+			const { tags, locked } = metadata;
+			if (locked) {
+				return null;
+			}
 			if (!tags?.includes(tag)) {
 				return null;
 			}
-			return metadata;
+			return { ...metadata, slug };
 		})
 	);
 	return posts.filter((post) => post !== null);
