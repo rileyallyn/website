@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@plugin "@tailwindcss/typography";
-@plugin "./lib/grid-plugin.ts";
+@plugin '@tailwindcss/typography';
+@plugin './lib/grid-plugin.ts';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
