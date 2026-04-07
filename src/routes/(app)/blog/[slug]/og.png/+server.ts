@@ -69,7 +69,6 @@ const GET: RequestHandler = async ({ url }) => {
 
 	const response = new ImageResponse(
 		// todo: fix the library to accept a svelte 5 component
-		// @ts-expect-error - this is a valid type, but the function is not typed properly. it expects a SvelteComponent not a Component
 		OG,
 		{
 			height: 630,
@@ -87,13 +86,7 @@ const GET: RequestHandler = async ({ url }) => {
 				}
 			]
 		},
-		{
-			props: {
-				title,
-				description,
-				date
-			}
-		}
+		{ title, description, date }
 	);
 	// really stupid, but blob() consumes the response
 	const copiedResponse = response.clone();

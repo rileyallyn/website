@@ -6,7 +6,8 @@ import type { PostMetadata } from '~/types';
 import { render } from 'svelte/server';
 
 function getReadingTime(input: string) {
-	return readingTime(input, 200).text;
+	const result = readingTime(input, { wordsPerMinute: 200 });
+	return result.text;
 }
 
 export const entries: EntryGenerator = async () => {
