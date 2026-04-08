@@ -61,7 +61,6 @@
 		"@babeard/svelte-heroicons": "2.0.3",
 		"@ethercorps/sveltekit-og": "^4.2.1",
 		"@netlify/blobs": "^10.7.4",
-		"@resvg/resvg-js": "^2.6.2",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"bits-ui": "^2.17.2",
 		"clsx": "^2.1.1",

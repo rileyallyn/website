@@ -1,8 +1,8 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { ImageResponse } from '@ethercorps/sveltekit-og';
 import { getStore } from '@netlify/blobs';
 import OG from './og.svelte';
 import { getBlogPostMetadata } from '$lib/blog';
+import { ImageResponse } from '@ethercorps/sveltekit-og';
 
 const fontFile400 = await fetch('https://og-playground.vercel.app/inter-latin-ext-400-normal.woff');
 const fontData400: ArrayBuffer = await fontFile400.arrayBuffer();
@@ -40,7 +40,7 @@ const GET: RequestHandler = async ({ url }) => {
 	// cache miss, we need to generate the image
 	let shouldReturnCache = process.env.NODE_ENV !== 'development';
 
-	let image: ArrayBuffer | null = null;
+	let image: ArrayBuffer | null;
 
 	if (!data) {
 		shouldReturnCache = false;
