@@ -6,6 +6,7 @@
 	import { github } from 'svelte-awesome/icons';
 	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
 	import { techUsed as techUsedData, projects, aboutMeText } from '$lib/home-data';
+
 	const techImgs = import.meta.glob('$lib/imgs/*.svg', {
 		eager: true,
 		query: {
