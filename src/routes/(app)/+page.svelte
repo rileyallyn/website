@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { CardContainer, CardBody, CardItem } from '$lib/components/ui/Card';
-	import type { Tech, Project } from '$lib/types';
+	import { CardContainer, CardBody } from '$lib/components/ui/Card';
 	import { cn } from '$lib/utils';
 	import Container from '$lib/components/ui/container.svelte';
 	import { Icon } from 'svelte-awesome';
 	import { github } from 'svelte-awesome/icons';
-	import Button from '$lib/components/ui/Button/Button.svelte';
+	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
+	import { techUsed as techUsedData, projects, aboutMeText } from '$lib/home-data';
 	const techImgs = import.meta.glob('$lib/imgs/*.svg', {
 		eager: true,
 		query: {
@@ -13,79 +13,7 @@
 		}
 	});
 
-	let techUsed: Tech[] = [
-		{
-			name: 'React',
-			imgSrc: 'react.svg',
-			customClass: 'w-full  h-auto'
-		},
-		{
-			name: 'Next.js',
-			imgSrc: 'nextjs.svg',
-			customClass: 'w-full '
-		},
-		{
-			name: 'Svelte',
-			imgSrc: 'svelte.svg',
-			customClass: 'w-full '
-		},
-		{
-			name: 'Vue.js',
-			imgSrc: 'vue.svg',
-			customClass: 'w-full '
-		},
-		{
-			name: 'Laravel',
-			imgSrc: 'laravel.svg',
-			customClass: 'w-full '
-		},
-		{
-			name: 'TypeScript',
-			imgSrc: 'ts.svg',
-			customClass: 'w-full '
-		},
-		{
-			name: 'Go',
-			imgSrc: 'golang.svg'
-		},
-		{
-			name: 'Rust',
-			imgSrc: 'rust.svg',
-			customClass: 'w-full ',
-			imgClass: 'dark:invert'
-		}
-	];
-
-	const projects: Project[] = [
-		{
-			name: 'Resume',
-			description:
-				'My resume is a web application that displays my resume in a clean and modern format. It is built with Svelte and Tailwind CSS and uses supabase to allow for easy updates and changes to the resume.',
-			link: 'https://github.com/rileyallyn/resume'
-		},
-		{
-			name: 'Womp Womp',
-			description: `Womp Womp is a web application that counts the amount of times I said "womp womp". It is built with Svelte and Tailwind CSS, and is completely deployed on Cloudflare Workers.`,
-			link: 'https://github.com/qpixel/womp-womp'
-		},
-		{
-			name: 'rp2040_audio_player',
-			description: 'A PCM audio player using a rp2040 microcontroller and a PCM5102A DAC.',
-			link: 'https://github.com/rileyallyn/rp2040_audio_player'
-		},
-		{
-			name: 'Submitty VSCode Extension',
-			description:
-				'A VSCode extension that adds support for Submitty, a learning management system.',
-			link: 'https://github.com/Submitty/VSCode-extension'
-		},
-		{
-			name: 'ASWWU Web',
-			description:
-				'ASWWU Web is the web team for the Associated Students of Walla Walla University. As a former member of the web team, I helped maintain the ASWWU website.',
-			link: 'https://github.com/aswwu-web'
-		}
-	];
+	let techUsed = structuredClone(techUsedData);
 
 	for (const tech of techUsed) {
 		if (typeof techImgs === 'undefined' || !techImgs) {
@@ -109,76 +37,107 @@
 		>
 			About Me
 		</h2>
-		<p>
-			I am a software developer and creative from Southern California with a passion for building
-			things. With over seven years of experience in various technologies, I specialize in creating
-			and learning new things. Currently, I develop web applications and websites using modern
-			frameworks like React and Svelte. In my free time, I enjoy photography, hiking, and playing
-			video games.
-		</p>
+		<p class="text-md leading-relaxed tracking-wide">{aboutMeText}</p>
 	</section>
-	<section class="" id="tech">
+	<section id="tech" class="space-y-2">
 		<h2 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
-			Tech I Use
+			Technologies I Use
 		</h2>
-		<div
-			class="grid grid-cols-2 gap-x-1 gap-y-4 py-4 sm:grid-cols-3 sm:grid-rows-2 sm:gap-x-4 sm:gap-y-8"
-			aria-label="Technologies I use"
-			role="list"
-		>
-			{#each techUsed as tech (tech.name)}
-				<CardContainer className={cn('w-full', tech.customClass)} role="listitem">
-					<CardBody className="relative group/card  w-full h-auto rounded-xl p-6 border">
-						<CardItem className="mx-auto"
-							><img
-								src={tech.imgSrc.default}
-								alt={tech.name + ' logo'}
-								class={cn('h-32 w-auto', tech.imgClass)}
-							/></CardItem
-						>
-						<CardItem
-							className="text-xl font-bold text-zinc-900 dark:text-white text-center mx-auto mt-4"
-							>{tech.name}</CardItem
-						>
-					</CardBody>
-				</CardContainer>
-			{/each}
+		<div class="flex flex-col">
+			<ol class="flex flex-wrap gap-2">
+				{#each techUsed as tech (tech.name)}
+					<li
+						class="group text-md flex items-center gap-2 rounded-full border bg-card px-2.5 py-0.5 text-muted-foreground transition-all duration-200 ease-linear hover:bg-muted-foreground/80 hover:text-foreground dark:hover:bg-muted-foreground/20"
+					>
+						<img
+							src={tech.imgSrc.default}
+							alt={tech.name + ' logo'}
+							class={cn(
+								'size-4 grayscale transition-all duration-200 ease-linear group-hover:scale-110 group-hover:grayscale-0',
+								tech.imgClass
+							)}
+						/>
+						<span>{tech.name}</span>
+					</li>
+				{/each}
+			</ol>
 		</div>
 	</section>
-	<section id="projects">
+	<section id="projects" class="space-y-2">
 		<h2 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
 			Projects
 		</h2>
+		<p>Some projects I've built.</p>
 		<ol
-			class="grid grid-cols-1 gap-x-1 gap-y-4 py-4 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8"
-			aria-label="Projects I've worked on"
+			class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+			aria-label="Projects I've built"
 			role="list"
 		>
 			{#each projects as project (project.name)}
-				<li class="md:last:col-span-2">
-					<CardContainer className="w-full" containerClassName="">
-						<CardBody className="  w-full sm:w-120 h-auto rounded-xl p-6 border">
-							<CardItem
-								className="text-lg font-bold text-zinc-900 dark:text-white text-center mx-auto flex items-center gap-x-2"
+				<li
+					class={cn('h-full w-full', 'md:last:col-span-2', project.featured ? 'lg:col-span-2' : '')}
+				>
+					<!-- eslint-disable svelte/no-navigation-without-resolve -->
+					<a
+						href={project.link}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="View {project.name} on GitHub"
+						class="group block h-full w-full rounded-xl text-left no-underline outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+					>
+						<CardContainer
+							className="h-full w-full"
+							containerClassName="h-full w-full"
+							role="presentation"
+						>
+							<CardBody
+								style="unstyled"
+								className="h-full flex flex-col border bg-card transition-colors hover:border-purple-700/50 hover:bg-secondary"
 							>
-								<Icon name="github" data={github} scale={1.5} className="text-center" />
-								{project.name}
-							</CardItem>
-							<CardItem className="text-left mt-4 leading-relaxed tracking-wide">
-								<p>{project.description}</p>
-							</CardItem>
-							<CardItem className="mt-4 w-full">
-								<Button
-									href={project.link}
-									variant="link"
-									class="bg-black text-white dark:bg-white dark:text-black"
-									size="lg"
-								>
-									View on GitHub
-								</Button>
-							</CardItem>
-						</CardBody>
-					</CardContainer>
+								<div class="flex items-start justify-between gap-3">
+									<div class="flex min-w-0 flex-1 items-start gap-3">
+										<div
+											class="flex size-10 shrink-0 items-center justify-center rounded-lg border bg-secondary"
+										>
+											<Icon name="github" data={github} scale={1.25} class="shrink-0" />
+										</div>
+										<h3 class="min-w-0 pt-1.5 text-base font-semibold text-foreground">
+											{project.name}
+										</h3>
+									</div>
+								</div>
+
+								<p class="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+									{project.description}
+								</p>
+
+								<div class="mt-4 flex items-center justify-between gap-4 pt-1">
+									<div class="flex min-w-0 items-center gap-2 text-xs text-muted-foreground">
+										{#if project.language}
+											<span
+												class="size-2.5 shrink-0 rounded-full"
+												style:background-color={project.languageColor ?? 'var(--muted-foreground)'}
+											></span>
+											<span>{project.language}</span>
+										{/if}
+										{#if project.language && project.updatedAt}
+											<span aria-hidden="true">·</span>
+										{/if}
+										{#if project.updatedAt}
+											<span>Updated {project.updatedAt}</span>
+										{/if}
+									</div>
+									<span
+										class="flex shrink-0 items-center gap-1 text-sm font-medium text-foreground group-hover:underline"
+									>
+										View
+										<ExternalLinkIcon class="size-3.5" />
+									</span>
+								</div>
+							</CardBody>
+						</CardContainer>
+					</a>
+					<!-- eslint-enable svelte/no-navigation-without-resolve -->
 				</li>
 			{/each}
 		</ol>

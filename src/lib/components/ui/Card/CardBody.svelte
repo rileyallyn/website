@@ -3,7 +3,7 @@
 	import { tv, type VariantProps } from 'tailwind-variants';
 
 	const cardBody = tv({
-		base: 'h-96 w-96 transform-3d  *:transform-3d',
+		base: 'transform-3d *:transform-3d p-6 border rounded-xl',
 		variants: {
 			style: {
 				unstyled: '',

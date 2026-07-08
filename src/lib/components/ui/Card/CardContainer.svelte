@@ -46,10 +46,7 @@
 		onmousemove={handleMouseMove}
 		onmouseleave={handleMouseLeave}
 		{role}
-		class={cn(
-			'relative flex items-center justify-center transition-all duration-200 ease-linear',
-			className
-		)}
+		class={cn('relative flex h-full flex-col  transition-all duration-200 ease-linear', className)}
 		style="transform-style: preserve-3d;"
 	>
 		{@render children?.()}

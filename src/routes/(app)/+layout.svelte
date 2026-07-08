@@ -53,7 +53,7 @@
 	<div
 		class="relative mr-0 h-full w-full p-2 md:mr-8 md:w-2/3 md:p-0 md:pr-2.5 md:pb-0 md:pl-2 lg:mr-0"
 	>
-		<div class="w-full md:max-w-2xl">
+		<div class="w-full md:max-w-4xl">
 			{@render children?.()}
 		</div>
 	</div>

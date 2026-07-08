@@ -11,7 +11,7 @@
 
 <main
 	class={cn(
-		'container mx-auto flex flex-col gap-y-4 scroll-smooth p-0 tracking-wide md:mx-0 md:pb-28 dark:text-white',
+		'mx-auto flex flex-col gap-y-4 scroll-smooth p-0 tracking-wide md:mx-0 md:pb-28 dark:text-white',
 		className
 	)}
 	in:slide={{ duration: 500 }}
