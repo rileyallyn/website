@@ -52,7 +52,7 @@ export const projects: Project[] = [
 		link: 'https://github.com/qpixel/womp-womp'
 	},
 	{
-		name: 'rp2040_audio_player',
+		name: 'rp2040 Audio Player',
 		description: 'A PCM audio player using a rp2040 microcontroller and a PCM5102A DAC.',
 		link: 'https://github.com/rileyallyn/rp2040_audio_player'
 	},
