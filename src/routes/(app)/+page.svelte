@@ -60,19 +60,30 @@
 		{
 			name: 'Resume',
 			description:
-				'My resume is a web application that displays my resume in a clean and modern format. It is built with Svelte and Tailwind CSS.',
+				'My resume is a web application that displays my resume in a clean and modern format. It is built with Svelte and Tailwind CSS and uses supabase to allow for easy updates and changes to the resume.',
 			link: 'https://github.com/rileyallyn/resume'
+		},
+		{
+			name: 'Womp Womp',
+			description: `Womp Womp is a web application that counts the amount of times I said "womp womp". It is built with Svelte and Tailwind CSS, and is completely deployed on Cloudflare Workers.`,
+			link: 'https://github.com/qpixel/womp-womp'
+		},
+		{
+			name: 'rp2040_audio_player',
+			description: 'A PCM audio player using a rp2040 microcontroller and a PCM5102A DAC.',
+			link: 'https://github.com/rileyallyn/rp2040_audio_player'
+		},
+		{
+			name: 'Submitty VSCode Extension',
+			description:
+				'A VSCode extension that adds support for Submitty, a learning management system.',
+			link: 'https://github.com/Submitty/VSCode-extension'
 		},
 		{
 			name: 'ASWWU Web',
 			description:
-				'ASWWU Web is the web team for the Associated Students of Walla Walla University. As the webhead, I maintain the ASWWU website.',
+				'ASWWU Web is the web team for the Associated Students of Walla Walla University. As a former member of the web team, I helped maintain the ASWWU website.',
 			link: 'https://github.com/aswwu-web'
-		},
-		{
-			name: 'Womp Womp',
-			description: `Womp Womp is a web application that counts the amount of times I said \'womp womp\'. It is built with Svelte and Tailwind CSS, and is completely deployed on Cloudflare Workers.`,
-			link: 'https://github.com/qpixel/womp-womp'
 		}
 	];
 
@@ -81,8 +92,8 @@
 			break;
 		}
 		// TODO: Figure out the type shit
-		//@ts-ignore
-		tech.imgSrc = Object.entries(techImgs).find(([key, value]) => key.includes(tech.imgSrc))[1];
+		//@ts-expect-error - TypeScript is stupid
+		tech.imgSrc = Object.entries(techImgs).find(([key]) => key.includes(tech.imgSrc))[1];
 	}
 </script>
 
