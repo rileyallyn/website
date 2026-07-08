@@ -8,7 +8,7 @@
 			style: {
 				unstyled: '',
 				'frosted-glass':
-					'dark:bg-white/5 bg-neutral-200/80 shadow-md dark:shadow-none drop-shadow-lg backdrop-blur-xs hover:bg-neutral-200/90 dark:hover:bg-white/10 border-2 border-purple-300/30 transition-all duration-300'
+					'dark:bg-white/5 bg-neutral-100/80 shadow-md dark:shadow-none drop-shadow-lg backdrop-blur-xs hover:bg-neutral-100/90 dark:hover:bg-white/10 border-2 border-purple-300/30 transition-all duration-300'
 			}
 		},
 		defaultVariants: {

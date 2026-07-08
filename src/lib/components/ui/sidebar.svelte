@@ -8,7 +8,7 @@
 </script>
 
 <header
-	class="fixed top-0 left-0 z-40 block w-full bg-stone-200/5 pb-1 backdrop-blur-xs md:hidden dark:bg-zinc-700/5 dark:text-white"
+	class="fixed top-0 left-0 z-40 block w-full bg-stone-300/5 pb-1 backdrop-blur-xs md:hidden dark:bg-zinc-700/5 dark:text-white"
 >
 	<nav class="flex items-center gap-x-2 px-3 pt-2">
 		<enhanced:img

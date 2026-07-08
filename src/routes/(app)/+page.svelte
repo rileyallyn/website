@@ -47,17 +47,23 @@
 			<ol class="flex flex-wrap gap-2">
 				{#each techUsed as tech (tech.name)}
 					<li
-						class="group text-md flex items-center gap-2 rounded-full border bg-card px-2.5 py-0.5 text-muted-foreground transition-all duration-200 ease-linear hover:bg-muted-foreground/80 hover:text-foreground dark:hover:bg-muted-foreground/20"
+						class={cn(
+							'group flex items-center gap-2 rounded-full border px-3 py-1 text-sm transition-all duration-200 ease-linear',
+							'border-purple-200/70 bg-white/90 text-zinc-700 shadow-xs',
+							'hover:border-purple-400/60 hover:bg-purple-50 hover:text-zinc-900 hover:shadow-sm',
+							'dark:border-border dark:bg-card dark:px-2.5 dark:py-0.5 dark:text-muted-foreground dark:shadow-none',
+							'dark:hover:border-border dark:hover:bg-muted-foreground/20 dark:hover:text-foreground'
+						)}
 					>
 						<img
 							src={tech.imgSrc.default}
 							alt={tech.name + ' logo'}
 							class={cn(
-								'size-4 grayscale transition-all duration-200 ease-linear group-hover:scale-110 group-hover:grayscale-0',
+								'size-4 opacity-80 grayscale transition-all duration-200 ease-linear group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0 dark:opacity-100',
 								tech.imgClass
 							)}
 						/>
-						<span>{tech.name}</span>
+						<span class="font-medium">{tech.name}</span>
 					</li>
 				{/each}
 			</ol>
@@ -92,12 +98,12 @@
 						>
 							<CardBody
 								style="unstyled"
-								className="h-full flex flex-col border bg-card transition-colors hover:border-purple-700/50 hover:bg-secondary"
+								className="h-full flex flex-col border bg-card transition-colors hover:border-purple-700/50 hover:bg-background"
 							>
 								<div class="flex items-start justify-between gap-3">
 									<div class="flex min-w-0 flex-1 items-start gap-3">
 										<div
-											class="flex size-10 shrink-0 items-center justify-center rounded-lg border bg-secondary"
+											class="flex size-10 shrink-0 items-center justify-center rounded-lg border bg-background"
 										>
 											<Icon name="github" data={github} scale={1.25} class="shrink-0" />
 										</div>

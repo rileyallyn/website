@@ -41,7 +41,7 @@
 </Sheet.Root>
 
 <!-- <aside
-	class="block absolute z-50 py-40 w-full h-full dark:text-white dark:bg-zinc-950/95 backdrop-blur-xs sm:hidden bg-stone-200/95"
+	class="block absolute z-50 py-40 w-full h-full dark:text-white dark:bg-zinc-950/95 backdrop-blur-xs sm:hidden bg-stone-300/95"
 	class:open
 >
 	<div class="absolute top-0 right-0">

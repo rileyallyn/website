@@ -13,7 +13,7 @@
 <div class="flex h-screen flex-col items-center justify-center gap-y-4">
 	<CardContainer>
 		<CardBody
-			className="flex flex-col items-center justify-center gap-y-2 rounded-lg dark:bg-zinc-900 bg-stone-200 drop-shadow-lg border-2 border-purple-300/30"
+			className="flex flex-col items-center justify-center gap-y-2 rounded-lg dark:bg-zinc-900 bg-stone-300 drop-shadow-lg border-2 border-purple-300/30"
 			style="unstyled"
 		>
 			<h1 class="text-3xl font-bold">Womp Womp</h1>

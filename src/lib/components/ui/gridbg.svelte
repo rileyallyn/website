@@ -12,7 +12,7 @@
 
 <div
 	class={cn(
-		`absolute flex items-center justify-center bg-stone-300 bg-grid-zinc-950/[0.2] dark:bg-zinc-950 dark:bg-grid-white/[0.2]`,
+		`absolute flex items-center justify-center bg-stone-200 bg-grid-zinc-950/[0.2] dark:bg-zinc-950 dark:bg-grid-white/[0.2]`,
 		className
 	)}
 >
@@ -20,7 +20,7 @@
 	{@render children?.()}
 	{#if showFade}
 		<div
-			class="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-300 mask-(--mask-custom-radial) dark:bg-zinc-950"
+			class="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-200 mask-(--mask-custom-radial) dark:bg-zinc-950"
 		></div>
 	{/if}
 </div>

@@ -18,7 +18,7 @@
 	<DropdownMenu.Trigger
 		class={cn(
 			buttonVariants({ variant: 'outline', size }),
-			'cursor-pointer bg-stone-200 backdrop-blur-sm hover:bg-stone-200/50 dark:bg-zinc-900/50'
+			'cursor-pointer bg-stone-300 backdrop-blur-sm hover:bg-stone-300/50 dark:bg-zinc-900/50'
 		)}
 	>
 		<SunIcon
