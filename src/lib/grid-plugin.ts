@@ -3,7 +3,6 @@ import type { PluginAPI } from 'tailwindcss/plugin';
 import plugin from 'tailwindcss/plugin';
 
 const svgToDataUri = (svg: string) => {
-	// return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
 	return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 };
 
