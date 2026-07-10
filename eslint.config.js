@@ -28,6 +28,9 @@ export default ts.config(
 	},
 	{
 		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
+		rules: {
+			'svelte/no-navigation-without-resolve': 'warn'
+		},
 		languageOptions: {
 			parserOptions: {
 				projectService: true,

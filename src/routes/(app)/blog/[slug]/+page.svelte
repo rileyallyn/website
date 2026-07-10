@@ -1,8 +1,6 @@
 <script lang="ts">
 	import Container from '$lib/components/ui/container.svelte';
-	import { Icon } from 'svelte-awesome';
 	import type { PageData } from './$types';
-	import arrowLeft from 'svelte-awesome/icons/arrowLeft';
 	import { Badge } from '$lib/components/ui/Badge';
 	import { TIMEZONE } from '$lib/constants';
 	interface Props {
@@ -60,7 +58,7 @@
 					<p class="text-sm text-gray-500">{post.timeToRead}</p>
 					{#if post.tags}
 						<div class="mt-2 flex flex-wrap gap-x-2">
-							{#each post.tags as tag}
+							{#each post.tags as tag, index (index)}
 								<a href={`/blog/tags/${tag}`}>
 									<Badge
 										variant="outline"

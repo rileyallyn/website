@@ -31,7 +31,7 @@
 	</h1>
 	<div class="flex flex-col gap-y-10">
 		{#if data.posts}
-			{#each data.posts as post}
+			{#each data.posts as post, index (index)}
 				{#if post}
 					<BlogPost {post} />
 				{/if}

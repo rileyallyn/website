@@ -20,7 +20,7 @@
 	</nav>
 	<h1 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">Tags</h1>
 	<div class="flex flex-row gap-x-2">
-		{#each data.tags as tag}
+		{#each data.tags as tag, index (index)}
 			<a href={`/blog/tags/${tag}`}>
 				<Badge variant="outline">{tag}</Badge>
 			</a>

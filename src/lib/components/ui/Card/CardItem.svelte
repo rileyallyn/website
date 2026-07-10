@@ -1,34 +1,45 @@
-<!-- @migration-task Error while migrating Svelte code: $$props is used together with named props in a way that cannot be automatically migrated. -->
 <script lang="ts">
-	import { cn } from '$lib/utils';
+	import { cn, type WithElementRef } from '$lib/utils';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	export let className: string | undefined = undefined;
-	export let translateX: number | string | undefined = 0;
-	export let translateY: number | string | undefined = 0;
-	export let translateZ: number | string | undefined = 0;
-	export let rotateX: number | string | undefined = 0;
-	export let rotateY: number | string | undefined = 0;
-	export let rotateZ: number | string | undefined = 0;
-	export let isMouseEntered: boolean = false;
+	interface Props extends WithElementRef<HTMLAttributes<HTMLDivElement>> {
+		className?: string;
+		translateX?: number | string;
+		translateY?: number | string;
+		translateZ?: number | string;
+		rotateX?: number | string;
+		rotateY?: number | string;
+		rotateZ?: number | string;
+		isMouseEntered?: boolean;
+		children?: import('svelte').Snippet;
+	}
 
-	let ref: HTMLDivElement;
+	let {
+		className,
+		translateX = 0,
+		translateY = 0,
+		translateZ = 0,
+		rotateX = 0,
+		rotateY = 0,
+		rotateZ = 0,
+		isMouseEntered = false,
+		ref = $bindable(null),
+		children,
+		...restProps
+	}: Props = $props();
 
-	$: (isMouseEntered, handleAnimations());
-
-	const handleAnimations = () => {
+	$effect(() => {
 		if (!ref) return;
-		if (isMouseEntered) {
-			ref.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
-		} else {
-			ref.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
-		}
-	};
+		ref.style.transform = isMouseEntered
+			? `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
+			: `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
+	});
 </script>
 
 <div
 	bind:this={ref}
 	class={cn('w-fit transition duration-200 ease-linear', className)}
-	{...$$props}
+	{...restProps}
 >
-	<slot />
+	{@render children?.()}
 </div>

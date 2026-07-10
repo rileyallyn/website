@@ -4,7 +4,6 @@
 	interface Props {
 		className?: string | undefined;
 		containerClassName?: string | undefined;
-		isMouseEntered?: boolean;
 		children?: import('svelte').Snippet;
 		role?: string | undefined;
 	}
@@ -12,7 +11,6 @@
 	let {
 		className = undefined,
 		containerClassName = undefined,
-		isMouseEntered = $bindable(false),
 		children,
 		role = 'article'
 	}: Props = $props();
@@ -28,13 +26,11 @@
 	};
 
 	const handleMouseEnter = () => {
-		isMouseEntered = true;
 		if (!containerRef) return;
 	};
 
 	const handleMouseLeave = () => {
 		if (!containerRef) return;
-		isMouseEntered = false;
 		containerRef.style.transform = `rotateY(0deg) rotateX(0deg)`;
 	};
 </script>

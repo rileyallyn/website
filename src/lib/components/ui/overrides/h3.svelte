@@ -6,7 +6,6 @@
 
 	let { children }: Props = $props();
 	let data: HTMLAnchorElement | undefined = $state();
-	let id: string = $state('');
 	let cleanedId = $derived(
 		data?.innerHTML
 			.toLocaleLowerCase()

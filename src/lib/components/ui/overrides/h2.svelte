@@ -1,13 +1,11 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { render } from 'svelte/server';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
 
 	let { children }: Props = $props();
 	let data: HTMLAnchorElement | undefined = $state();
-	let id: string = $state('');
 	let cleanedId = $derived(
 		data?.innerHTML
 			.toLocaleLowerCase()
@@ -29,7 +27,7 @@
 </script>
 
 <h2 id={cleanedId} class="flex flex-row gap-y-2">
-	<a href={`#${cleanedId}`} class="anchor font-bold" bind:this={data}>
+	<a href={`#${cleanedId}`} class="anchor font-bold" bind:this={data} onclick={onClickCopy}>
 		{@render children?.()}
 	</a>
 	{#if copy}
