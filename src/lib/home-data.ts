@@ -43,29 +43,29 @@ export const projects: Project[] = [
 	{
 		name: 'Resume',
 		description:
-			'My resume is a web application that displays my resume in a clean and modern format. It is built with Svelte and Tailwind CSS and uses supabase to allow for easy updates and changes to the resume.',
+			'My resume is a web application that presents my experience in a clean, modern format. It is built with Svelte and Tailwind CSS and uses Supabase to make updates easy.',
 		link: 'https://github.com/rileyallyn/resume'
 	},
 	{
 		name: 'Womp Womp',
-		description: `Womp Womp is a web application that counts the amount of times I said "womp womp". It is built with Svelte and Tailwind CSS, and is completely deployed on Cloudflare Workers.`,
+		description: `Womp Womp is a web application that counts the number of times I've said "womp womp." It is built with Svelte and Tailwind CSS and deployed entirely on Cloudflare Workers.`,
 		link: 'https://github.com/qpixel/womp-womp'
 	},
 	{
 		name: 'rp2040 Audio Player',
-		description: 'A PCM audio player using a rp2040 microcontroller and a PCM5102A DAC.',
+		description: 'A PCM audio player using an RP2040 microcontroller and a PCM5102A DAC.',
 		link: 'https://github.com/rileyallyn/rp2040_audio_player'
 	},
 	{
 		name: 'Submitty VSCode Extension',
 		description:
-			'A VSCode extension that adds support for Submitty, allowing easy submission and feedback on assignments.',
+			'A VS Code extension that adds support for Submitty, making it easier to submit assignments and receive feedback.',
 		link: 'https://github.com/Submitty/VSCode-extension'
 	},
 	{
 		name: 'ASWWU Web',
 		description:
-			'ASWWU Web is the web team for the Associated Students of Walla Walla University. As a former member of the web team, I helped maintain the ASWWU website.',
+			'ASWWU Web is the web team for the Associated Students of Walla Walla University. As a former team member, I helped maintain the ASWWU website.',
 		link: 'https://github.com/aswwu-web'
 	}
 ];
