@@ -45,7 +45,7 @@
 		"lint-staged": "^17.2.0",
 		"mdsvex": "^0.12.8",
 		"netlify-cli": "^26.2.0",
-		"postcss": "^8.5.22",
+		"postcss": "^8.5.23",
 		"postcss-load-config": "^6.0.1",
 		"prettier": "^3.9.6",
 		"prettier-plugin-svelte": "^4.1.1",
