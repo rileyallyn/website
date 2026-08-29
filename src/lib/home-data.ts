@@ -52,6 +52,11 @@ export const projects: Project[] = [
 		link: 'https://github.com/qpixel/womp-womp'
 	},
 	{
+		name: 'Take Ludwig to Space',
+		description: `A "meme" website made during the streamer Ludwig Ahgren's subathon to take Ludwig to space. I built this as a project to learn Next.js and React.js.`,
+		link: 'https://space.rileyy.dev'
+	},
+	{
 		name: 'rp2040 Audio Player',
 		description: 'A PCM audio player using an RP2040 microcontroller and a PCM5102A DAC.',
 		link: 'https://github.com/rileyallyn/rp2040_audio_player'
