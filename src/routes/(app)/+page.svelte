@@ -42,7 +42,7 @@
 	</section>
 	<section id="tech" class="space-y-2">
 		<h2 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
-			Technologies I Use
+			Technologies I use
 		</h2>
 		<div class="flex flex-col">
 			<ol class="flex flex-wrap gap-2">
@@ -70,20 +70,17 @@
 			</ol>
 		</div>
 	</section>
-	<section id="projects" class="space-y-2">
+	<section id="projects" class="space-y-2 pr-4">
 		<h2 class="max-w-fit border-b-2 border-purple-700 text-xl leading-relaxed font-bold">
-			Projects
+			Projects I have built
 		</h2>
-		<p>Some projects I've built.</p>
 		<ol
 			class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
 			aria-label="Projects I've built"
 			role="list"
 		>
 			{#each projects as project (project.name)}
-				<li
-					class={cn('h-full w-full', 'md:last:col-span-2', project.featured ? 'lg:col-span-2' : '')}
-				>
+				<li class={cn('h-full w-full', project.featured ? 'lg:col-span-2' : '')}>
 					<!-- eslint-disable svelte/no-navigation-without-resolve -->
 					<a
 						href={project.link}
