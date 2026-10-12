@@ -18,3 +18,19 @@ declare namespace App {
 		context: any;
 	}
 }
+
+declare global {
+	namespace App {
+		interface Platform {
+			env: Env;
+			ctx: ExecutionContext;
+			caches: CacheStorage;
+			cf?: IncomingRequestCfProperties;
+		}
+	}
+}
+
+// for information about these interfaces
+// and what to do when importing types
+// interface Locals {}
+// interface Error {}

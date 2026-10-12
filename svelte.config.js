@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { escapeSvelte, mdsvex } from 'mdsvex';
 import { enhancedImages } from 'mdsvex-enhanced-images';
@@ -51,17 +51,9 @@ const config = {
 		})
 	],
 	kit: {
-		adapter: adapter({
-			edge: false,
-			split: true
-		}),
-		alias: {
-			$lib: 'src/lib',
-			'~/*': 'src/*'
-		},
-		prerender: {
-			handleHttpError: 'warn'
-		}
+		adapter: adapter(),
+		alias: { $lib: 'src/lib', '~/*': 'src/*' },
+		prerender: { handleHttpError: 'warn' }
 	}
 };
 

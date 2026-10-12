@@ -5,6 +5,7 @@ allowBuilds:
   sharp: true
   svelte-preprocess: true
   unix-dgram: true
+  workerd: true
 minimumReleaseAgeExclude:
   - crossws@0.4.15
   - electron-to-chromium@1.5.449
