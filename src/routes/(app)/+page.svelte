@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { CardContainer, CardBody } from '$lib/components/ui/Card';
-	import { cn } from '$lib/utils';
-	import Container from '$lib/components/ui/container.svelte';
+	import { CardContainer, CardBody } from '#lib/components/ui/Card/index.js';
+	import { cn } from '#lib/utils.js';
+	import Container from '#lib/components/ui/container.svelte';
 	import { Icon } from 'svelte-awesome';
 	import { github } from 'svelte-awesome/icons';
 	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
-	import { techUsed as techUsedData, projects, aboutMeText } from '$lib/home-data';
+	import { techUsed as techUsedData, projects, aboutMeText } from '#lib/home-data.js';
 
-	const techImgs = import.meta.glob('$lib/imgs/*.svg', {
+	const techImgs = import.meta.glob('#lib/imgs/*.svg', {
 		eager: true,
 		query: {
 			enhanced: true

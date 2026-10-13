@@ -2,7 +2,7 @@
 	import type { PostMetadata } from '~/types';
 	import { Badge } from './Badge';
 	import { CardContainer, CardBody, CardItem } from './Card';
-	import { TIMEZONE } from '$lib/constants';
+	import { TIMEZONE } from '#lib/constants.js';
 	let { post }: { post: Omit<PostMetadata, 'locked'> & { slug: string | undefined } } = $props();
 </script>
 

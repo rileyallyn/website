@@ -1,11 +1,11 @@
 <script>
 	import { page } from '$app/state';
-	import { buttonVariants } from '$lib/components/ui/Button';
+	import { buttonVariants } from '#lib/components/ui/Button/index.js';
 	import { HouseIcon } from '@lucide/svelte';
-	import { cn } from '$lib/utils';
-	import Gridbg from '$lib/components/ui/gridbg.svelte';
-	import CardContainer from '$lib/components/ui/Card/CardContainer.svelte';
-	import CardBody from '$lib/components/ui/Card/CardBody.svelte';
+	import { cn } from '#lib/utils.js';
+	import Gridbg from '#lib/components/ui/gridbg.svelte';
+	import CardContainer from '#lib/components/ui/Card/CardContainer.svelte';
+	import CardBody from '#lib/components/ui/Card/CardBody.svelte';
 </script>
 
 <Gridbg className="-z-10 h-full w-full" />

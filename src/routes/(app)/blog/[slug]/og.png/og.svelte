@@ -6,7 +6,7 @@
 		date: string;
 	}
 
-	import { TIMEZONE } from '$lib/constants';
+	import { TIMEZONE } from '#lib/constants.js';
 	let { title, description, date }: Props = $props();
 </script>
 

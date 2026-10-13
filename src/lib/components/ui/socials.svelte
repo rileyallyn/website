@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
+	import { cn } from '#lib/utils.js';
 	import Icon from 'svelte-awesome';
 	import { github, linkedinSquare, instagram, envelope } from 'svelte-awesome/icons';
 	interface Props {

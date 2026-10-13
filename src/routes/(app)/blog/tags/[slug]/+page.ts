@@ -1,4 +1,4 @@
-import { getBlogPostsByTag } from '$lib/blog';
+import { getBlogPostsByTag } from '#lib/blog.js';
 
 export const load = async ({ params: { slug: tag } }) => {
 	const posts = await getBlogPostsByTag(tag);

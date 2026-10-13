@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Container from '$lib/components/ui/container.svelte';
-	import BlogPost from '$lib/components/ui/blog-post.svelte';
+	import Container from '#lib/components/ui/container.svelte';
+	import BlogPost from '#lib/components/ui/blog-post.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();

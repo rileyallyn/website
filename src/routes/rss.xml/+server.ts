@@ -1,5 +1,5 @@
 import { create } from 'xmlbuilder2';
-import { getBlogPostsMetadata } from '$lib/blog';
+import { getBlogPostsMetadata } from '#lib/blog.js';
 
 // Some code taken from https://kylenazario.com/blog/full-content-rss-feed-with-sveltekit-part-two
 

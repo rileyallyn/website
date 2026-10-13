@@ -6,12 +6,12 @@ tags: [projects, webdev]
 ---
 
 <script>
-	import astrodb from '$lib/imgs/blog/womp-womp/astrodb.png?enhanced';
-	import mvp from '$lib/imgs/blog/womp-womp/mvp.png';
-	import counter1 from '$lib/imgs/blog/womp-womp/counter-1.png?enhanced';
-	import counter2 from '$lib/imgs/blog/womp-womp/counter-2.png?enhanced';
-	import counter3 from '$lib/imgs/blog/womp-womp/counter-3.png?enhanced';
-	import counterQuarters from '$lib/imgs/blog/womp-womp/counter-quarters.png?enhanced';
+	import astrodb from '#lib/imgs/blog/womp-womp/astrodb.png?enhanced';
+	import mvp from '#lib/imgs/blog/womp-womp/mvp.png';
+	import counter1 from '#lib/imgs/blog/womp-womp/counter-1.png?enhanced';
+	import counter2 from '#lib/imgs/blog/womp-womp/counter-2.png?enhanced';
+	import counter3 from '#lib/imgs/blog/womp-womp/counter-3.png?enhanced';
+	import counterQuarters from '#lib/imgs/blog/womp-womp/counter-quarters.png?enhanced';
 </script>
 
 _As of right now, I have over 300 'womps' tracked on ['Womp Womp'](https://counter.womp.lol)._

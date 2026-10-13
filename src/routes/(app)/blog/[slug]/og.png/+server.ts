@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { getStore } from '@netlify/blobs';
 import OG from './og.svelte';
-import { getBlogPostMetadata } from '$lib/blog';
+import { getBlogPostMetadata } from '#lib/blog.js';
 import { ImageResponse } from '@ethercorps/sveltekit-og';
 
 const fontFile400 = await fetch('https://og-playground.vercel.app/inter-latin-ext-400-normal.woff');

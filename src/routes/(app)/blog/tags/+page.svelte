@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import Container from '$lib/components/ui/container.svelte';
-	import { Badge } from '$lib/components/ui/Badge';
+	import Container from '#lib/components/ui/container.svelte';
+	import { Badge } from '#lib/components/ui/Badge/index.js';
 
 	let { data }: { data: PageData } = $props();
 </script>

@@ -3,9 +3,9 @@
 	import MoonIcon from '@lucide/svelte/icons/moon';
 
 	import { resetMode, setMode } from 'mode-watcher';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { buttonVariants } from '$lib/components/ui/Button';
-	import { cn } from '$lib/utils';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.js';
+	import { buttonVariants } from '#lib/components/ui/Button/index.js';
+	import { cn } from '#lib/utils.js';
 
 	interface Props {
 		size?: 'iconSm' | 'icon';

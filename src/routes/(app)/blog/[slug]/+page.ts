@@ -1,6 +1,6 @@
 import { error, redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import { getBlogPost } from '$lib/blog';
+import { getBlogPost } from '#lib/blog.js';
 
 // TODO: Figure how to prerender with enhanced:img
 export const prerender = true;

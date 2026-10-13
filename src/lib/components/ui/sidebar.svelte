@@ -1,6 +1,6 @@
 <script>
 	import Socials from './socials.svelte';
-	import pfp from '$lib/imgs/pfp.webp?enhanced';
+	import pfp from '#lib/imgs/pfp.webp?enhanced';
 	import Navbar from './mobile-nav.svelte';
 	import ModeWatcher from './modewatcher.svelte';
 

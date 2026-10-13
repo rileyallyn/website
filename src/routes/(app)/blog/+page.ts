@@ -1,4 +1,4 @@
-import { getBlogPosts } from '$lib/blog';
+import { getBlogPosts } from '#lib/blog.js';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ url }) {

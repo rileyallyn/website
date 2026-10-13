@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Container from '$lib/components/ui/container.svelte';
+	import Container from '#lib/components/ui/container.svelte';
 	import type { PageData } from './$types';
-	import { Badge } from '$lib/components/ui/Badge';
-	import { TIMEZONE } from '$lib/constants';
+	import { Badge } from '#lib/components/ui/Badge/index.js';
+	import { TIMEZONE } from '#lib/constants.js';
 	interface Props {
 		data: PageData;
 	}

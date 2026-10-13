@@ -1,4 +1,4 @@
-import { getBlogTags } from '$lib/blog';
+import { getBlogTags } from '#lib/blog.js';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ url }) {

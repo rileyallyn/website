@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
+	import { cn } from '#lib/utils.js';
 	import { slide } from 'svelte/transition';
 	interface Props {
 		className?: string;

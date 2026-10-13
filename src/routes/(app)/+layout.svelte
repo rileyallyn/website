@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Sidebar from '$lib/components/ui/sidebar.svelte';
-	import GridBg from '$lib/components/ui/gridbg.svelte';
+	import Sidebar from '#lib/components/ui/sidebar.svelte';
+	import GridBg from '#lib/components/ui/gridbg.svelte';
 	import { page } from '$app/state';
 	interface Props {
 		children?: import('svelte').Snippet;

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import MenuIcon from '@lucide/svelte/icons/menu';
-	import * as Sheet from '$lib/components/ui/sheet';
-	import { buttonVariants } from '$lib/components/ui/Button';
+	import * as Sheet from '#lib/components/ui/sheet/index.js';
+	import { buttonVariants } from '#lib/components/ui/Button/index.js';
 	import Socials from './socials.svelte';
 	import ModeWatcher from './modewatcher.svelte';
 	let open = $state(false);
