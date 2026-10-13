@@ -40,7 +40,7 @@ const config: UserConfig = {
 
 							const html = escapeSvelte(
 								highlighter.codeToHtml(code, {
-									lang,
+									lang: lang ?? 'text',
 									themes: { light: catppuccin, dark: tokyoNight },
 									defaultColor: 'light-dark()',
 									transformers: [

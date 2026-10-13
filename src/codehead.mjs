@@ -4,15 +4,21 @@
  */
 
 /**
- * @param {CodeHeaderOptions} options
+ * @typedef {Object} CodeHeaderOptions
+ * @property {{ lang?: string | null }} [meta]
+ */
+
+/**
+ * @param {CodeHeaderOptions} [options]
  * @returns {Object}
  */
 
 const codeHeaderTransformer = (options = {}) => {
 	return {
 		name: 'code-header',
+		/** @param {any} node */
 		pre(node) {
-			const lang = options.meta.lang;
+			const lang = options.meta?.lang;
 			if (!lang) {
 				return; // Only apply to code blocks with a language defined
 			}

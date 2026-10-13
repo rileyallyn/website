@@ -5,14 +5,14 @@
 	"scripts": {
 		"dev:netlify": "netlify dev",
 		"dev": "vite dev",
-		"build": "wrangler types --check && vite build",
+		"build": "node scripts/wrangler-types.mjs --check && vite build",
 		"preview": "wrangler dev .svelte-kit/cloudflare/_worker.js --port 4173",
-		"check": "wrangler types --check && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check": "node scripts/wrangler-types.mjs --check && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"prepare": "husky",
-		"gen": "wrangler types"
+		"gen": "node scripts/wrangler-types.mjs"
 	},
 	"lint-staged": {
 		"*.{js,ts,svelte}": [
