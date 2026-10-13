@@ -1,8 +1,8 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { getStore } from '@netlify/blobs';
 import OG from './og.svelte';
 import { getBlogPostMetadata } from '#lib/blog.js';
 import { ImageResponse } from '@ethercorps/sveltekit-og';
+import { env } from 'cloudflare:workers';
 
 const fontFile400 = await fetch('https://og-playground.vercel.app/inter-latin-ext-400-normal.woff');
 const fontData400: ArrayBuffer = await fontFile400.arrayBuffer();
@@ -28,15 +28,7 @@ const GET: RequestHandler = async ({ url }) => {
 		return new Response('Missing title or description', { status: 400 });
 	}
 
-	// temp fix until i can get the adapter fixed
-	const store = getStore({
-		name: 'og-images',
-		siteID: process.env.SITE_ID,
-		token: process.env.NETLIFY_PAT
-	});
-
-	// this should be a blob, but it's not
-	const data = await store.getWithMetadata(`${slug}.png`, { type: 'arrayBuffer' });
+	const data = await env.OG_IMAGES.get(`${slug}.png`);
 	// cache miss, we need to generate the image
 	let shouldReturnCache = process.env.NODE_ENV !== 'development';
 
@@ -46,7 +38,7 @@ const GET: RequestHandler = async ({ url }) => {
 		shouldReturnCache = false;
 		image = null;
 	} else {
-		image = data.data;
+		image = await data.arrayBuffer();
 	}
 
 	// if the last updated date is within the last 24 hours, return the cached image
@@ -68,7 +60,6 @@ const GET: RequestHandler = async ({ url }) => {
 	console.log('generating new image, shouldReturnCache:', shouldReturnCache);
 
 	const response = new ImageResponse(
-		// todo: fix the library to accept a svelte 5 component
 		OG,
 		{
 			height: 630,
@@ -90,8 +81,8 @@ const GET: RequestHandler = async ({ url }) => {
 	);
 	// really stupid, but blob() consumes the response
 	const copiedResponse = response.clone();
-	await store.set(`${slug}.png`, await copiedResponse.blob(), {
-		metadata: {
+	await env.OG_IMAGES.put(`${slug}.png`, await copiedResponse.blob(), {
+		customMetadata: {
 			lastModified: new Date().toISOString()
 		}
 	});

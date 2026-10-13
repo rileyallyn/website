@@ -8,6 +8,12 @@
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
 	},
+	"r2_buckets": [
+		{
+			"binding": "OG_IMAGES",
+			"bucket_name": "og-images"
+		}
+	],
 	"workers_dev": true,
 	"preview_urls": true
 }

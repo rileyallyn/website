@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"dev:netlify": "netlify dev",
 		"dev": "vite dev",
 		"build": "node scripts/wrangler-types.mjs --check && vite build",
 		"preview": "wrangler dev .svelte-kit/cloudflare/_worker.js --port 4173",
@@ -46,7 +45,6 @@
 		"husky": "^9.1.7",
 		"lint-staged": "^17.6.0",
 		"mdsvex": "^0.12.8",
-		"netlify-cli": "^26.2.0",
 		"postcss": "^8.5.29",
 		"postcss-load-config": "^6.0.1",
 		"prettier": "^3.9.9",
@@ -72,7 +70,6 @@
 	"dependencies": {
 		"@babeard/svelte-heroicons": "2.0.3",
 		"@ethercorps/sveltekit-og": "^4.3.0",
-		"@netlify/blobs": "^10.7.13",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"bits-ui": "^2.19.5",
 		"clsx": "^2.1.1",
