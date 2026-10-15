@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { escapeSvelte, mdsvex } from 'mdsvex';
-import { enhancedImages as enhancedImagesMdsvex } from 'mdsvex-enhanced-images';
+// import { enhancedImages as enhancedImagesMdsvex } from 'mdsvex-enhanced-images';
 import rehypeUnwrapImages from 'rehype-unwrap-images';
 import { join } from 'path';
 import highlighterPromise from './src/highlighter.mjs';
@@ -14,7 +14,6 @@ import type { UserConfig } from 'vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import tailwindcss from '@tailwindcss/vite';
 import { sveltekitOG } from '@ethercorps/sveltekit-og/plugin';
-// import { rollupWasm } from '@ethercorps/sveltekit-og/plugin';
 
 const layout = join(import.meta.dirname, 'src/lib/layouts/blog.svelte');
 
@@ -31,8 +30,9 @@ const config: UserConfig = {
 				mdsvex({
 					extensions: ['.md', '.svx'],
 					layout: { _: layout },
+					layoutPropForwarding: 'runes',
 					rehypePlugins: [rehypeUnwrapImages],
-					remarkPlugins: [enhancedImagesMdsvex],
+					// remarkPlugins: [enhancedImagesMdsvex],
 					highlight: {
 						highlighter: async (code, lang, metastring) => {
 							const twoslash = metastring?.includes('twoslash');
@@ -59,7 +59,6 @@ const config: UserConfig = {
 				})
 			],
 			adapter: adapter(),
-			alias: { $lib: 'src/lib', '~/*': 'src/*' },
 			prerender: { handleHttpError: 'warn' }
 		}),
 		sveltekitOG()

@@ -3,7 +3,7 @@ import type { PageLoad } from './$types';
 import { getBlogPost } from '#lib/blog.js';
 
 // TODO: Figure how to prerender with enhanced:img
-export const prerender = true;
+// export const prerender = true;
 
 export const load: PageLoad = async ({ params, url, data }) => {
 	const { slug } = params;

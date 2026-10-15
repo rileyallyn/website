@@ -1,4 +1,4 @@
-import type { BlogPost, PostMetadata } from '~/types';
+import type { BlogPost, PostMetadata } from '#lib/posts.ts';
 
 export const mdModules = import.meta.glob('../posts/**/index.md');
 
@@ -41,7 +41,9 @@ export const getBlogPosts = async () => {
 };
 
 export const getBlogPost = async (slug: string): Promise<BlogPost | null> => {
-	const postPromise = import(`../posts/${slug}/index.md`).catch(() => null);
+	const postPromise = import(`../posts/${slug}/index.md`).catch(() =>
+		console.error(`***error`, slug)
+	);
 	const [postResult] = await Promise.all([postPromise]);
 	if (!postResult) {
 		return null;

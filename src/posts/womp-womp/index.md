@@ -6,15 +6,15 @@ tags: [projects, webdev]
 ---
 
 <script>
-	import astrodb from '#lib/imgs/blog/womp-womp/astrodb.png?enhanced';
+	import astrodb from '#lib/imgs/blog/womp-womp/astrodb.png';
 	import mvp from '#lib/imgs/blog/womp-womp/mvp.png';
-	import counter1 from '#lib/imgs/blog/womp-womp/counter-1.png?enhanced';
-	import counter2 from '#lib/imgs/blog/womp-womp/counter-2.png?enhanced';
-	import counter3 from '#lib/imgs/blog/womp-womp/counter-3.png?enhanced';
-	import counterQuarters from '#lib/imgs/blog/womp-womp/counter-quarters.png?enhanced';
+	import counter1 from '#lib/imgs/blog/womp-womp/counter-1.png';
+	import counter2 from '#lib/imgs/blog/womp-womp/counter-2.png';
+	import counter3 from '#lib/imgs/blog/womp-womp/counter-3.png';
+	import counterQuarters from '#lib/imgs/blog/womp-womp/counter-quarters.png';
 </script>
 
-_As of right now, I have over 300 'womps' tracked on ['Womp Womp'](https://counter.womp.lol)._
+_As of right now, I have over 300 'womps' tracked on ['Womp Womp'](https://womp.rileyy.dev)._
 
 ### Why 'Womp Womp'?
 
@@ -26,7 +26,7 @@ So I decided to make a website to allow my friends to track how many times I say
 
 The original version of the site was built with [Astro](https://astro.build), using their new DB product called Astro DB. It was meant to be a simple website to track how many times I say 'Womp Womp'.
 
-![The MVP of the website]($lib/imgs/blog/womp-womp/mvp.png)
+![The MVP of the website]({mvp})
 
 In fact! It didn't even store the individual entries of someone pushing the button! I was just running an SQL update transaction.
 

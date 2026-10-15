@@ -1,4 +1,4 @@
-import type { Tech, Project } from './types';
+import type { Tech, Project } from './homepage';
 
 export const aboutMeText: string = `
 I'm a software developer and creative from Southern California with a passion for building products people enjoy using. With over seven years of experience across a range of technologies, I currently build web applications using modern frameworks like React and Svelte. Besides that, I'm usually behind a camera, at the beach, or advising on live audio.`;
