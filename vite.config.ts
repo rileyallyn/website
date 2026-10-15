@@ -21,39 +21,7 @@ const config: UserConfig = {
 			// Consult https://github.com/sveltejs/svelte-preprocess
 			// for more information about preprocessors
 			extensions: ['.svelte', '.md', '.svx'],
-			preprocess: [
-				// mdsvex({
-				// 	extensions: ['.md', '.svx'],
-				// 	layout: { _: layout },
-				// 	layoutPropForwarding: 'runes',
-				// 	rehypePlugins: [rehypeUnwrapImages],
-				// 	// remarkPlugins: [enhancedImagesMdsvex],
-				// 	highlight: {
-				// 		highlighter: async (code, lang, metastring) => {
-				// 			const twoslash = metastring?.includes('twoslash');
-				// 			const highlighter = await highlighterPromise;
-
-				// 			const html = escapeSvelte(
-				// 				highlighter.codeToHtml(code, {
-				// 					lang: lang ?? 'text',
-				// 					themes: { light: catppuccin, dark: tokyoNight },
-				// 					defaultColor: 'light-dark()',
-				// 					transformers: [
-				// 						transformerTwoslash({
-				// 							explicitTrigger: !twoslash,
-				// 							langs: twoslash ? ['ts'] : undefined
-				// 						}),
-				// 						codeHeaderTransformer({ meta: { lang } })
-				// 					]
-				// 				})
-				// 			);
-
-				// 			return `{@html \`${html}\`}`;
-				// 		}
-				// 	}
-				// }),
-				vitePreprocess({})
-			],
+			preprocess: [vitePreprocess({})],
 			adapter: adapter(),
 			prerender: { handleHttpError: 'warn' }
 		}),
