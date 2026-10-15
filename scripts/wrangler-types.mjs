@@ -10,7 +10,8 @@ const hadWorker = existsSync(worker);
 
 if (hadWorker) renameSync(worker, backup);
 
-let status = 1;
+let status;
+
 try {
 	const result = spawnSync('wrangler', ['types', ...process.argv.slice(2)], {
 		stdio: 'inherit',

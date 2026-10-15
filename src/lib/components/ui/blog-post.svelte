@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PostMetadata } from '~/types';
+	import type { PostMetadata } from '#lib/posts.ts';
 	import { Badge } from './Badge';
 	import { CardContainer, CardBody, CardItem } from './Card';
 	import { TIMEZONE } from '#lib/constants.js';
