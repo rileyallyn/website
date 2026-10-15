@@ -81,7 +81,7 @@
 		"prism-themes": "^1.9.0",
 		"prismjs": "^1.30.0",
 		"reading-time-estimator": "^2.15.0",
-		"rehype-unwrap-images": "github:rileyallyn/rehype-unwrap-images",
+		"rehype-unwrap-images": "github:rileyallyn/rehype-unwrap-images#01e1b560b06742527cb7b5f5b9240cbf3b00d703",
 		"schema-dts": "^2.1.0",
 		"svelte-awesome": "^3.3.5",
 		"svelte-motion": "^0.12.2",
