@@ -1,6 +1,6 @@
 # website
 
-This is my personal portfolio website. It is built with Svelte, TailwindCSS, and deployed on netlify.
+This is my personal portfolio website. It is built with Svelte, TailwindCSS, and deployed on CloudFlare.
 
 ## Development
 
